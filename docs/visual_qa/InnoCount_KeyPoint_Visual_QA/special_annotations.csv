@@ -1,0 +1,1603 @@
+split,image_id,file_name,annotation_id,class_id,class_name,occluded,out_of_image,out_of_bbox,malformed
+train,6,000006.jpg,7867,1,T-beam,False,True,True,False
+train,6,000006.jpg,7875,1,T-beam,False,True,False,False
+train,6,000006.jpg,7877,1,T-beam,False,True,False,False
+train,6,000006.jpg,7878,1,T-beam,False,True,False,False
+train,6,000006.jpg,7879,1,T-beam,False,True,False,False
+train,11,000011.jpg,4141,3,Angle Bar,False,True,True,False
+train,11,000011.jpg,4142,3,Angle Bar,False,True,True,False
+train,11,000011.jpg,4143,3,Angle Bar,False,True,True,False
+train,11,000011.jpg,4144,3,Angle Bar,False,True,True,False
+train,11,000011.jpg,4145,3,Angle Bar,False,True,True,False
+train,11,000011.jpg,4147,3,Angle Bar,False,True,True,False
+train,11,000011.jpg,4148,3,Angle Bar,False,True,True,False
+train,11,000011.jpg,4149,3,Angle Bar,False,True,True,False
+train,11,000011.jpg,4150,3,Angle Bar,False,True,True,False
+train,11,000011.jpg,4151,3,Angle Bar,True,False,True,False
+train,11,000011.jpg,4152,3,Angle Bar,True,False,True,False
+train,11,000011.jpg,4153,3,Angle Bar,True,False,True,False
+train,11,000011.jpg,4158,3,Angle Bar,True,False,True,False
+train,11,000011.jpg,4160,3,Angle Bar,False,True,True,False
+train,11,000011.jpg,4161,3,Angle Bar,False,True,False,False
+train,11,000011.jpg,4162,3,Angle Bar,False,True,True,False
+train,11,000011.jpg,4163,3,Angle Bar,False,True,True,False
+train,12,000012.jpg,74,1,T-beam,False,False,True,False
+train,13,000013.jpg,578,0,Channel,True,False,False,False
+train,14,000014.jpg,7646,2,HI-Beam,False,True,False,False
+train,16,000016.jpg,11376,1,T-beam,False,True,False,False
+train,16,000016.jpg,11383,1,T-beam,False,False,True,False
+train,17,000017.jpg,140,1,T-beam,False,False,True,False
+train,17,000017.jpg,150,1,T-beam,False,False,True,False
+train,17,000017.jpg,166,1,T-beam,False,False,True,False
+train,17,000017.jpg,167,1,T-beam,False,False,True,False
+train,17,000017.jpg,200,1,T-beam,False,False,True,False
+train,17,000017.jpg,206,1,T-beam,True,False,False,False
+train,17,000017.jpg,207,1,T-beam,True,False,False,False
+train,17,000017.jpg,216,1,T-beam,True,False,False,False
+train,17,000017.jpg,228,1,T-beam,True,False,False,False
+train,18,000018.jpg,8085,3,Angle Bar,False,True,True,False
+train,18,000018.jpg,8090,3,Angle Bar,True,True,True,False
+train,18,000018.jpg,8091,3,Angle Bar,True,True,True,False
+train,18,000018.jpg,8092,3,Angle Bar,True,True,True,False
+train,18,000018.jpg,8093,3,Angle Bar,True,True,True,False
+train,18,000018.jpg,8094,3,Angle Bar,True,True,True,False
+train,18,000018.jpg,8095,3,Angle Bar,True,False,True,False
+train,18,000018.jpg,8096,3,Angle Bar,True,False,True,False
+train,18,000018.jpg,8097,3,Angle Bar,True,False,True,False
+train,18,000018.jpg,8098,3,Angle Bar,True,True,True,False
+train,18,000018.jpg,8102,3,Angle Bar,False,True,True,False
+train,18,000018.jpg,8103,3,Angle Bar,False,False,True,False
+train,18,000018.jpg,8104,3,Angle Bar,False,False,True,False
+train,18,000018.jpg,8105,3,Angle Bar,False,False,True,False
+train,18,000018.jpg,8106,3,Angle Bar,False,True,True,False
+train,23,000023.jpg,10718,1,T-beam,False,True,False,False
+train,26,000026.jpg,523,0,Channel,False,False,True,False
+train,26,000026.jpg,527,0,Channel,False,False,True,False
+train,26,000026.jpg,529,0,Channel,False,False,True,False
+train,26,000026.jpg,535,0,Channel,False,False,True,False
+train,26,000026.jpg,582,0,Channel,False,False,True,False
+train,26,000026.jpg,620,0,Channel,False,False,True,False
+train,27,000027.jpg,9067,1,T-beam,False,False,True,False
+train,27,000027.jpg,9069,1,T-beam,False,False,True,False
+train,27,000027.jpg,9071,1,T-beam,False,False,True,False
+train,28,000028.jpg,7996,1,T-beam,False,False,True,False
+train,30,000030.jpg,918,3,Angle Bar,True,True,True,False
+train,30,000030.jpg,919,3,Angle Bar,False,True,True,False
+train,30,000030.jpg,921,3,Angle Bar,True,False,True,False
+train,30,000030.jpg,922,3,Angle Bar,True,True,True,False
+train,30,000030.jpg,923,3,Angle Bar,True,True,True,False
+train,30,000030.jpg,924,3,Angle Bar,True,True,True,False
+train,30,000030.jpg,925,3,Angle Bar,True,True,True,False
+train,30,000030.jpg,928,3,Angle Bar,True,False,True,False
+train,30,000030.jpg,932,3,Angle Bar,False,True,True,False
+train,30,000030.jpg,933,3,Angle Bar,False,True,True,False
+train,30,000030.jpg,934,3,Angle Bar,False,False,True,False
+train,30,000030.jpg,935,3,Angle Bar,False,False,True,False
+train,30,000030.jpg,936,3,Angle Bar,False,False,True,False
+train,30,000030.jpg,937,3,Angle Bar,False,False,True,False
+train,32,000032.jpg,2838,2,HI-Beam,True,False,False,False
+train,32,000032.jpg,2840,2,HI-Beam,True,False,False,False
+train,32,000032.jpg,2842,2,HI-Beam,True,False,False,False
+train,32,000032.jpg,2869,2,HI-Beam,True,False,True,False
+train,32,000032.jpg,2870,2,HI-Beam,True,False,True,False
+train,32,000032.jpg,2893,2,HI-Beam,False,False,True,False
+train,32,000032.jpg,2936,2,HI-Beam,True,False,False,False
+train,32,000032.jpg,2937,2,HI-Beam,True,False,False,False
+train,32,000032.jpg,2938,2,HI-Beam,True,False,False,False
+train,32,000032.jpg,2939,2,HI-Beam,True,False,False,False
+train,32,000032.jpg,2940,2,HI-Beam,True,False,False,False
+train,32,000032.jpg,2941,2,HI-Beam,True,False,False,False
+train,34,000034.jpg,7787,1,T-beam,False,False,True,False
+train,40,000040.jpg,11470,1,T-beam,False,True,False,False
+train,42,000042.jpg,805,1,T-beam,True,False,False,False
+train,42,000042.jpg,807,1,T-beam,True,False,False,False
+train,44,000044.jpg,6566,0,Channel,True,False,False,False
+train,44,000044.jpg,6648,0,Channel,True,False,False,False
+train,44,000044.jpg,6649,0,Channel,True,False,False,False
+train,44,000044.jpg,6650,0,Channel,True,False,False,False
+train,44,000044.jpg,6651,0,Channel,True,False,False,False
+train,44,000044.jpg,6652,0,Channel,True,False,False,False
+train,44,000044.jpg,6653,0,Channel,True,False,False,False
+train,44,000044.jpg,6677,0,Channel,True,False,False,False
+train,44,000044.jpg,6682,0,Channel,True,False,False,False
+train,44,000044.jpg,6683,0,Channel,True,False,False,False
+train,44,000044.jpg,6686,0,Channel,True,False,False,False
+train,44,000044.jpg,6687,0,Channel,True,False,False,False
+train,45,000045.jpg,7844,1,T-beam,False,True,True,False
+train,46,000046.jpg,5864,1,T-beam,False,False,True,False
+train,46,000046.jpg,5865,1,T-beam,False,False,True,False
+train,48,000048.jpg,6100,2,HI-Beam,True,False,False,False
+train,48,000048.jpg,6102,2,HI-Beam,True,False,False,False
+train,48,000048.jpg,6126,2,HI-Beam,False,False,True,False
+train,48,000048.jpg,6132,2,HI-Beam,False,False,True,False
+train,48,000048.jpg,6133,2,HI-Beam,False,False,True,False
+train,48,000048.jpg,6134,2,HI-Beam,False,False,True,False
+train,50,000050.jpg,10736,1,T-beam,False,True,False,False
+train,50,000050.jpg,10737,1,T-beam,True,False,False,False
+train,50,000050.jpg,10738,1,T-beam,False,True,False,False
+train,50,000050.jpg,10741,1,T-beam,True,True,True,False
+train,50,000050.jpg,10742,1,T-beam,True,True,True,False
+train,50,000050.jpg,10750,1,T-beam,False,True,False,False
+train,51,000051.jpg,10681,3,Angle Bar,True,True,True,False
+train,51,000051.jpg,10687,3,Angle Bar,False,True,False,False
+train,55,000055.jpg,7400,2,HI-Beam,False,False,True,False
+train,55,000055.jpg,7401,2,HI-Beam,False,False,True,False
+train,55,000055.jpg,7417,2,HI-Beam,False,False,True,False
+train,55,000055.jpg,7418,2,HI-Beam,False,False,True,False
+train,55,000055.jpg,7419,2,HI-Beam,False,False,True,False
+train,64,000064.jpg,4232,1,T-beam,False,True,True,False
+train,64,000064.jpg,4233,1,T-beam,False,True,True,False
+train,65,000065.jpg,2717,2,HI-Beam,True,False,False,False
+train,65,000065.jpg,2719,2,HI-Beam,False,False,True,False
+train,65,000065.jpg,2723,2,HI-Beam,False,False,True,False
+train,65,000065.jpg,2724,2,HI-Beam,False,False,True,False
+train,65,000065.jpg,2731,2,HI-Beam,False,False,True,False
+train,65,000065.jpg,2732,2,HI-Beam,False,False,True,False
+train,65,000065.jpg,2734,2,HI-Beam,False,False,True,False
+train,65,000065.jpg,2737,2,HI-Beam,False,False,True,False
+train,65,000065.jpg,2738,2,HI-Beam,False,False,True,False
+train,65,000065.jpg,2740,2,HI-Beam,False,False,True,False
+train,65,000065.jpg,2741,2,HI-Beam,False,False,True,False
+train,65,000065.jpg,2745,2,HI-Beam,False,False,True,False
+train,65,000065.jpg,2748,2,HI-Beam,False,False,True,False
+train,65,000065.jpg,2750,2,HI-Beam,False,False,True,False
+train,65,000065.jpg,2751,2,HI-Beam,False,False,True,False
+train,65,000065.jpg,2752,2,HI-Beam,False,False,True,False
+train,65,000065.jpg,2755,2,HI-Beam,False,False,True,False
+train,65,000065.jpg,2760,2,HI-Beam,False,False,True,False
+train,65,000065.jpg,2761,2,HI-Beam,False,False,True,False
+train,65,000065.jpg,2764,2,HI-Beam,False,False,True,False
+train,67,000067.jpg,1514,3,Angle Bar,True,False,False,False
+train,67,000067.jpg,1516,3,Angle Bar,False,True,True,False
+train,67,000067.jpg,1517,3,Angle Bar,False,True,True,False
+train,69,000069.jpg,6287,1,T-beam,False,False,True,False
+train,69,000069.jpg,6288,1,T-beam,False,True,False,False
+train,69,000069.jpg,6289,1,T-beam,False,True,True,False
+train,71,000071.jpg,2945,1,T-beam,False,False,True,False
+train,71,000071.jpg,2947,1,T-beam,False,False,True,False
+train,72,000072.jpg,5682,2,HI-Beam,False,False,True,False
+train,72,000072.jpg,5684,2,HI-Beam,False,False,True,False
+train,72,000072.jpg,5687,2,HI-Beam,False,False,True,False
+train,72,000072.jpg,5688,2,HI-Beam,False,False,True,False
+train,72,000072.jpg,5689,2,HI-Beam,False,False,True,False
+train,75,000075.jpg,10409,2,HI-Beam,True,False,False,False
+train,75,000075.jpg,10428,2,HI-Beam,False,False,True,False
+train,75,000075.jpg,10430,2,HI-Beam,False,False,True,False
+train,75,000075.jpg,10456,2,HI-Beam,False,False,True,False
+train,75,000075.jpg,10481,2,HI-Beam,False,False,True,False
+train,75,000075.jpg,10482,2,HI-Beam,False,False,True,False
+train,75,000075.jpg,10485,2,HI-Beam,True,False,False,False
+train,75,000075.jpg,10525,2,HI-Beam,True,False,False,False
+train,75,000075.jpg,10528,2,HI-Beam,True,False,False,False
+train,76,000076.jpg,11508,2,HI-Beam,False,False,True,False
+train,76,000076.jpg,11516,2,HI-Beam,False,False,True,False
+train,76,000076.jpg,11529,2,HI-Beam,True,False,False,False
+train,76,000076.jpg,11534,2,HI-Beam,False,False,True,False
+train,76,000076.jpg,11548,2,HI-Beam,False,False,True,False
+train,76,000076.jpg,11549,2,HI-Beam,False,False,True,False
+train,76,000076.jpg,11551,2,HI-Beam,False,False,True,False
+train,76,000076.jpg,11557,2,HI-Beam,True,False,False,False
+train,76,000076.jpg,11558,2,HI-Beam,False,False,True,False
+train,76,000076.jpg,11570,2,HI-Beam,False,False,True,False
+train,76,000076.jpg,11571,2,HI-Beam,False,False,True,False
+train,76,000076.jpg,11574,2,HI-Beam,False,False,True,False
+train,76,000076.jpg,11593,2,HI-Beam,False,False,True,False
+train,76,000076.jpg,11594,2,HI-Beam,False,False,True,False
+train,76,000076.jpg,11601,2,HI-Beam,True,False,False,False
+train,76,000076.jpg,11604,2,HI-Beam,True,False,False,False
+train,76,000076.jpg,11612,2,HI-Beam,True,False,False,False
+train,76,000076.jpg,11641,2,HI-Beam,False,False,True,False
+train,76,000076.jpg,11649,2,HI-Beam,True,False,False,False
+train,76,000076.jpg,11665,2,HI-Beam,False,False,True,False
+train,76,000076.jpg,11675,2,HI-Beam,True,False,False,False
+train,76,000076.jpg,11679,2,HI-Beam,False,False,True,False
+train,76,000076.jpg,11680,2,HI-Beam,False,False,True,False
+train,76,000076.jpg,11687,2,HI-Beam,False,False,True,False
+train,76,000076.jpg,11695,2,HI-Beam,False,False,True,False
+train,76,000076.jpg,11716,2,HI-Beam,False,False,True,False
+train,76,000076.jpg,11724,2,HI-Beam,False,False,True,False
+train,76,000076.jpg,11727,2,HI-Beam,False,False,True,False
+train,76,000076.jpg,11755,2,HI-Beam,True,False,True,False
+train,76,000076.jpg,11756,2,HI-Beam,True,False,False,False
+train,76,000076.jpg,11757,2,HI-Beam,False,False,True,False
+train,76,000076.jpg,11762,2,HI-Beam,True,False,False,False
+train,76,000076.jpg,11763,2,HI-Beam,True,False,False,False
+train,76,000076.jpg,11764,2,HI-Beam,True,False,True,False
+train,76,000076.jpg,11767,2,HI-Beam,True,False,True,False
+train,76,000076.jpg,11779,2,HI-Beam,True,False,False,False
+train,76,000076.jpg,11780,2,HI-Beam,True,False,False,False
+train,76,000076.jpg,11783,2,HI-Beam,False,False,True,False
+train,76,000076.jpg,11784,2,HI-Beam,True,False,False,False
+train,76,000076.jpg,11793,2,HI-Beam,False,False,True,False
+train,76,000076.jpg,11794,2,HI-Beam,True,False,True,False
+train,76,000076.jpg,11796,2,HI-Beam,False,False,True,False
+train,76,000076.jpg,11800,2,HI-Beam,True,False,False,False
+train,76,000076.jpg,11804,2,HI-Beam,True,False,False,False
+train,76,000076.jpg,11805,2,HI-Beam,True,False,False,False
+train,76,000076.jpg,11806,2,HI-Beam,True,False,False,False
+train,76,000076.jpg,11810,2,HI-Beam,False,False,True,False
+train,76,000076.jpg,11812,2,HI-Beam,True,False,False,False
+train,76,000076.jpg,11814,2,HI-Beam,True,False,False,False
+train,76,000076.jpg,11815,2,HI-Beam,True,False,False,False
+train,78,000078.jpg,9834,2,HI-Beam,False,False,True,False
+train,78,000078.jpg,9835,2,HI-Beam,True,True,False,False
+train,79,000079.jpg,8250,2,HI-Beam,True,False,True,False
+train,80,000080.jpg,1468,1,T-beam,False,False,True,False
+train,80,000080.jpg,1469,1,T-beam,False,False,True,False
+train,82,000082.jpg,3250,3,Angle Bar,False,True,True,False
+train,82,000082.jpg,3255,3,Angle Bar,True,False,False,False
+train,82,000082.jpg,3271,3,Angle Bar,False,True,True,False
+train,82,000082.jpg,3273,3,Angle Bar,True,False,False,False
+train,82,000082.jpg,3276,3,Angle Bar,True,False,False,False
+train,82,000082.jpg,3280,3,Angle Bar,True,False,False,False
+train,82,000082.jpg,3285,3,Angle Bar,True,False,False,False
+train,82,000082.jpg,3287,3,Angle Bar,True,False,False,False
+train,82,000082.jpg,3290,3,Angle Bar,False,True,True,False
+train,82,000082.jpg,3291,3,Angle Bar,True,False,True,False
+train,82,000082.jpg,3292,3,Angle Bar,True,False,True,False
+train,82,000082.jpg,3293,3,Angle Bar,True,False,True,False
+train,82,000082.jpg,3294,3,Angle Bar,True,False,True,False
+train,82,000082.jpg,3295,3,Angle Bar,True,False,True,False
+train,82,000082.jpg,3296,3,Angle Bar,True,False,True,False
+train,82,000082.jpg,3297,3,Angle Bar,True,False,True,False
+train,82,000082.jpg,3298,3,Angle Bar,True,False,True,False
+train,82,000082.jpg,3299,3,Angle Bar,True,False,True,False
+train,82,000082.jpg,3300,3,Angle Bar,True,False,True,False
+train,82,000082.jpg,3301,3,Angle Bar,True,False,False,False
+train,82,000082.jpg,3302,3,Angle Bar,True,False,False,False
+train,82,000082.jpg,3310,3,Angle Bar,True,False,True,False
+train,82,000082.jpg,3312,3,Angle Bar,False,True,True,False
+train,82,000082.jpg,3313,3,Angle Bar,True,True,True,False
+train,82,000082.jpg,3314,3,Angle Bar,True,False,True,False
+train,82,000082.jpg,3315,3,Angle Bar,True,False,True,False
+train,82,000082.jpg,3316,3,Angle Bar,True,False,True,False
+train,82,000082.jpg,3317,3,Angle Bar,True,False,True,False
+train,82,000082.jpg,3321,3,Angle Bar,True,True,False,False
+train,82,000082.jpg,3323,3,Angle Bar,False,False,True,False
+train,82,000082.jpg,3325,3,Angle Bar,True,True,True,False
+train,82,000082.jpg,3326,3,Angle Bar,False,True,True,False
+train,82,000082.jpg,3327,3,Angle Bar,True,True,True,False
+train,82,000082.jpg,3328,3,Angle Bar,True,True,False,False
+train,88,000088.jpg,1103,2,HI-Beam,True,False,False,False
+train,89,000089.jpg,11001,2,HI-Beam,True,False,False,False
+train,89,000089.jpg,11002,2,HI-Beam,True,False,False,False
+train,89,000089.jpg,11013,2,HI-Beam,True,False,False,False
+train,90,000090.jpg,7733,3,Angle Bar,True,False,False,False
+train,90,000090.jpg,7736,3,Angle Bar,True,False,False,False
+train,90,000090.jpg,7737,3,Angle Bar,True,False,False,False
+train,90,000090.jpg,7738,3,Angle Bar,True,True,True,False
+train,90,000090.jpg,7739,3,Angle Bar,True,True,True,False
+train,90,000090.jpg,7740,3,Angle Bar,True,True,True,False
+train,90,000090.jpg,7741,3,Angle Bar,True,True,True,False
+train,90,000090.jpg,7742,3,Angle Bar,True,True,True,False
+train,90,000090.jpg,7743,3,Angle Bar,True,True,True,False
+train,90,000090.jpg,7744,3,Angle Bar,False,True,True,False
+train,90,000090.jpg,7745,3,Angle Bar,True,True,True,False
+train,90,000090.jpg,7746,3,Angle Bar,True,True,True,False
+train,90,000090.jpg,7747,3,Angle Bar,True,True,True,False
+train,90,000090.jpg,7748,3,Angle Bar,True,True,True,False
+train,92,000092.jpg,11159,3,Angle Bar,False,False,True,False
+train,92,000092.jpg,11162,3,Angle Bar,False,False,True,False
+train,92,000092.jpg,11163,3,Angle Bar,False,False,True,False
+train,92,000092.jpg,11164,3,Angle Bar,False,False,True,False
+train,92,000092.jpg,11166,3,Angle Bar,False,False,True,False
+train,92,000092.jpg,11168,3,Angle Bar,False,False,True,False
+train,92,000092.jpg,11178,3,Angle Bar,True,True,True,False
+train,92,000092.jpg,11179,3,Angle Bar,False,False,True,False
+train,92,000092.jpg,11182,3,Angle Bar,True,False,False,False
+train,92,000092.jpg,11183,3,Angle Bar,True,False,False,False
+train,92,000092.jpg,11184,3,Angle Bar,True,False,True,False
+train,93,000093.jpg,3019,1,T-beam,False,False,True,False
+train,93,000093.jpg,3020,1,T-beam,True,False,False,False
+train,95,000095.jpg,276,1,T-beam,True,False,False,False
+train,97,000097.jpg,5008,2,HI-Beam,False,False,True,False
+train,97,000097.jpg,5013,2,HI-Beam,False,False,True,False
+train,97,000097.jpg,5019,2,HI-Beam,False,False,True,False
+train,97,000097.jpg,5020,2,HI-Beam,False,False,True,False
+train,97,000097.jpg,5021,2,HI-Beam,False,False,True,False
+train,97,000097.jpg,5027,2,HI-Beam,False,False,True,False
+train,97,000097.jpg,5034,2,HI-Beam,False,False,True,False
+train,97,000097.jpg,5042,2,HI-Beam,False,False,True,False
+train,97,000097.jpg,5043,2,HI-Beam,False,False,True,False
+train,97,000097.jpg,5047,2,HI-Beam,False,False,True,False
+train,97,000097.jpg,5049,2,HI-Beam,False,False,True,False
+train,100,000100.jpg,883,1,T-beam,False,False,True,False
+train,100,000100.jpg,884,1,T-beam,False,False,True,False
+train,101,000101.jpg,6743,2,HI-Beam,True,False,False,False
+train,104,000104.jpg,318,2,HI-Beam,False,False,True,False
+train,106,000106.jpg,10229,3,Angle Bar,True,False,False,False
+train,106,000106.jpg,10230,3,Angle Bar,True,False,False,False
+train,106,000106.jpg,10231,3,Angle Bar,False,False,True,False
+train,106,000106.jpg,10233,3,Angle Bar,False,False,True,False
+train,106,000106.jpg,10249,3,Angle Bar,True,True,True,False
+train,106,000106.jpg,10250,3,Angle Bar,True,True,True,False
+train,106,000106.jpg,10254,3,Angle Bar,True,False,True,False
+train,106,000106.jpg,10259,3,Angle Bar,True,False,True,False
+train,110,000110.jpg,2374,1,T-beam,False,False,True,False
+train,110,000110.jpg,2379,1,T-beam,True,False,False,False
+train,113,000113.jpg,4805,2,HI-Beam,True,False,False,False
+train,113,000113.jpg,4847,2,HI-Beam,False,False,True,False
+train,114,000114.jpg,812,2,HI-Beam,False,False,True,False
+train,114,000114.jpg,838,2,HI-Beam,False,False,True,False
+train,114,000114.jpg,846,2,HI-Beam,False,False,True,False
+train,114,000114.jpg,853,2,HI-Beam,False,False,True,False
+train,114,000114.jpg,856,2,HI-Beam,False,False,True,False
+train,114,000114.jpg,860,2,HI-Beam,True,False,False,False
+train,114,000114.jpg,861,2,HI-Beam,True,False,False,False
+train,114,000114.jpg,862,2,HI-Beam,True,False,False,False
+train,114,000114.jpg,863,2,HI-Beam,True,False,False,False
+train,116,000116.jpg,10399,1,T-beam,True,False,False,False
+train,117,000117.jpg,1359,2,HI-Beam,True,False,False,False
+train,117,000117.jpg,1361,2,HI-Beam,True,False,False,False
+train,117,000117.jpg,1363,2,HI-Beam,True,False,False,False
+train,118,000118.jpg,7940,1,T-beam,False,False,True,False
+train,118,000118.jpg,7941,1,T-beam,False,False,True,False
+train,118,000118.jpg,7945,1,T-beam,True,False,True,False
+train,120,000120.jpg,8043,1,T-beam,False,True,True,False
+train,121,000121.jpg,4216,1,T-beam,True,True,True,False
+train,121,000121.jpg,4218,1,T-beam,True,False,False,False
+train,122,000122.jpg,5095,1,T-beam,True,False,False,False
+train,122,000122.jpg,5098,1,T-beam,True,False,False,False
+train,124,000124.jpg,703,1,T-beam,False,True,True,False
+train,125,000125.jpg,9765,2,HI-Beam,False,False,True,False
+train,125,000125.jpg,9769,2,HI-Beam,False,False,True,False
+train,125,000125.jpg,9771,2,HI-Beam,False,False,True,False
+train,125,000125.jpg,9773,2,HI-Beam,False,False,True,False
+train,125,000125.jpg,9783,2,HI-Beam,False,False,True,False
+train,125,000125.jpg,9785,2,HI-Beam,False,False,True,False
+train,125,000125.jpg,9786,2,HI-Beam,False,False,True,False
+train,127,000127.jpg,362,3,Angle Bar,False,False,True,False
+train,127,000127.jpg,365,3,Angle Bar,False,True,True,False
+train,127,000127.jpg,366,3,Angle Bar,False,True,True,False
+train,127,000127.jpg,367,3,Angle Bar,False,True,True,False
+train,127,000127.jpg,368,3,Angle Bar,False,True,True,False
+train,127,000127.jpg,369,3,Angle Bar,False,True,True,False
+train,129,000129.jpg,2953,1,T-beam,True,False,False,False
+train,130,000130.jpg,69,3,Angle Bar,True,False,False,False
+train,130,000130.jpg,70,3,Angle Bar,True,False,False,False
+train,130,000130.jpg,72,3,Angle Bar,True,False,False,False
+train,130,000130.jpg,74,3,Angle Bar,False,True,True,False
+train,130,000130.jpg,75,3,Angle Bar,False,True,True,False
+train,134,000134.jpg,2711,3,Angle Bar,False,True,False,False
+train,135,000135.jpg,3179,1,T-beam,True,False,False,False
+train,142,000142.jpg,25,3,Angle Bar,False,True,True,False
+train,142,000142.jpg,26,3,Angle Bar,False,True,True,False
+train,142,000142.jpg,27,3,Angle Bar,False,True,True,False
+train,142,000142.jpg,28,3,Angle Bar,False,True,True,False
+train,142,000142.jpg,29,3,Angle Bar,False,True,True,False
+train,142,000142.jpg,30,3,Angle Bar,False,True,True,False
+train,147,000147.jpg,4294,3,Angle Bar,True,False,False,False
+train,147,000147.jpg,4295,3,Angle Bar,True,False,False,False
+train,147,000147.jpg,4307,3,Angle Bar,True,False,False,False
+train,147,000147.jpg,4309,3,Angle Bar,True,False,True,False
+train,149,000149.jpg,5081,1,T-beam,True,False,False,False
+train,152,000152.jpg,6314,2,HI-Beam,False,False,True,False
+train,152,000152.jpg,6315,2,HI-Beam,True,False,False,False
+train,155,000155.jpg,11027,3,Angle Bar,False,True,True,False
+train,155,000155.jpg,11028,3,Angle Bar,False,True,True,False
+train,155,000155.jpg,11029,3,Angle Bar,False,True,True,False
+train,155,000155.jpg,11030,3,Angle Bar,False,True,True,False
+train,155,000155.jpg,11031,3,Angle Bar,False,True,True,False
+train,157,000157.jpg,1248,1,T-beam,False,False,True,False
+train,160,000160.jpg,2481,3,Angle Bar,False,True,False,False
+train,160,000160.jpg,2482,3,Angle Bar,False,True,False,False
+train,160,000160.jpg,2483,3,Angle Bar,False,True,False,False
+train,160,000160.jpg,2484,3,Angle Bar,True,True,False,False
+train,160,000160.jpg,2486,3,Angle Bar,True,False,True,False
+train,160,000160.jpg,2487,3,Angle Bar,True,False,True,False
+train,160,000160.jpg,2488,3,Angle Bar,True,False,True,False
+train,160,000160.jpg,2489,3,Angle Bar,True,False,True,False
+train,160,000160.jpg,2492,3,Angle Bar,True,False,True,False
+train,160,000160.jpg,2493,3,Angle Bar,True,False,True,False
+train,166,000166.jpg,10558,2,HI-Beam,True,False,False,False
+train,166,000166.jpg,10561,2,HI-Beam,False,False,True,False
+train,166,000166.jpg,10562,2,HI-Beam,False,False,True,False
+train,168,000168.jpg,1011,3,Angle Bar,True,False,False,False
+train,168,000168.jpg,1012,3,Angle Bar,True,True,True,False
+train,168,000168.jpg,1013,3,Angle Bar,True,True,True,False
+train,168,000168.jpg,1015,3,Angle Bar,True,False,False,False
+train,168,000168.jpg,1020,3,Angle Bar,True,False,False,False
+train,168,000168.jpg,1033,3,Angle Bar,True,True,True,False
+train,168,000168.jpg,1034,3,Angle Bar,True,True,True,False
+train,168,000168.jpg,1035,3,Angle Bar,True,True,True,False
+train,168,000168.jpg,1036,3,Angle Bar,True,True,True,False
+train,168,000168.jpg,1037,3,Angle Bar,True,True,True,False
+train,168,000168.jpg,1038,3,Angle Bar,True,True,True,False
+train,168,000168.jpg,1039,3,Angle Bar,True,True,True,False
+train,168,000168.jpg,1040,3,Angle Bar,True,True,True,False
+train,168,000168.jpg,1041,3,Angle Bar,True,True,True,False
+train,168,000168.jpg,1042,3,Angle Bar,True,True,True,False
+train,169,000169.jpg,3389,1,T-beam,False,False,True,False
+train,169,000169.jpg,3398,1,T-beam,False,False,True,False
+train,169,000169.jpg,3400,1,T-beam,True,False,False,False
+train,169,000169.jpg,3405,1,T-beam,True,False,False,False
+train,169,000169.jpg,3407,1,T-beam,False,False,True,False
+train,172,000172.jpg,1296,1,T-beam,False,False,True,False
+train,174,000174.jpg,2380,1,T-beam,True,False,False,False
+train,174,000174.jpg,2388,1,T-beam,True,False,False,False
+train,175,000175.jpg,887,2,HI-Beam,False,True,False,False
+train,175,000175.jpg,890,2,HI-Beam,False,True,False,False
+train,178,000178.jpg,6841,1,T-beam,False,True,True,False
+train,179,000179.jpg,440,2,HI-Beam,False,True,False,False
+train,181,000181.jpg,4725,1,T-beam,False,True,False,False
+train,184,000184.jpg,5087,1,T-beam,False,False,True,False
+train,184,000184.jpg,5091,1,T-beam,False,True,True,False
+train,187,000187.jpg,10876,3,Angle Bar,True,False,False,False
+train,187,000187.jpg,10877,3,Angle Bar,True,False,False,False
+train,187,000187.jpg,10880,3,Angle Bar,True,False,False,False
+train,187,000187.jpg,10881,3,Angle Bar,True,False,False,False
+train,187,000187.jpg,10884,3,Angle Bar,True,False,False,False
+train,187,000187.jpg,10891,3,Angle Bar,True,False,False,False
+train,187,000187.jpg,10900,3,Angle Bar,True,False,False,False
+train,187,000187.jpg,10914,3,Angle Bar,True,False,False,False
+train,187,000187.jpg,10924,3,Angle Bar,True,False,False,False
+train,187,000187.jpg,10934,3,Angle Bar,True,False,False,False
+train,189,000189.jpg,11501,1,T-beam,False,True,False,False
+train,191,000191.jpg,7881,2,HI-Beam,True,False,False,False
+train,192,000192.jpg,5764,1,T-beam,False,True,True,False
+train,193,000193.jpg,1000,1,T-beam,False,False,True,False
+train,195,000195.jpg,6806,1,T-beam,False,False,True,False
+train,197,000197.jpg,10269,1,T-beam,False,False,True,False
+train,198,000198.jpg,1583,1,T-beam,False,False,True,False
+train,198,000198.jpg,1588,1,T-beam,False,False,True,False
+train,198,000198.jpg,1594,1,T-beam,False,False,True,False
+train,198,000198.jpg,1595,1,T-beam,False,False,True,False
+train,199,000199.jpg,10588,1,T-beam,False,False,True,False
+train,201,000201.jpg,1459,1,T-beam,False,False,True,False
+train,201,000201.jpg,1460,1,T-beam,False,False,True,False
+train,201,000201.jpg,1463,1,T-beam,False,False,True,False
+train,205,000205.jpg,11122,1,T-beam,False,False,True,False
+train,205,000205.jpg,11123,1,T-beam,False,False,True,False
+train,206,000206.jpg,10546,1,T-beam,False,True,False,False
+train,207,000207.jpg,10184,2,HI-Beam,True,False,False,False
+train,210,000210.jpg,6707,1,T-beam,False,False,True,False
+train,211,000211.jpg,4882,1,T-beam,False,False,True,False
+train,211,000211.jpg,4888,1,T-beam,False,False,True,False
+train,212,000212.jpg,435,1,T-beam,False,False,True,False
+train,212,000212.jpg,436,1,T-beam,False,True,False,False
+train,212,000212.jpg,437,1,T-beam,False,False,True,False
+train,224,000224.jpg,7661,1,T-beam,True,True,False,False
+train,225,000225.jpg,4244,2,HI-Beam,False,False,True,False
+train,225,000225.jpg,4248,2,HI-Beam,True,False,False,False
+train,227,000227.jpg,333,2,HI-Beam,True,False,False,False
+train,231,000231.jpg,897,1,T-beam,False,False,True,False
+train,231,000231.jpg,898,1,T-beam,False,False,True,False
+train,231,000231.jpg,902,1,T-beam,False,False,True,False
+train,231,000231.jpg,903,1,T-beam,False,False,True,False
+train,232,000232.jpg,3216,3,Angle Bar,True,True,True,False
+train,232,000232.jpg,3217,3,Angle Bar,False,True,True,False
+train,232,000232.jpg,3218,3,Angle Bar,False,True,False,False
+train,232,000232.jpg,3219,3,Angle Bar,False,True,False,False
+train,234,000234.jpg,9081,1,T-beam,False,True,True,False
+train,238,000238.jpg,4870,2,HI-Beam,True,False,False,False
+train,240,000240.jpg,11393,2,HI-Beam,True,False,False,False
+train,241,000241.jpg,1479,2,HI-Beam,True,False,False,False
+train,247,000247.jpg,6243,3,Angle Bar,False,True,True,False
+train,247,000247.jpg,6251,3,Angle Bar,False,True,True,False
+train,247,000247.jpg,6255,3,Angle Bar,True,True,True,False
+train,247,000247.jpg,6258,3,Angle Bar,False,True,True,False
+train,247,000247.jpg,6259,3,Angle Bar,True,True,True,False
+train,250,000250.jpg,4122,1,T-beam,False,True,True,False
+train,255,000255.jpg,176,1,T-beam,False,True,False,False
+train,259,000259.jpg,4949,2,HI-Beam,True,False,False,False
+train,260,000260.jpg,1292,1,T-beam,False,True,False,False
+train,260,000260.jpg,1295,1,T-beam,False,True,True,False
+train,265,000265.jpg,4092,3,Angle Bar,True,False,False,False
+train,265,000265.jpg,4093,3,Angle Bar,True,False,False,False
+train,265,000265.jpg,4096,3,Angle Bar,True,False,False,False
+train,265,000265.jpg,4110,3,Angle Bar,True,False,False,False
+train,265,000265.jpg,4113,3,Angle Bar,True,False,False,False
+train,265,000265.jpg,4116,3,Angle Bar,True,False,False,False
+train,265,000265.jpg,4117,3,Angle Bar,True,False,False,False
+train,270,000270.jpg,9661,3,Angle Bar,True,False,False,False
+train,270,000270.jpg,9666,3,Angle Bar,True,False,False,False
+train,270,000270.jpg,9667,3,Angle Bar,True,False,False,False
+train,270,000270.jpg,9672,3,Angle Bar,True,False,False,False
+train,270,000270.jpg,9688,3,Angle Bar,True,False,False,False
+train,270,000270.jpg,9694,3,Angle Bar,True,False,False,False
+train,270,000270.jpg,9703,3,Angle Bar,True,False,False,False
+train,270,000270.jpg,9704,3,Angle Bar,False,True,False,False
+train,270,000270.jpg,9705,3,Angle Bar,False,True,False,False
+train,270,000270.jpg,9707,3,Angle Bar,True,False,False,False
+train,270,000270.jpg,9708,3,Angle Bar,True,False,False,False
+train,270,000270.jpg,9709,3,Angle Bar,True,False,False,False
+train,278,000278.jpg,10182,1,T-beam,False,True,True,False
+train,278,000278.jpg,10183,1,T-beam,False,True,True,False
+train,280,000280.jpg,3055,1,T-beam,False,True,False,False
+train,285,000285.jpg,1413,2,HI-Beam,True,False,False,False
+train,285,000285.jpg,1414,2,HI-Beam,False,False,True,False
+train,289,000289.jpg,9189,0,Channel,True,False,False,False
+train,289,000289.jpg,9190,0,Channel,True,False,False,False
+train,289,000289.jpg,9191,0,Channel,True,False,False,False
+train,289,000289.jpg,9192,0,Channel,True,False,False,False
+train,289,000289.jpg,9193,0,Channel,True,False,False,False
+train,289,000289.jpg,9194,0,Channel,True,False,False,False
+train,289,000289.jpg,9290,0,Channel,True,True,True,False
+train,289,000289.jpg,9386,0,Channel,False,False,True,False
+train,289,000289.jpg,9392,0,Channel,False,False,True,False
+train,289,000289.jpg,9398,0,Channel,False,False,True,False
+train,289,000289.jpg,9486,0,Channel,False,False,True,False
+train,289,000289.jpg,9539,0,Channel,False,False,True,False
+train,289,000289.jpg,9545,0,Channel,False,False,True,False
+train,289,000289.jpg,9546,0,Channel,False,False,True,False
+train,290,000290.jpg,3001,1,T-beam,False,True,True,False
+train,290,000290.jpg,3006,1,T-beam,False,False,True,False
+train,290,000290.jpg,3008,1,T-beam,False,True,False,False
+train,290,000290.jpg,3011,1,T-beam,False,True,False,False
+train,291,000291.jpg,3052,1,T-beam,False,True,False,False
+train,292,000292.jpg,2497,0,Channel,True,False,False,False
+train,292,000292.jpg,2500,0,Channel,True,False,False,False
+train,292,000292.jpg,2525,0,Channel,True,False,False,False
+train,292,000292.jpg,2583,0,Channel,True,False,False,False
+train,292,000292.jpg,2617,0,Channel,True,False,False,False
+train,292,000292.jpg,2628,0,Channel,True,False,False,False
+train,292,000292.jpg,2631,0,Channel,True,False,False,False
+train,292,000292.jpg,2634,0,Channel,True,False,False,False
+train,294,000294.jpg,1314,3,Angle Bar,False,True,True,False
+train,294,000294.jpg,1326,3,Angle Bar,False,True,True,False
+train,294,000294.jpg,1327,3,Angle Bar,False,True,True,False
+train,295,000295.jpg,3025,1,T-beam,False,True,True,False
+train,300,000300.jpg,9884,2,HI-Beam,True,False,False,False
+train,300,000300.jpg,9885,2,HI-Beam,True,False,False,False
+train,300,000300.jpg,9886,2,HI-Beam,True,False,False,False
+train,300,000300.jpg,9887,2,HI-Beam,True,False,False,False
+train,300,000300.jpg,9888,2,HI-Beam,True,False,False,False
+train,300,000300.jpg,9889,2,HI-Beam,True,False,False,False
+train,300,000300.jpg,9890,2,HI-Beam,True,False,False,False
+train,300,000300.jpg,9891,2,HI-Beam,True,False,False,False
+train,300,000300.jpg,9892,2,HI-Beam,True,False,False,False
+train,300,000300.jpg,9893,2,HI-Beam,True,False,False,False
+train,300,000300.jpg,9894,2,HI-Beam,True,False,False,False
+train,300,000300.jpg,9895,2,HI-Beam,True,False,False,False
+train,300,000300.jpg,9896,2,HI-Beam,True,False,False,False
+train,300,000300.jpg,9897,2,HI-Beam,True,False,False,False
+train,300,000300.jpg,9898,2,HI-Beam,True,False,False,False
+train,300,000300.jpg,9899,2,HI-Beam,True,False,False,False
+train,300,000300.jpg,9900,2,HI-Beam,True,False,False,False
+train,300,000300.jpg,9901,2,HI-Beam,True,False,False,False
+train,300,000300.jpg,9907,2,HI-Beam,True,False,True,False
+train,300,000300.jpg,9908,2,HI-Beam,True,False,False,False
+train,300,000300.jpg,9909,2,HI-Beam,True,False,True,False
+train,300,000300.jpg,9918,2,HI-Beam,False,False,True,False
+train,300,000300.jpg,9955,2,HI-Beam,False,False,True,False
+train,300,000300.jpg,9956,2,HI-Beam,False,False,True,False
+train,300,000300.jpg,9957,2,HI-Beam,False,False,True,False
+train,300,000300.jpg,9958,2,HI-Beam,False,False,True,False
+train,300,000300.jpg,9959,2,HI-Beam,False,False,True,False
+train,300,000300.jpg,9960,2,HI-Beam,False,False,True,False
+train,300,000300.jpg,9961,2,HI-Beam,True,False,False,False
+train,300,000300.jpg,9963,2,HI-Beam,True,False,False,False
+train,300,000300.jpg,9964,2,HI-Beam,True,False,False,False
+train,300,000300.jpg,9965,2,HI-Beam,True,False,False,False
+train,300,000300.jpg,9966,2,HI-Beam,True,False,False,False
+train,300,000300.jpg,9969,2,HI-Beam,True,False,False,False
+train,300,000300.jpg,10035,2,HI-Beam,True,False,False,False
+train,306,000306.jpg,6798,2,HI-Beam,True,False,False,False
+train,306,000306.jpg,6799,2,HI-Beam,True,False,False,False
+train,307,000307.jpg,298,1,T-beam,False,False,True,False
+train,315,000315.jpg,1391,2,HI-Beam,True,False,False,False
+train,315,000315.jpg,1393,2,HI-Beam,True,False,False,False
+train,315,000315.jpg,1394,2,HI-Beam,True,False,False,False
+train,315,000315.jpg,1397,2,HI-Beam,True,False,False,False
+train,315,000315.jpg,1398,2,HI-Beam,True,False,False,False
+train,315,000315.jpg,1399,2,HI-Beam,True,False,False,False
+train,315,000315.jpg,1401,2,HI-Beam,True,False,False,False
+train,315,000315.jpg,1402,2,HI-Beam,True,False,False,False
+train,315,000315.jpg,1403,2,HI-Beam,True,False,False,False
+train,315,000315.jpg,1412,2,HI-Beam,True,False,True,False
+train,317,000317.jpg,1397,2,HI-Beam,True,False,False,False
+train,317,000317.jpg,1403,2,HI-Beam,False,False,True,False
+train,317,000317.jpg,1408,2,HI-Beam,False,False,True,False
+train,317,000317.jpg,1414,2,HI-Beam,False,False,True,False
+train,317,000317.jpg,1419,2,HI-Beam,True,False,False,False
+train,318,000318.jpg,134,1,T-beam,False,True,False,False
+train,319,000319.jpg,6858,1,T-beam,False,True,True,False
+train,319,000319.jpg,6859,1,T-beam,False,True,True,False
+train,319,000319.jpg,6865,1,T-beam,False,True,True,False
+train,324,000324.jpg,155,3,Angle Bar,True,False,False,False
+train,332,000332.jpg,726,2,HI-Beam,True,False,False,False
+train,332,000332.jpg,734,2,HI-Beam,False,False,True,False
+train,332,000332.jpg,756,2,HI-Beam,False,False,True,False
+train,332,000332.jpg,758,2,HI-Beam,False,False,True,False
+train,333,000333.jpg,4199,1,T-beam,False,True,False,False
+train,333,000333.jpg,4200,1,T-beam,False,True,False,False
+train,333,000333.jpg,4208,1,T-beam,False,False,True,False
+train,333,000333.jpg,4209,1,T-beam,False,True,True,False
+train,339,000339.jpg,11110,1,T-beam,False,False,True,False
+train,340,000340.jpg,1152,1,T-beam,False,False,True,False
+train,341,000341.jpg,4791,1,T-beam,False,False,True,False
+train,341,000341.jpg,4793,1,T-beam,True,False,False,False
+train,345,000345.jpg,10939,2,HI-Beam,True,False,False,False
+train,345,000345.jpg,10941,2,HI-Beam,False,True,False,False
+train,346,000346.jpg,3076,1,T-beam,False,False,True,False
+train,347,000347.jpg,2434,2,HI-Beam,False,False,True,False
+train,347,000347.jpg,2435,2,HI-Beam,False,False,True,False
+train,347,000347.jpg,2438,2,HI-Beam,False,False,True,False
+train,347,000347.jpg,2440,2,HI-Beam,False,False,True,False
+train,349,000349.jpg,10336,1,T-beam,True,False,False,False
+train,352,000352.jpg,33,3,Angle Bar,True,True,True,False
+train,352,000352.jpg,37,3,Angle Bar,True,True,True,False
+train,352,000352.jpg,39,3,Angle Bar,True,True,True,False
+train,352,000352.jpg,40,3,Angle Bar,True,True,True,False
+train,352,000352.jpg,41,3,Angle Bar,True,True,True,False
+train,352,000352.jpg,43,3,Angle Bar,False,False,True,False
+train,352,000352.jpg,51,3,Angle Bar,True,False,True,False
+train,352,000352.jpg,52,3,Angle Bar,True,True,True,False
+train,352,000352.jpg,63,3,Angle Bar,False,False,True,False
+train,352,000352.jpg,65,3,Angle Bar,False,True,False,False
+train,352,000352.jpg,66,3,Angle Bar,False,True,False,False
+train,362,000362.jpg,881,2,HI-Beam,False,True,False,False
+train,363,000363.jpg,131,1,T-beam,True,True,True,False
+train,366,000366.jpg,3509,0,Channel,True,False,False,False
+train,366,000366.jpg,3593,0,Channel,True,False,False,False
+train,366,000366.jpg,3594,0,Channel,True,False,False,False
+train,366,000366.jpg,3595,0,Channel,True,False,False,False
+train,366,000366.jpg,3596,0,Channel,True,False,False,False
+train,366,000366.jpg,3597,0,Channel,True,False,False,False
+train,366,000366.jpg,3598,0,Channel,True,False,False,False
+train,366,000366.jpg,3599,0,Channel,True,False,False,False
+train,366,000366.jpg,3600,0,Channel,True,False,False,False
+train,366,000366.jpg,3835,0,Channel,True,False,False,False
+train,366,000366.jpg,3838,0,Channel,True,False,False,False
+train,366,000366.jpg,3889,0,Channel,True,False,False,False
+train,366,000366.jpg,4064,0,Channel,True,False,False,False
+train,366,000366.jpg,4065,0,Channel,True,True,True,False
+train,366,000366.jpg,4066,0,Channel,True,True,True,False
+train,369,000369.jpg,82,3,Angle Bar,True,False,False,False
+train,369,000369.jpg,85,3,Angle Bar,True,False,False,False
+train,369,000369.jpg,87,3,Angle Bar,True,False,False,False
+train,369,000369.jpg,98,3,Angle Bar,True,False,False,False
+train,369,000369.jpg,99,3,Angle Bar,True,False,False,False
+train,370,000370.jpg,347,1,T-beam,False,False,True,False
+train,373,000373.jpg,10195,1,T-beam,False,False,True,False
+train,374,000374.jpg,7367,1,T-beam,True,False,False,False
+train,376,000376.jpg,1238,1,T-beam,True,False,False,False
+train,377,000377.jpg,105,1,T-beam,False,True,False,False
+train,377,000377.jpg,106,1,T-beam,False,True,False,False
+train,383,000383.jpg,4701,1,T-beam,True,False,False,False
+train,384,000384.jpg,7276,0,Channel,True,False,False,False
+train,384,000384.jpg,7277,0,Channel,True,False,False,False
+train,384,000384.jpg,7278,0,Channel,True,False,False,False
+train,384,000384.jpg,7315,0,Channel,True,False,False,False
+train,384,000384.jpg,7316,0,Channel,True,False,False,False
+train,385,000385.jpg,3185,3,Angle Bar,True,True,True,False
+train,385,000385.jpg,3186,3,Angle Bar,True,True,True,False
+train,385,000385.jpg,3187,3,Angle Bar,True,True,True,False
+train,385,000385.jpg,3188,3,Angle Bar,True,True,True,False
+train,385,000385.jpg,3189,3,Angle Bar,True,True,True,False
+train,386,000386.jpg,5839,1,T-beam,False,False,True,False
+train,386,000386.jpg,5848,1,T-beam,False,True,False,False
+train,386,000386.jpg,5850,1,T-beam,False,True,True,False
+train,393,000393.jpg,1379,1,T-beam,False,False,True,False
+train,393,000393.jpg,1380,1,T-beam,False,False,True,False
+train,393,000393.jpg,1382,1,T-beam,False,False,True,False
+train,404,000404.jpg,354,1,T-beam,False,False,True,False
+train,405,000405.jpg,1373,0,Channel,True,False,False,False
+train,405,000405.jpg,1374,0,Channel,True,False,False,False
+train,411,000411.jpg,10969,2,HI-Beam,False,False,True,False
+train,411,000411.jpg,10970,2,HI-Beam,False,False,True,False
+train,411,000411.jpg,10972,2,HI-Beam,True,True,True,False
+train,411,000411.jpg,10976,2,HI-Beam,True,False,False,False
+train,412,000412.jpg,5690,2,HI-Beam,False,False,True,False
+train,412,000412.jpg,5691,2,HI-Beam,True,False,True,False
+train,412,000412.jpg,5692,2,HI-Beam,True,False,True,False
+train,412,000412.jpg,5693,2,HI-Beam,False,False,True,False
+train,412,000412.jpg,5694,2,HI-Beam,False,False,True,False
+train,412,000412.jpg,5695,2,HI-Beam,True,False,True,False
+train,413,000413.jpg,5070,1,T-beam,False,True,False,False
+train,417,000417.jpg,6051,1,T-beam,True,False,False,False
+train,420,000420.jpg,8030,3,Angle Bar,True,True,True,False
+train,420,000420.jpg,8031,3,Angle Bar,True,True,True,False
+train,420,000420.jpg,8032,3,Angle Bar,True,True,True,False
+train,420,000420.jpg,8033,3,Angle Bar,True,True,True,False
+train,420,000420.jpg,8034,3,Angle Bar,False,True,False,False
+train,420,000420.jpg,8035,3,Angle Bar,False,True,False,False
+train,420,000420.jpg,8036,3,Angle Bar,True,False,False,False
+train,425,000425.jpg,1086,1,T-beam,True,False,False,False
+train,429,000429.jpg,2958,3,Angle Bar,False,True,False,False
+train,429,000429.jpg,2959,3,Angle Bar,False,True,False,False
+train,429,000429.jpg,2961,3,Angle Bar,False,True,True,False
+train,429,000429.jpg,2962,3,Angle Bar,False,True,True,False
+train,429,000429.jpg,2972,3,Angle Bar,True,False,True,False
+train,429,000429.jpg,2986,3,Angle Bar,False,True,True,False
+train,434,000434.jpg,1198,3,Angle Bar,True,True,True,False
+train,434,000434.jpg,1199,3,Angle Bar,True,True,True,False
+train,434,000434.jpg,1200,3,Angle Bar,True,True,True,False
+train,434,000434.jpg,1201,3,Angle Bar,True,True,True,False
+train,434,000434.jpg,1202,3,Angle Bar,True,True,True,False
+train,434,000434.jpg,1203,3,Angle Bar,True,True,True,False
+train,434,000434.jpg,1204,3,Angle Bar,True,True,True,False
+train,434,000434.jpg,1205,3,Angle Bar,True,True,True,False
+train,434,000434.jpg,1208,3,Angle Bar,True,True,True,False
+train,434,000434.jpg,1209,3,Angle Bar,True,True,True,False
+train,434,000434.jpg,1210,3,Angle Bar,True,True,True,False
+train,434,000434.jpg,1211,3,Angle Bar,True,True,True,False
+train,434,000434.jpg,1215,3,Angle Bar,True,False,True,False
+train,434,000434.jpg,1216,3,Angle Bar,True,False,True,False
+train,434,000434.jpg,1217,3,Angle Bar,True,False,True,False
+train,434,000434.jpg,1218,3,Angle Bar,True,True,True,False
+train,434,000434.jpg,1219,3,Angle Bar,True,True,True,False
+train,434,000434.jpg,1220,3,Angle Bar,True,True,True,False
+train,434,000434.jpg,1221,3,Angle Bar,True,True,True,False
+train,434,000434.jpg,1222,3,Angle Bar,True,False,True,False
+train,434,000434.jpg,1223,3,Angle Bar,True,True,True,False
+train,434,000434.jpg,1228,3,Angle Bar,False,True,True,False
+train,434,000434.jpg,1229,3,Angle Bar,True,True,True,False
+train,434,000434.jpg,1230,3,Angle Bar,True,True,True,False
+train,434,000434.jpg,1231,3,Angle Bar,True,True,True,False
+train,435,000435.jpg,1778,1,T-beam,True,True,True,False
+train,435,000435.jpg,1779,1,T-beam,True,True,True,False
+train,435,000435.jpg,1780,1,T-beam,True,False,False,False
+train,438,000438.jpg,279,2,HI-Beam,True,False,False,False
+train,438,000438.jpg,363,2,HI-Beam,True,False,False,False
+train,441,000441.jpg,1110,3,Angle Bar,False,False,True,False
+train,442,000442.jpg,6066,1,T-beam,False,True,True,False
+train,444,000444.jpg,4346,1,T-beam,False,True,False,False
+train,447,000447.jpg,247,2,HI-Beam,True,False,False,False
+train,449,000449.jpg,10646,1,T-beam,False,False,True,False
+train,450,000450.jpg,5725,2,HI-Beam,False,False,True,False
+train,455,000455.jpg,771,1,T-beam,False,False,True,False
+train,458,000458.jpg,9165,1,T-beam,False,False,True,False
+train,458,000458.jpg,9166,1,T-beam,False,False,True,False
+train,459,000459.jpg,1860,1,T-beam,False,True,True,False
+train,460,000460.jpg,11186,2,HI-Beam,True,False,False,False
+train,460,000460.jpg,11255,2,HI-Beam,True,False,False,False
+train,460,000460.jpg,11298,2,HI-Beam,True,False,False,False
+train,460,000460.jpg,11318,2,HI-Beam,True,False,False,False
+train,460,000460.jpg,11319,2,HI-Beam,True,False,False,False
+train,467,000467.jpg,7356,1,T-beam,True,False,False,False
+train,467,000467.jpg,7359,1,T-beam,False,True,False,False
+train,468,000468.jpg,6741,2,HI-Beam,False,False,True,False
+train,469,000469.jpg,55,1,T-beam,False,True,False,False
+train,469,000469.jpg,59,1,T-beam,False,True,True,False
+train,473,000473.jpg,5878,2,HI-Beam,True,False,False,False
+train,473,000473.jpg,5881,2,HI-Beam,True,False,False,False
+train,477,000477.jpg,5118,0,Channel,False,False,True,False
+train,477,000477.jpg,5119,0,Channel,False,False,True,False
+train,477,000477.jpg,5120,0,Channel,False,False,True,False
+train,477,000477.jpg,5121,0,Channel,False,False,True,False
+train,477,000477.jpg,5122,0,Channel,False,False,True,False
+train,477,000477.jpg,5126,0,Channel,False,False,True,False
+train,477,000477.jpg,5127,0,Channel,False,False,True,False
+train,477,000477.jpg,5129,0,Channel,False,False,True,False
+train,477,000477.jpg,5131,0,Channel,False,False,True,False
+train,477,000477.jpg,5132,0,Channel,False,False,True,False
+train,477,000477.jpg,5135,0,Channel,False,False,True,False
+train,477,000477.jpg,5137,0,Channel,False,False,True,False
+train,477,000477.jpg,5138,0,Channel,False,False,True,False
+train,477,000477.jpg,5140,0,Channel,False,False,True,False
+train,477,000477.jpg,5141,0,Channel,False,False,True,False
+train,477,000477.jpg,5146,0,Channel,False,False,True,False
+train,477,000477.jpg,5148,0,Channel,False,False,True,False
+train,477,000477.jpg,5150,0,Channel,False,False,True,False
+train,477,000477.jpg,5152,0,Channel,False,False,True,False
+train,477,000477.jpg,5153,0,Channel,False,False,True,False
+train,477,000477.jpg,5159,0,Channel,False,False,True,False
+train,477,000477.jpg,5164,0,Channel,False,False,True,False
+train,477,000477.jpg,5167,0,Channel,False,False,True,False
+train,477,000477.jpg,5169,0,Channel,False,False,True,False
+train,477,000477.jpg,5171,0,Channel,False,False,True,False
+train,477,000477.jpg,5172,0,Channel,False,False,True,False
+train,477,000477.jpg,5173,0,Channel,False,False,True,False
+train,477,000477.jpg,5175,0,Channel,False,False,True,False
+train,477,000477.jpg,5183,0,Channel,False,False,True,False
+train,477,000477.jpg,5185,0,Channel,False,False,True,False
+train,477,000477.jpg,5189,0,Channel,False,False,True,False
+train,477,000477.jpg,5191,0,Channel,False,False,True,False
+train,477,000477.jpg,5192,0,Channel,False,False,True,False
+train,477,000477.jpg,5195,0,Channel,False,False,True,False
+train,477,000477.jpg,5198,0,Channel,False,False,True,False
+train,477,000477.jpg,5204,0,Channel,False,False,True,False
+train,477,000477.jpg,5205,0,Channel,False,False,True,False
+train,477,000477.jpg,5207,0,Channel,False,False,True,False
+train,477,000477.jpg,5210,0,Channel,False,False,True,False
+train,477,000477.jpg,5215,0,Channel,False,False,True,False
+train,477,000477.jpg,5224,0,Channel,False,False,True,False
+train,477,000477.jpg,5232,0,Channel,False,False,True,False
+train,477,000477.jpg,5240,0,Channel,False,False,True,False
+train,477,000477.jpg,5241,0,Channel,False,False,True,False
+train,477,000477.jpg,5268,0,Channel,False,False,True,False
+train,477,000477.jpg,5270,0,Channel,False,False,True,False
+train,477,000477.jpg,5277,0,Channel,False,False,True,False
+train,477,000477.jpg,5284,0,Channel,False,False,True,False
+train,477,000477.jpg,5286,0,Channel,False,False,True,False
+train,477,000477.jpg,5289,0,Channel,False,False,True,False
+train,477,000477.jpg,5298,0,Channel,False,False,True,False
+train,477,000477.jpg,5300,0,Channel,False,False,True,False
+train,477,000477.jpg,5310,0,Channel,False,False,True,False
+train,477,000477.jpg,5318,0,Channel,False,False,True,False
+train,477,000477.jpg,5321,0,Channel,False,False,True,False
+train,477,000477.jpg,5327,0,Channel,False,False,True,False
+train,477,000477.jpg,5373,0,Channel,False,False,True,False
+train,477,000477.jpg,5400,0,Channel,False,False,True,False
+train,477,000477.jpg,5536,0,Channel,False,False,True,False
+train,477,000477.jpg,5541,0,Channel,False,False,True,False
+train,477,000477.jpg,5542,0,Channel,False,False,True,False
+train,477,000477.jpg,5563,0,Channel,False,False,True,False
+train,477,000477.jpg,5565,0,Channel,False,False,True,False
+train,477,000477.jpg,5569,0,Channel,False,False,True,False
+train,477,000477.jpg,5571,0,Channel,False,False,True,False
+train,477,000477.jpg,5589,0,Channel,False,False,True,False
+train,477,000477.jpg,5600,0,Channel,False,False,True,False
+train,480,000480.jpg,331,1,T-beam,False,False,True,False
+train,481,000481.jpg,9158,1,T-beam,False,False,True,False
+train,482,000482.jpg,10167,1,T-beam,False,False,True,False
+train,484,000484.jpg,7984,1,T-beam,True,True,False,False
+train,486,000486.jpg,868,1,T-beam,False,False,True,False
+train,486,000486.jpg,869,1,T-beam,False,False,True,False
+train,488,000488.jpg,120,2,HI-Beam,True,True,False,False
+train,489,000489.jpg,50,1,T-beam,False,False,True,False
+train,492,000492.jpg,3027,1,T-beam,False,True,False,False
+train,492,000492.jpg,3032,1,T-beam,True,True,True,False
+train,493,000493.jpg,6848,1,T-beam,True,False,False,False
+train,493,000493.jpg,6850,1,T-beam,True,False,False,False
+train,497,000497.jpg,1871,1,T-beam,True,False,False,False
+train,500,000500.jpg,7936,1,T-beam,False,True,True,False
+train,504,000504.jpg,809,1,T-beam,False,True,True,False
+train,507,000507.jpg,1287,1,T-beam,True,False,False,False
+train,507,000507.jpg,1290,1,T-beam,True,False,False,False
+train,509,000509.jpg,10359,3,Angle Bar,False,False,True,False
+train,509,000509.jpg,10367,3,Angle Bar,True,False,False,False
+train,509,000509.jpg,10368,3,Angle Bar,True,False,False,False
+train,509,000509.jpg,10369,3,Angle Bar,True,True,True,False
+train,509,000509.jpg,10372,3,Angle Bar,True,False,False,False
+train,509,000509.jpg,10377,3,Angle Bar,True,False,False,False
+train,509,000509.jpg,10378,3,Angle Bar,True,False,False,False
+train,509,000509.jpg,10388,3,Angle Bar,True,True,True,False
+train,509,000509.jpg,10389,3,Angle Bar,True,True,True,False
+train,509,000509.jpg,10390,3,Angle Bar,True,True,True,False
+train,509,000509.jpg,10391,3,Angle Bar,True,True,True,False
+train,509,000509.jpg,10392,3,Angle Bar,True,True,True,False
+train,509,000509.jpg,10393,3,Angle Bar,True,True,True,False
+train,509,000509.jpg,10394,3,Angle Bar,True,True,True,False
+train,509,000509.jpg,10395,3,Angle Bar,True,True,True,False
+train,509,000509.jpg,10396,3,Angle Bar,True,True,True,False
+train,509,000509.jpg,10397,3,Angle Bar,True,True,True,False
+train,511,000511.jpg,152,2,HI-Beam,True,False,False,False
+train,513,000513.jpg,8040,1,T-beam,True,False,False,False
+train,513,000513.jpg,8041,1,T-beam,True,False,False,False
+train,514,000514.jpg,1308,2,HI-Beam,False,False,True,False
+train,515,000515.jpg,1069,1,T-beam,True,False,False,False
+train,519,000519.jpg,496,1,T-beam,True,True,True,False
+train,522,000522.jpg,4765,3,Angle Bar,False,False,True,False
+train,522,000522.jpg,4766,3,Angle Bar,False,True,True,False
+train,522,000522.jpg,4768,3,Angle Bar,False,False,True,False
+train,522,000522.jpg,4770,3,Angle Bar,False,True,False,False
+train,522,000522.jpg,4771,3,Angle Bar,True,True,True,False
+train,522,000522.jpg,4772,3,Angle Bar,True,True,True,False
+train,522,000522.jpg,4773,3,Angle Bar,True,True,True,False
+train,522,000522.jpg,4778,3,Angle Bar,False,True,False,False
+train,522,000522.jpg,4779,3,Angle Bar,False,True,False,False
+train,522,000522.jpg,4780,3,Angle Bar,False,True,False,False
+train,522,000522.jpg,4781,3,Angle Bar,False,False,True,False
+train,522,000522.jpg,4782,3,Angle Bar,True,False,True,False
+train,522,000522.jpg,4783,3,Angle Bar,True,True,True,False
+train,527,000527.jpg,1976,1,T-beam,False,False,True,False
+train,532,000532.jpg,8151,2,HI-Beam,False,False,True,False
+train,532,000532.jpg,8154,2,HI-Beam,True,False,False,False
+train,532,000532.jpg,8165,2,HI-Beam,False,False,True,False
+train,532,000532.jpg,8179,2,HI-Beam,True,False,False,False
+train,540,000540.jpg,797,2,HI-Beam,True,False,False,False
+train,544,000544.jpg,1064,3,Angle Bar,False,False,True,False
+train,545,000545.jpg,10619,3,Angle Bar,False,False,True,False
+train,545,000545.jpg,10632,3,Angle Bar,False,False,True,False
+train,545,000545.jpg,10635,3,Angle Bar,False,True,True,False
+train,545,000545.jpg,10636,3,Angle Bar,False,True,True,False
+train,546,000546.jpg,78,1,T-beam,False,True,False,False
+train,546,000546.jpg,80,1,T-beam,False,True,False,False
+train,548,000548.jpg,10954,2,HI-Beam,False,False,True,False
+train,548,000548.jpg,10961,2,HI-Beam,True,False,False,False
+train,550,000550.jpg,566,1,T-beam,False,True,False,False
+train,552,000552.jpg,11068,1,T-beam,False,False,True,False
+train,555,000555.jpg,8146,2,HI-Beam,True,False,False,False
+train,555,000555.jpg,8148,2,HI-Beam,False,False,True,False
+train,555,000555.jpg,8149,2,HI-Beam,True,True,False,False
+train,556,000556.jpg,8258,1,T-beam,False,False,True,False
+train,556,000556.jpg,8262,1,T-beam,False,False,True,False
+train,556,000556.jpg,8270,1,T-beam,True,False,False,False
+train,556,000556.jpg,8272,1,T-beam,True,False,False,False
+train,556,000556.jpg,8284,1,T-beam,False,False,True,False
+train,556,000556.jpg,8295,1,T-beam,False,False,True,False
+train,556,000556.jpg,8297,1,T-beam,True,False,False,False
+train,556,000556.jpg,8301,1,T-beam,False,False,True,False
+train,556,000556.jpg,8318,1,T-beam,False,False,True,False
+train,556,000556.jpg,8322,1,T-beam,False,False,True,False
+train,556,000556.jpg,8370,1,T-beam,False,False,True,False
+train,556,000556.jpg,8381,1,T-beam,False,False,True,False
+train,557,000557.jpg,5755,1,T-beam,True,False,False,False
+train,558,000558.jpg,11126,2,HI-Beam,False,False,True,False
+train,560,000560.jpg,217,1,T-beam,True,False,False,False
+train,560,000560.jpg,221,1,T-beam,True,False,False,False
+train,563,000563.jpg,4712,1,T-beam,False,True,True,False
+train,565,000565.jpg,4875,3,Angle Bar,False,False,True,False
+train,565,000565.jpg,4876,3,Angle Bar,False,False,True,False
+train,565,000565.jpg,4879,3,Angle Bar,False,False,True,False
+train,565,000565.jpg,4880,3,Angle Bar,False,False,True,False
+train,565,000565.jpg,4881,3,Angle Bar,False,False,True,False
+train,568,000568.jpg,913,1,T-beam,False,False,True,False
+train,570,000570.jpg,6293,1,T-beam,False,True,False,False
+train,571,000571.jpg,2470,1,T-beam,False,False,True,False
+train,572,000572.jpg,11399,3,Angle Bar,False,False,True,False
+train,572,000572.jpg,11400,3,Angle Bar,False,False,True,False
+train,572,000572.jpg,11406,3,Angle Bar,True,False,True,False
+train,572,000572.jpg,11410,3,Angle Bar,False,False,True,False
+train,572,000572.jpg,11412,3,Angle Bar,False,False,True,False
+train,572,000572.jpg,11413,3,Angle Bar,False,True,True,False
+train,572,000572.jpg,11414,3,Angle Bar,False,True,True,False
+train,572,000572.jpg,11415,3,Angle Bar,False,True,True,False
+train,572,000572.jpg,11416,3,Angle Bar,False,True,True,False
+train,572,000572.jpg,11417,3,Angle Bar,False,True,True,False
+train,572,000572.jpg,11422,3,Angle Bar,False,True,True,False
+train,572,000572.jpg,11423,3,Angle Bar,False,True,False,False
+train,572,000572.jpg,11424,3,Angle Bar,False,True,False,False
+train,572,000572.jpg,11425,3,Angle Bar,False,True,False,False
+train,572,000572.jpg,11426,3,Angle Bar,False,True,True,False
+train,573,000573.jpg,963,2,HI-Beam,True,False,False,False
+train,573,000573.jpg,964,2,HI-Beam,True,False,False,False
+train,573,000573.jpg,965,2,HI-Beam,True,False,False,False
+train,573,000573.jpg,966,2,HI-Beam,True,False,False,False
+train,573,000573.jpg,967,2,HI-Beam,True,False,True,False
+train,573,000573.jpg,968,2,HI-Beam,True,False,False,False
+train,573,000573.jpg,969,2,HI-Beam,True,False,False,False
+train,573,000573.jpg,970,2,HI-Beam,True,False,False,False
+train,573,000573.jpg,971,2,HI-Beam,True,False,False,False
+train,573,000573.jpg,972,2,HI-Beam,True,False,False,False
+train,573,000573.jpg,973,2,HI-Beam,True,False,False,False
+train,573,000573.jpg,974,2,HI-Beam,True,False,False,False
+train,573,000573.jpg,975,2,HI-Beam,True,False,False,False
+train,573,000573.jpg,976,2,HI-Beam,True,False,False,False
+train,573,000573.jpg,977,2,HI-Beam,True,False,False,False
+train,573,000573.jpg,978,2,HI-Beam,True,False,False,False
+train,574,000574.jpg,3144,1,T-beam,True,False,False,False
+train,577,000577.jpg,8079,1,T-beam,False,False,True,False
+train,577,000577.jpg,8083,1,T-beam,True,False,False,False
+train,577,000577.jpg,8084,1,T-beam,True,False,False,False
+train,578,000578.jpg,1285,2,HI-Beam,True,False,True,False
+train,581,000581.jpg,770,0,Channel,True,False,False,False
+train,581,000581.jpg,771,0,Channel,True,False,False,False
+train,581,000581.jpg,782,0,Channel,True,False,False,False
+train,581,000581.jpg,786,0,Channel,True,False,False,False
+train,581,000581.jpg,790,0,Channel,True,False,False,False
+train,581,000581.jpg,794,0,Channel,True,False,False,False
+train,581,000581.jpg,798,0,Channel,True,False,False,False
+train,581,000581.jpg,802,0,Channel,True,False,False,False
+train,581,000581.jpg,806,0,Channel,True,False,False,False
+train,581,000581.jpg,813,0,Channel,True,False,False,False
+train,581,000581.jpg,814,0,Channel,True,False,False,False
+train,581,000581.jpg,1011,0,Channel,True,False,False,False
+train,581,000581.jpg,1014,0,Channel,True,False,False,False
+train,581,000581.jpg,1017,0,Channel,True,False,False,False
+train,581,000581.jpg,1019,0,Channel,True,False,False,False
+train,581,000581.jpg,1022,0,Channel,True,False,False,False
+train,581,000581.jpg,1026,0,Channel,True,False,False,False
+train,581,000581.jpg,1029,0,Channel,True,False,False,False
+train,581,000581.jpg,1032,0,Channel,True,False,False,False
+train,581,000581.jpg,1035,0,Channel,True,False,False,False
+train,581,000581.jpg,1038,0,Channel,True,False,False,False
+train,581,000581.jpg,1101,0,Channel,False,False,True,False
+train,582,000582.jpg,4234,2,HI-Beam,True,False,False,False
+train,582,000582.jpg,4235,2,HI-Beam,True,False,False,False
+train,582,000582.jpg,4236,2,HI-Beam,True,False,False,False
+train,582,000582.jpg,4237,2,HI-Beam,True,False,False,False
+train,583,000583.jpg,7954,1,T-beam,False,True,False,False
+train,584,000584.jpg,1253,2,HI-Beam,False,False,True,False
+train,593,000593.jpg,1455,1,T-beam,False,False,True,False
+train,595,000595.jpg,1362,3,Angle Bar,False,True,False,False
+train,595,000595.jpg,1363,3,Angle Bar,False,True,True,False
+train,595,000595.jpg,1364,3,Angle Bar,False,False,True,False
+train,595,000595.jpg,1366,3,Angle Bar,False,True,True,False
+train,595,000595.jpg,1367,3,Angle Bar,False,True,True,False
+train,595,000595.jpg,1369,3,Angle Bar,False,False,True,False
+train,595,000595.jpg,1370,3,Angle Bar,False,False,True,False
+train,595,000595.jpg,1371,3,Angle Bar,False,False,True,False
+train,596,000596.jpg,1452,2,HI-Beam,False,True,False,False
+train,597,000597.jpg,6898,2,HI-Beam,True,False,False,False
+train,606,000606.jpg,804,1,T-beam,True,False,False,False
+train,607,000607.jpg,8059,3,Angle Bar,True,True,True,False
+train,607,000607.jpg,8062,3,Angle Bar,True,True,True,False
+train,607,000607.jpg,8064,3,Angle Bar,True,True,True,False
+train,607,000607.jpg,8068,3,Angle Bar,True,True,True,False
+train,607,000607.jpg,8069,3,Angle Bar,True,True,True,False
+train,607,000607.jpg,8070,3,Angle Bar,True,True,True,False
+train,607,000607.jpg,8071,3,Angle Bar,True,True,True,False
+train,607,000607.jpg,8072,3,Angle Bar,True,False,True,False
+train,607,000607.jpg,8073,3,Angle Bar,True,False,True,False
+train,607,000607.jpg,8074,3,Angle Bar,True,False,True,False
+train,610,000610.jpg,2991,1,T-beam,False,True,True,False
+train,610,000610.jpg,2993,1,T-beam,False,True,True,False
+train,611,000611.jpg,1475,1,T-beam,False,True,True,False
+train,611,000611.jpg,1477,1,T-beam,True,False,False,False
+train,611,000611.jpg,1478,1,T-beam,True,False,False,False
+train,613,000613.jpg,108,1,T-beam,False,False,True,False
+train,613,000613.jpg,111,1,T-beam,False,False,True,False
+train,614,000614.jpg,6879,1,T-beam,False,True,True,False
+train,616,000616.jpg,8116,3,Angle Bar,False,True,True,False
+train,616,000616.jpg,8120,3,Angle Bar,True,False,False,False
+train,616,000616.jpg,8125,3,Angle Bar,False,True,True,False
+train,616,000616.jpg,8126,3,Angle Bar,False,True,True,False
+train,616,000616.jpg,8127,3,Angle Bar,False,True,True,False
+train,616,000616.jpg,8128,3,Angle Bar,False,True,True,False
+train,616,000616.jpg,8129,3,Angle Bar,False,True,True,False
+train,616,000616.jpg,8130,3,Angle Bar,False,True,True,False
+train,616,000616.jpg,8131,3,Angle Bar,False,True,True,False
+train,616,000616.jpg,8134,3,Angle Bar,False,True,True,False
+train,616,000616.jpg,8135,3,Angle Bar,False,True,True,False
+train,616,000616.jpg,8137,3,Angle Bar,False,True,True,False
+train,616,000616.jpg,8140,3,Angle Bar,False,True,True,False
+train,616,000616.jpg,8141,3,Angle Bar,False,True,True,False
+train,616,000616.jpg,8142,3,Angle Bar,False,True,True,False
+train,616,000616.jpg,8143,3,Angle Bar,False,True,False,False
+train,616,000616.jpg,8144,3,Angle Bar,False,True,True,False
+train,616,000616.jpg,8145,3,Angle Bar,False,True,True,False
+train,618,000618.jpg,116,2,HI-Beam,True,False,False,False
+train,619,000619.jpg,513,2,HI-Beam,False,False,True,False
+train,619,000619.jpg,516,2,HI-Beam,True,False,False,False
+train,619,000619.jpg,518,2,HI-Beam,True,False,True,False
+train,620,000620.jpg,808,3,Angle Bar,False,True,True,False
+train,620,000620.jpg,823,3,Angle Bar,False,True,True,False
+train,620,000620.jpg,824,3,Angle Bar,False,True,True,False
+train,620,000620.jpg,825,3,Angle Bar,False,True,True,False
+train,620,000620.jpg,826,3,Angle Bar,False,True,True,False
+train,620,000620.jpg,827,3,Angle Bar,False,True,True,False
+train,620,000620.jpg,828,3,Angle Bar,False,True,True,False
+train,620,000620.jpg,829,3,Angle Bar,False,True,True,False
+train,620,000620.jpg,830,3,Angle Bar,False,True,True,False
+train,620,000620.jpg,840,3,Angle Bar,False,True,True,False
+train,620,000620.jpg,841,3,Angle Bar,True,False,False,False
+train,620,000620.jpg,847,3,Angle Bar,False,True,True,False
+train,620,000620.jpg,854,3,Angle Bar,False,True,True,False
+train,620,000620.jpg,855,3,Angle Bar,False,True,False,False
+train,620,000620.jpg,861,3,Angle Bar,False,True,True,False
+train,620,000620.jpg,862,3,Angle Bar,True,False,True,False
+train,620,000620.jpg,863,3,Angle Bar,True,False,True,False
+train,620,000620.jpg,864,3,Angle Bar,True,False,False,False
+train,620,000620.jpg,865,3,Angle Bar,True,False,False,False
+train,620,000620.jpg,866,3,Angle Bar,True,False,False,False
+train,620,000620.jpg,867,3,Angle Bar,True,True,True,False
+train,620,000620.jpg,868,3,Angle Bar,True,False,False,False
+train,620,000620.jpg,869,3,Angle Bar,True,True,True,False
+train,623,000623.jpg,6754,2,HI-Beam,False,False,True,False
+train,623,000623.jpg,6757,2,HI-Beam,False,False,True,False
+train,623,000623.jpg,6760,2,HI-Beam,False,False,True,False
+train,623,000623.jpg,6761,2,HI-Beam,False,False,True,False
+train,627,000627.jpg,8213,1,T-beam,False,False,True,False
+train,629,000629.jpg,228,2,HI-Beam,False,False,True,False
+train,630,000630.jpg,6157,1,T-beam,False,True,False,False
+train,631,000631.jpg,5834,1,T-beam,False,False,True,False
+train,632,000632.jpg,1097,1,T-beam,False,True,True,False
+train,634,000634.jpg,9730,3,Angle Bar,True,False,True,False
+train,634,000634.jpg,9731,3,Angle Bar,True,False,True,False
+train,634,000634.jpg,9743,3,Angle Bar,True,False,True,False
+train,634,000634.jpg,9744,3,Angle Bar,True,False,True,False
+train,634,000634.jpg,9745,3,Angle Bar,True,False,True,False
+train,634,000634.jpg,9746,3,Angle Bar,True,False,True,False
+train,634,000634.jpg,9747,3,Angle Bar,True,True,True,False
+train,636,000636.jpg,1423,2,HI-Beam,False,False,True,False
+train,636,000636.jpg,1424,2,HI-Beam,True,False,False,False
+train,636,000636.jpg,1425,2,HI-Beam,False,False,True,False
+train,636,000636.jpg,1426,2,HI-Beam,True,False,False,False
+train,636,000636.jpg,1427,2,HI-Beam,True,False,False,False
+train,636,000636.jpg,1428,2,HI-Beam,True,False,True,False
+train,636,000636.jpg,1429,2,HI-Beam,True,False,False,False
+train,636,000636.jpg,1430,2,HI-Beam,True,False,False,False
+train,636,000636.jpg,1431,2,HI-Beam,True,False,False,False
+train,636,000636.jpg,1432,2,HI-Beam,True,False,True,False
+train,636,000636.jpg,1433,2,HI-Beam,True,False,False,False
+train,636,000636.jpg,1435,2,HI-Beam,True,False,False,False
+train,636,000636.jpg,1436,2,HI-Beam,True,False,False,False
+train,636,000636.jpg,1437,2,HI-Beam,True,False,False,False
+train,636,000636.jpg,1438,2,HI-Beam,False,False,True,False
+train,636,000636.jpg,1443,2,HI-Beam,False,False,True,False
+train,637,000637.jpg,4255,3,Angle Bar,False,True,False,False
+train,637,000637.jpg,4259,3,Angle Bar,True,True,True,False
+train,637,000637.jpg,4264,3,Angle Bar,True,True,True,False
+train,640,000640.jpg,2398,1,T-beam,False,False,True,False
+train,640,000640.jpg,2399,1,T-beam,False,True,True,False
+train,641,000641.jpg,1208,1,T-beam,False,True,True,False
+train,644,000644.jpg,9146,1,T-beam,False,True,True,False
+train,645,000645.jpg,1236,1,T-beam,True,True,True,False
+train,653,000653.jpg,8404,2,HI-Beam,True,False,False,False
+train,653,000653.jpg,8410,2,HI-Beam,True,False,False,False
+train,653,000653.jpg,8413,2,HI-Beam,True,False,False,False
+train,653,000653.jpg,8417,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8426,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8429,2,HI-Beam,True,False,False,False
+train,653,000653.jpg,8432,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8433,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8434,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8436,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8437,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8438,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8439,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8440,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8441,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8442,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8466,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8467,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8469,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8471,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8486,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8509,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8510,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8511,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8512,2,HI-Beam,True,False,False,False
+train,653,000653.jpg,8519,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8520,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8521,2,HI-Beam,True,False,False,False
+train,653,000653.jpg,8522,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8525,2,HI-Beam,True,False,False,False
+train,653,000653.jpg,8526,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8527,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8529,2,HI-Beam,True,False,False,False
+train,653,000653.jpg,8530,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8531,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8532,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8538,2,HI-Beam,True,False,False,False
+train,653,000653.jpg,8544,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8554,2,HI-Beam,True,False,False,False
+train,653,000653.jpg,8566,2,HI-Beam,True,False,False,False
+train,653,000653.jpg,8567,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8576,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8579,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8586,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8595,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8600,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8601,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8602,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8603,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8604,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8605,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8611,2,HI-Beam,True,False,False,False
+train,653,000653.jpg,8620,2,HI-Beam,True,False,False,False
+train,653,000653.jpg,8622,2,HI-Beam,True,False,False,False
+train,653,000653.jpg,8625,2,HI-Beam,True,False,False,False
+train,653,000653.jpg,8626,2,HI-Beam,True,False,False,False
+train,653,000653.jpg,8628,2,HI-Beam,True,False,False,False
+train,653,000653.jpg,8630,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8631,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8636,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8637,2,HI-Beam,False,False,True,False
+train,653,000653.jpg,8638,2,HI-Beam,False,False,True,False
+train,655,000655.jpg,11335,1,T-beam,False,False,True,False
+train,655,000655.jpg,11343,1,T-beam,False,False,True,False
+train,660,000660.jpg,172,1,T-beam,False,True,False,False
+train,671,000671.jpg,3122,1,T-beam,True,False,False,False
+train,672,000672.jpg,10065,3,Angle Bar,True,False,True,False
+train,672,000672.jpg,10075,3,Angle Bar,False,False,True,False
+train,672,000672.jpg,10078,3,Angle Bar,False,True,True,False
+train,672,000672.jpg,10081,3,Angle Bar,True,False,True,False
+train,672,000672.jpg,10086,3,Angle Bar,False,True,False,False
+train,680,000680.jpg,5868,2,HI-Beam,True,True,False,False
+train,682,000682.jpg,10595,1,T-beam,True,False,False,False
+train,682,000682.jpg,10601,1,T-beam,True,False,False,False
+train,683,000683.jpg,1273,1,T-beam,False,False,True,False
+train,683,000683.jpg,1274,1,T-beam,False,False,True,False
+train,684,000684.jpg,352,2,HI-Beam,True,False,False,False
+train,684,000684.jpg,353,2,HI-Beam,True,False,False,False
+train,684,000684.jpg,358,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,359,2,HI-Beam,True,False,False,False
+train,684,000684.jpg,360,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,363,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,364,2,HI-Beam,True,False,False,False
+train,684,000684.jpg,368,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,370,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,374,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,376,2,HI-Beam,True,False,False,False
+train,684,000684.jpg,377,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,380,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,381,2,HI-Beam,True,False,False,False
+train,684,000684.jpg,382,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,384,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,386,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,392,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,403,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,406,2,HI-Beam,True,False,False,False
+train,684,000684.jpg,407,2,HI-Beam,True,False,False,False
+train,684,000684.jpg,409,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,412,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,415,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,416,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,417,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,418,2,HI-Beam,True,False,False,False
+train,684,000684.jpg,420,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,425,2,HI-Beam,True,False,True,False
+train,684,000684.jpg,433,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,434,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,436,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,437,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,443,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,444,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,450,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,460,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,461,2,HI-Beam,True,False,True,False
+train,684,000684.jpg,463,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,464,2,HI-Beam,True,False,False,False
+train,684,000684.jpg,465,2,HI-Beam,True,False,False,False
+train,684,000684.jpg,468,2,HI-Beam,True,False,False,False
+train,684,000684.jpg,469,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,474,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,475,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,476,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,480,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,481,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,484,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,486,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,491,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,494,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,498,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,499,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,500,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,502,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,505,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,508,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,511,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,513,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,514,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,515,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,521,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,522,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,524,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,526,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,527,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,529,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,532,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,535,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,537,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,543,2,HI-Beam,True,False,False,False
+train,684,000684.jpg,545,2,HI-Beam,False,False,True,False
+train,684,000684.jpg,560,2,HI-Beam,False,False,True,False
+train,686,000686.jpg,1168,1,T-beam,False,True,False,False
+train,687,000687.jpg,4618,3,Angle Bar,False,False,True,False
+train,687,000687.jpg,4619,3,Angle Bar,False,False,True,False
+train,687,000687.jpg,4621,3,Angle Bar,False,False,True,False
+train,687,000687.jpg,4623,3,Angle Bar,False,False,True,False
+train,687,000687.jpg,4625,3,Angle Bar,False,False,True,False
+train,687,000687.jpg,4626,3,Angle Bar,False,False,True,False
+train,687,000687.jpg,4627,3,Angle Bar,True,False,True,False
+train,687,000687.jpg,4633,3,Angle Bar,False,False,True,False
+train,687,000687.jpg,4634,3,Angle Bar,False,False,True,False
+train,687,000687.jpg,4635,3,Angle Bar,False,False,True,False
+train,687,000687.jpg,4636,3,Angle Bar,True,False,True,False
+train,687,000687.jpg,4637,3,Angle Bar,True,False,True,False
+train,690,000690.jpg,10264,2,HI-Beam,True,True,False,False
+train,695,000695.jpg,1491,1,T-beam,False,True,True,False
+train,695,000695.jpg,1492,1,T-beam,False,False,True,False
+train,696,000696.jpg,5641,1,T-beam,False,False,True,False
+train,697,000697.jpg,44,2,HI-Beam,True,False,False,False
+train,697,000697.jpg,67,2,HI-Beam,False,False,True,False
+train,699,000699.jpg,4651,1,T-beam,True,False,False,False
+train,700,000700.jpg,146,1,T-beam,False,False,True,False
+train,700,000700.jpg,147,1,T-beam,False,True,False,False
+train,702,000702.jpg,7799,3,Angle Bar,False,False,True,False
+train,702,000702.jpg,7801,3,Angle Bar,True,False,True,False
+train,702,000702.jpg,7802,3,Angle Bar,True,False,True,False
+train,702,000702.jpg,7803,3,Angle Bar,True,False,True,False
+train,702,000702.jpg,7810,3,Angle Bar,False,False,True,False
+train,702,000702.jpg,7811,3,Angle Bar,False,True,True,False
+train,702,000702.jpg,7812,3,Angle Bar,False,True,True,False
+train,702,000702.jpg,7813,3,Angle Bar,False,True,True,False
+train,702,000702.jpg,7826,3,Angle Bar,False,True,True,False
+train,702,000702.jpg,7827,3,Angle Bar,False,True,True,False
+train,702,000702.jpg,7828,3,Angle Bar,False,True,True,False
+train,702,000702.jpg,7830,3,Angle Bar,False,True,True,False
+train,702,000702.jpg,7831,3,Angle Bar,False,True,True,False
+train,702,000702.jpg,7832,3,Angle Bar,False,True,True,False
+train,702,000702.jpg,7833,3,Angle Bar,False,True,True,False
+train,703,000703.jpg,3162,1,T-beam,False,True,True,False
+train,703,000703.jpg,3164,1,T-beam,False,False,True,False
+train,710,000710.jpg,2659,3,Angle Bar,False,True,False,False
+train,710,000710.jpg,2660,3,Angle Bar,False,True,False,False
+train,710,000710.jpg,2665,3,Angle Bar,True,True,True,False
+train,710,000710.jpg,2666,3,Angle Bar,True,True,True,False
+train,710,000710.jpg,2669,3,Angle Bar,False,True,False,False
+train,710,000710.jpg,2670,3,Angle Bar,False,True,False,False
+train,710,000710.jpg,2671,3,Angle Bar,False,True,False,False
+train,710,000710.jpg,2672,3,Angle Bar,False,True,False,False
+train,710,000710.jpg,2673,3,Angle Bar,False,True,False,False
+train,710,000710.jpg,2674,3,Angle Bar,False,True,False,False
+train,712,000712.jpg,1189,1,T-beam,False,False,True,False
+train,712,000712.jpg,1195,1,T-beam,True,False,False,False
+train,716,000716.jpg,1347,1,T-beam,False,True,True,False
+train,716,000716.jpg,1348,1,T-beam,False,True,True,False
+train,716,000716.jpg,1349,1,T-beam,False,True,True,False
+train,716,000716.jpg,1350,1,T-beam,False,True,True,False
+train,716,000716.jpg,1351,1,T-beam,False,True,True,False
+train,718,000718.jpg,6711,1,T-beam,True,False,False,False
+train,721,000721.jpg,588,2,HI-Beam,False,False,True,False
+train,721,000721.jpg,596,2,HI-Beam,False,False,True,False
+train,721,000721.jpg,608,2,HI-Beam,True,False,False,False
+train,721,000721.jpg,617,2,HI-Beam,False,False,True,False
+train,721,000721.jpg,624,2,HI-Beam,True,False,False,False
+train,721,000721.jpg,634,2,HI-Beam,False,False,True,False
+train,721,000721.jpg,635,2,HI-Beam,False,False,True,False
+train,721,000721.jpg,645,2,HI-Beam,False,False,True,False
+train,721,000721.jpg,654,2,HI-Beam,False,False,True,False
+train,721,000721.jpg,657,2,HI-Beam,True,False,False,False
+train,721,000721.jpg,659,2,HI-Beam,False,False,True,False
+train,721,000721.jpg,660,2,HI-Beam,False,False,True,False
+train,721,000721.jpg,662,2,HI-Beam,True,False,False,False
+train,721,000721.jpg,671,2,HI-Beam,False,False,True,False
+train,721,000721.jpg,683,2,HI-Beam,True,False,False,False
+train,721,000721.jpg,690,2,HI-Beam,False,False,True,False
+train,721,000721.jpg,696,2,HI-Beam,False,False,True,False
+train,721,000721.jpg,705,2,HI-Beam,False,False,True,False
+train,721,000721.jpg,715,2,HI-Beam,False,False,True,False
+train,721,000721.jpg,721,2,HI-Beam,False,False,True,False
+train,721,000721.jpg,722,2,HI-Beam,False,False,True,False
+train,721,000721.jpg,724,2,HI-Beam,False,False,True,False
+train,721,000721.jpg,725,2,HI-Beam,False,False,True,False
+train,721,000721.jpg,728,2,HI-Beam,False,False,True,False
+train,721,000721.jpg,729,2,HI-Beam,False,False,True,False
+train,721,000721.jpg,732,2,HI-Beam,False,False,True,False
+train,721,000721.jpg,733,2,HI-Beam,True,False,False,False
+train,721,000721.jpg,738,2,HI-Beam,False,False,True,False
+train,721,000721.jpg,746,2,HI-Beam,False,False,True,False
+train,721,000721.jpg,747,2,HI-Beam,False,False,True,False
+train,721,000721.jpg,749,2,HI-Beam,False,False,True,False
+train,721,000721.jpg,750,2,HI-Beam,False,False,True,False
+train,721,000721.jpg,756,2,HI-Beam,False,False,True,False
+train,721,000721.jpg,760,2,HI-Beam,False,False,True,False
+train,721,000721.jpg,774,2,HI-Beam,False,False,True,False
+train,721,000721.jpg,775,2,HI-Beam,False,False,True,False
+train,721,000721.jpg,785,2,HI-Beam,False,False,True,False
+train,721,000721.jpg,786,2,HI-Beam,False,False,True,False
+train,721,000721.jpg,787,2,HI-Beam,False,False,True,False
+train,721,000721.jpg,789,2,HI-Beam,False,False,True,False
+train,724,000724.jpg,6141,3,Angle Bar,True,True,True,False
+train,724,000724.jpg,6148,3,Angle Bar,False,True,False,False
+train,724,000724.jpg,6149,3,Angle Bar,False,True,False,False
+train,725,000725.jpg,1215,1,T-beam,False,False,True,False
+train,725,000725.jpg,1217,1,T-beam,False,False,True,False
+train,725,000725.jpg,1221,1,T-beam,False,False,True,False
+train,725,000725.jpg,1223,1,T-beam,False,False,True,False
+train,726,000726.jpg,8644,0,Channel,True,False,False,False
+train,726,000726.jpg,8645,0,Channel,True,False,False,False
+train,726,000726.jpg,8652,0,Channel,True,False,False,False
+train,726,000726.jpg,8656,0,Channel,True,False,False,False
+train,726,000726.jpg,8666,0,Channel,True,False,False,False
+train,726,000726.jpg,8673,0,Channel,True,False,False,False
+train,726,000726.jpg,8737,0,Channel,True,False,False,False
+train,726,000726.jpg,8743,0,Channel,True,False,False,False
+train,726,000726.jpg,8749,0,Channel,True,False,False,False
+train,726,000726.jpg,8752,0,Channel,True,False,False,False
+train,726,000726.jpg,8753,0,Channel,True,False,False,False
+train,726,000726.jpg,8758,0,Channel,True,False,False,False
+train,726,000726.jpg,8761,0,Channel,True,False,False,False
+train,728,000728.jpg,4707,1,T-beam,True,False,False,False
+train,728,000728.jpg,4708,1,T-beam,False,True,False,False
+train,729,000729.jpg,179,1,T-beam,False,False,True,False
+train,732,000732.jpg,107,1,T-beam,True,False,False,False
+train,732,000732.jpg,109,1,T-beam,False,False,True,False
+train,732,000732.jpg,111,1,T-beam,False,False,True,False
+train,733,000733.jpg,11351,3,Angle Bar,False,False,True,False
+train,733,000733.jpg,11353,3,Angle Bar,False,False,True,False
+train,735,000735.jpg,241,1,T-beam,False,True,True,False
+train,736,000736.jpg,1073,1,T-beam,False,True,False,False
+valid,49,000049.jpg,5837,1,T-beam,True,True,True,False
+valid,59,000059.jpg,7338,1,T-beam,True,False,False,False
+valid,63,000063.jpg,5828,1,T-beam,False,True,False,False
+valid,81,000081.jpg,7475,1,T-beam,False,False,True,False
+valid,81,000081.jpg,7478,1,T-beam,False,False,True,False
+valid,81,000081.jpg,7482,1,T-beam,True,False,True,False
+valid,83,000083.jpg,499,1,T-beam,True,False,False,False
+valid,139,000139.jpg,984,2,HI-Beam,False,False,True,False
+valid,139,000139.jpg,986,2,HI-Beam,True,False,True,False
+valid,139,000139.jpg,989,2,HI-Beam,True,False,False,False
+valid,141,000141.jpg,11083,2,HI-Beam,True,False,False,False
+valid,141,000141.jpg,11090,2,HI-Beam,False,False,True,False
+valid,141,000141.jpg,11094,2,HI-Beam,True,False,False,False
+valid,141,000141.jpg,11095,2,HI-Beam,True,False,True,False
+valid,176,000176.jpg,2094,0,Channel,True,False,False,False
+valid,176,000176.jpg,2095,0,Channel,True,False,False,False
+valid,176,000176.jpg,2100,0,Channel,True,False,False,False
+valid,176,000176.jpg,2107,0,Channel,True,False,False,False
+valid,176,000176.jpg,2164,0,Channel,True,False,False,False
+valid,176,000176.jpg,2167,0,Channel,True,False,False,False
+valid,176,000176.jpg,2170,0,Channel,True,False,False,False
+valid,176,000176.jpg,2173,0,Channel,True,False,False,False
+valid,176,000176.jpg,2176,0,Channel,True,False,False,False
+valid,176,000176.jpg,2177,0,Channel,True,False,False,False
+valid,176,000176.jpg,2183,0,Channel,True,False,False,False
+valid,176,000176.jpg,2185,0,Channel,True,False,False,False
+valid,176,000176.jpg,2223,0,Channel,False,False,True,False
+valid,176,000176.jpg,2239,0,Channel,True,False,False,False
+valid,176,000176.jpg,2245,0,Channel,True,False,False,False
+valid,176,000176.jpg,2251,0,Channel,True,False,False,False
+valid,176,000176.jpg,2257,0,Channel,True,False,False,False
+valid,176,000176.jpg,2266,0,Channel,True,False,False,False
+valid,176,000176.jpg,2275,0,Channel,True,False,False,False
+valid,176,000176.jpg,2276,0,Channel,True,False,False,False
+valid,176,000176.jpg,2293,0,Channel,True,False,False,False
+valid,180,000180.jpg,1,1,T-beam,False,False,True,False
+valid,180,000180.jpg,2,1,T-beam,True,False,True,False
+valid,180,000180.jpg,3,1,T-beam,False,False,True,False
+valid,180,000180.jpg,4,1,T-beam,False,False,True,False
+valid,180,000180.jpg,8,1,T-beam,True,False,False,False
+valid,180,000180.jpg,10,1,T-beam,True,False,True,False
+valid,180,000180.jpg,11,1,T-beam,True,False,False,False
+valid,180,000180.jpg,12,1,T-beam,True,False,True,False
+valid,186,000186.jpg,10115,2,HI-Beam,True,False,False,False
+valid,186,000186.jpg,10121,2,HI-Beam,False,False,True,False
+valid,186,000186.jpg,10123,2,HI-Beam,True,False,False,False
+valid,239,000239.jpg,2698,1,T-beam,True,False,False,False
+valid,239,000239.jpg,2699,1,T-beam,True,False,False,False
+valid,239,000239.jpg,2700,1,T-beam,True,True,True,False
+valid,239,000239.jpg,2701,1,T-beam,True,True,False,False
+valid,239,000239.jpg,2702,1,T-beam,True,True,True,False
+valid,264,000264.jpg,1850,1,T-beam,False,False,True,False
+valid,281,000281.jpg,10265,2,HI-Beam,False,False,True,False
+valid,281,000281.jpg,10266,2,HI-Beam,True,False,False,False
+valid,282,000282.jpg,893,1,T-beam,False,True,False,False
+valid,282,000282.jpg,894,1,T-beam,False,False,True,False
+valid,282,000282.jpg,896,1,T-beam,False,True,True,False
+valid,282,000282.jpg,897,1,T-beam,False,True,True,False
+valid,288,000288.jpg,9112,2,HI-Beam,False,False,True,False
+valid,288,000288.jpg,9116,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7494,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7524,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7528,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7531,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7533,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7535,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7536,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7541,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7545,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7548,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7550,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7551,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7554,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7555,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7558,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7561,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7566,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7568,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7574,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7583,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7587,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7588,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7592,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7594,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7596,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7598,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7601,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7602,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7604,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7608,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7610,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7615,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7620,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7624,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7633,2,HI-Beam,False,False,True,False
+valid,297,000297.jpg,7642,2,HI-Beam,False,False,True,False
+valid,342,000342.jpg,10773,1,T-beam,True,True,True,False
+valid,365,000365.jpg,10406,1,T-beam,True,False,False,False
+valid,398,000398.jpg,2644,1,T-beam,False,True,False,False
+valid,398,000398.jpg,2647,1,T-beam,False,True,True,False
+valid,401,000401.jpg,5818,1,T-beam,True,False,False,False
+valid,419,000419.jpg,1614,0,Channel,False,False,True,False
+valid,419,000419.jpg,1637,0,Channel,True,False,False,False
+valid,419,000419.jpg,1639,0,Channel,True,False,False,False
+valid,419,000419.jpg,1641,0,Channel,True,False,False,False
+valid,419,000419.jpg,1642,0,Channel,True,False,False,False
+valid,419,000419.jpg,1680,0,Channel,False,False,True,False
+valid,440,000440.jpg,4757,1,T-beam,False,True,True,False
+valid,452,000452.jpg,7971,1,T-beam,True,False,False,False
+valid,454,000454.jpg,5115,1,T-beam,False,False,True,False
+valid,461,000461.jpg,227,1,T-beam,False,True,False,False
+valid,463,000463.jpg,7836,1,T-beam,True,False,False,False
+valid,463,000463.jpg,7838,1,T-beam,True,False,False,False
+valid,537,000537.jpg,1732,0,Channel,True,False,False,False
+valid,537,000537.jpg,1765,0,Channel,True,False,False,False
+valid,576,000576.jpg,2639,2,HI-Beam,True,True,False,False
+valid,681,000681.jpg,960,2,HI-Beam,False,False,True,False
+valid,681,000681.jpg,981,2,HI-Beam,True,False,False,False
+valid,681,000681.jpg,1007,2,HI-Beam,False,False,True,False
+valid,681,000681.jpg,1022,2,HI-Beam,True,False,False,False
+valid,681,000681.jpg,1023,2,HI-Beam,True,False,False,False
+valid,681,000681.jpg,1025,2,HI-Beam,True,False,False,False
+valid,681,000681.jpg,1027,2,HI-Beam,False,False,True,False
+valid,681,000681.jpg,1028,2,HI-Beam,True,False,True,False
+valid,681,000681.jpg,1029,2,HI-Beam,True,False,False,False
+valid,681,000681.jpg,1030,2,HI-Beam,True,False,False,False
+valid,741,000741.jpg,2695,1,T-beam,False,True,False,False
+test,108,000108.jpg,157,0,Channel,True,False,False,False
+test,108,000108.jpg,195,0,Channel,True,False,False,False
+test,108,000108.jpg,196,0,Channel,True,False,False,False
+test,108,000108.jpg,216,0,Channel,True,False,False,False
+test,108,000108.jpg,272,0,Channel,True,False,False,False
+test,108,000108.jpg,273,0,Channel,True,False,False,False
+test,108,000108.jpg,292,0,Channel,True,False,False,False
+test,108,000108.jpg,297,0,Channel,True,False,False,False
+test,108,000108.jpg,299,0,Channel,True,False,False,False
+test,108,000108.jpg,308,0,Channel,True,False,False,False
+test,108,000108.jpg,324,0,Channel,True,False,False,False
+test,115,000115.jpg,1364,2,HI-Beam,True,False,False,False
+test,162,000162.jpg,10276,1,T-beam,False,True,False,False
+test,162,000162.jpg,10280,1,T-beam,False,False,True,False
+test,162,000162.jpg,10281,1,T-beam,True,False,False,False
+test,200,000200.jpg,3104,2,HI-Beam,True,False,False,False
+test,200,000200.jpg,3105,2,HI-Beam,True,False,False,False
+test,200,000200.jpg,3106,2,HI-Beam,True,False,False,False
+test,200,000200.jpg,3112,2,HI-Beam,False,False,True,False
+test,216,000216.jpg,11034,2,HI-Beam,True,False,True,False
+test,216,000216.jpg,11045,2,HI-Beam,True,False,False,False
+test,216,000216.jpg,11049,2,HI-Beam,True,False,False,False
+test,216,000216.jpg,11050,2,HI-Beam,True,False,False,False
+test,216,000216.jpg,11056,2,HI-Beam,True,False,False,False
+test,216,000216.jpg,11058,2,HI-Beam,False,False,True,False
+test,216,000216.jpg,11059,2,HI-Beam,False,False,True,False
+test,226,000226.jpg,1387,1,T-beam,False,False,True,False
+test,236,000236.jpg,2064,3,Angle Bar,True,True,True,False
+test,236,000236.jpg,2066,3,Angle Bar,False,False,True,False
+test,236,000236.jpg,2067,3,Angle Bar,True,True,True,False
+test,236,000236.jpg,2068,3,Angle Bar,True,True,True,False
+test,236,000236.jpg,2069,3,Angle Bar,True,True,True,False
+test,236,000236.jpg,2070,3,Angle Bar,True,True,True,False
+test,236,000236.jpg,2071,3,Angle Bar,True,True,True,False
+test,236,000236.jpg,2072,3,Angle Bar,True,False,True,False
+test,236,000236.jpg,2073,3,Angle Bar,True,False,True,False
+test,236,000236.jpg,2074,3,Angle Bar,True,False,True,False
+test,236,000236.jpg,2075,3,Angle Bar,True,False,True,False
+test,236,000236.jpg,2076,3,Angle Bar,True,True,True,False
+test,236,000236.jpg,2077,3,Angle Bar,True,True,True,False
+test,236,000236.jpg,2078,3,Angle Bar,True,True,True,False
+test,236,000236.jpg,2079,3,Angle Bar,True,True,True,False
+test,268,000268.jpg,19,1,T-beam,True,False,False,False
+test,326,000326.jpg,45,2,HI-Beam,False,False,True,False
+test,331,000331.jpg,5767,1,T-beam,False,False,True,False
+test,331,000331.jpg,5771,1,T-beam,True,False,False,False
+test,331,000331.jpg,5772,1,T-beam,False,False,True,False
+test,331,000331.jpg,5774,1,T-beam,True,False,False,False
+test,368,000368.jpg,5066,1,T-beam,True,True,True,False
+test,375,000375.jpg,10780,2,HI-Beam,False,False,True,False
+test,375,000375.jpg,10782,2,HI-Beam,False,False,True,False
+test,375,000375.jpg,10801,2,HI-Beam,False,False,True,False
+test,375,000375.jpg,10808,2,HI-Beam,False,False,True,False
+test,375,000375.jpg,10812,2,HI-Beam,False,False,True,False
+test,402,000402.jpg,1161,1,T-beam,False,False,True,False
+test,433,000433.jpg,8216,2,HI-Beam,False,False,True,False
+test,433,000433.jpg,8218,2,HI-Beam,True,False,False,False
+test,445,000445.jpg,6223,1,T-beam,False,True,True,False
+test,445,000445.jpg,6225,1,T-beam,False,False,True,False
+test,445,000445.jpg,6233,1,T-beam,False,False,True,False
+test,445,000445.jpg,6236,1,T-beam,False,False,True,False
+test,579,000579.jpg,5789,3,Angle Bar,False,True,False,False
+test,579,000579.jpg,5790,3,Angle Bar,False,True,True,False
+test,579,000579.jpg,5791,3,Angle Bar,False,True,False,False
+test,579,000579.jpg,5792,3,Angle Bar,False,True,False,False
+test,579,000579.jpg,5801,3,Angle Bar,False,False,True,False
+test,579,000579.jpg,5807,3,Angle Bar,True,False,True,False
+test,579,000579.jpg,5813,3,Angle Bar,False,False,True,False
+test,586,000586.jpg,5104,1,T-beam,True,False,False,False
+test,608,000608.jpg,3349,1,T-beam,False,True,True,False
+test,633,000633.jpg,1124,3,Angle Bar,False,False,True,False
+test,633,000633.jpg,1125,3,Angle Bar,False,True,False,False
+test,633,000633.jpg,1126,3,Angle Bar,False,True,False,False
+test,633,000633.jpg,1127,3,Angle Bar,False,True,True,False
+test,633,000633.jpg,1128,3,Angle Bar,False,True,False,False
+test,633,000633.jpg,1129,3,Angle Bar,False,True,False,False
+test,633,000633.jpg,1130,3,Angle Bar,False,True,False,False
+test,633,000633.jpg,1131,3,Angle Bar,False,True,False,False
+test,633,000633.jpg,1132,3,Angle Bar,False,True,False,False
+test,633,000633.jpg,1133,3,Angle Bar,True,True,True,False
+test,648,000648.jpg,1340,1,T-beam,False,False,True,False
+test,664,000664.jpg,10990,1,T-beam,False,True,False,False
+test,664,000664.jpg,10991,1,T-beam,False,True,False,False
+test,664,000664.jpg,10992,1,T-beam,False,False,True,False
+test,668,000668.jpg,502,1,T-beam,True,True,True,False
+test,668,000668.jpg,503,1,T-beam,True,True,True,False
+test,668,000668.jpg,504,1,T-beam,True,True,True,False
+test,678,000678.jpg,2405,3,Angle Bar,True,False,False,False
+test,678,000678.jpg,2406,3,Angle Bar,True,False,False,False
+test,678,000678.jpg,2407,3,Angle Bar,True,False,False,False
+test,678,000678.jpg,2408,3,Angle Bar,True,False,False,False
+test,678,000678.jpg,2409,3,Angle Bar,True,False,False,False
+test,678,000678.jpg,2413,3,Angle Bar,False,True,True,False
+test,678,000678.jpg,2414,3,Angle Bar,False,True,True,False
+test,678,000678.jpg,2415,3,Angle Bar,False,True,True,False
+test,678,000678.jpg,2416,3,Angle Bar,True,False,True,False
+test,678,000678.jpg,2417,3,Angle Bar,True,True,True,False
+test,678,000678.jpg,2418,3,Angle Bar,False,True,True,False
+test,707,000707.jpg,6930,0,Channel,True,False,False,False
+test,707,000707.jpg,6981,2,HI-Beam,True,False,False,False
+test,717,000717.jpg,2642,1,T-beam,False,True,True,False

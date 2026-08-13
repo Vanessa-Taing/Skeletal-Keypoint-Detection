@@ -1,0 +1,252 @@
+{
+  "Channel": [
+    {
+      "split": "train",
+      "image_id": 108,
+      "annotation_id": 177,
+      "file_name": "000108.jpg"
+    },
+    {
+      "split": "valid",
+      "image_id": 642,
+      "annotation_id": 4452,
+      "file_name": "000642.jpg"
+    },
+    {
+      "split": "test",
+      "image_id": 137,
+      "annotation_id": 1923,
+      "file_name": "000137.jpg"
+    },
+    {
+      "split": "train",
+      "image_id": 289,
+      "annotation_id": 9290,
+      "file_name": "000289.jpg"
+    },
+    {
+      "split": "test",
+      "image_id": 477,
+      "annotation_id": 5277,
+      "file_name": "000477.jpg"
+    },
+    {
+      "split": "valid",
+      "image_id": 44,
+      "annotation_id": 6649,
+      "file_name": "000044.jpg"
+    },
+    {
+      "split": "train",
+      "image_id": 726,
+      "annotation_id": 8688,
+      "file_name": "000726.jpg"
+    },
+    {
+      "split": "train",
+      "image_id": 26,
+      "annotation_id": 578,
+      "file_name": "000026.jpg"
+    }
+  ],
+  "T-beam": [
+    {
+      "split": "train",
+      "image_id": 343,
+      "annotation_id": 6240,
+      "file_name": "000343.jpg"
+    },
+    {
+      "split": "valid",
+      "image_id": 609,
+      "annotation_id": 10709,
+      "file_name": "000609.jpg"
+    },
+    {
+      "split": "test",
+      "image_id": 556,
+      "annotation_id": 8277,
+      "file_name": "000556.jpg"
+    },
+    {
+      "split": "train",
+      "image_id": 632,
+      "annotation_id": 1097,
+      "file_name": "000632.jpg"
+    },
+    {
+      "split": "test",
+      "image_id": 118,
+      "annotation_id": 7940,
+      "file_name": "000118.jpg"
+    },
+    {
+      "split": "valid",
+      "image_id": 122,
+      "annotation_id": 5095,
+      "file_name": "000122.jpg"
+    },
+    {
+      "split": "train",
+      "image_id": 245,
+      "annotation_id": 4179,
+      "file_name": "000245.jpg"
+    },
+    {
+      "split": "train",
+      "image_id": 148,
+      "annotation_id": 4647,
+      "file_name": "000148.jpg"
+    }
+  ],
+  "HI-Beam": [
+    {
+      "split": "train",
+      "image_id": 438,
+      "annotation_id": 259,
+      "file_name": "000438.jpg"
+    },
+    {
+      "split": "valid",
+      "image_id": 300,
+      "annotation_id": 9949,
+      "file_name": "000300.jpg"
+    },
+    {
+      "split": "test",
+      "image_id": 114,
+      "annotation_id": 813,
+      "file_name": "000114.jpg"
+    },
+    {
+      "split": "train",
+      "image_id": 65,
+      "annotation_id": 2750,
+      "file_name": "000065.jpg"
+    },
+    {
+      "split": "train",
+      "image_id": 216,
+      "annotation_id": 11045,
+      "file_name": "000216.jpg"
+    },
+    {
+      "split": "train",
+      "image_id": 707,
+      "annotation_id": 7018,
+      "file_name": "000707.jpg"
+    },
+    {
+      "split": "train",
+      "image_id": 259,
+      "annotation_id": 4969,
+      "file_name": "000259.jpg"
+    },
+    {
+      "split": "train",
+      "image_id": 438,
+      "annotation_id": 351,
+      "file_name": "000438.jpg"
+    }
+  ],
+  "Angle Bar": [
+    {
+      "split": "train",
+      "image_id": 92,
+      "annotation_id": 11174,
+      "file_name": "000092.jpg"
+    },
+    {
+      "split": "valid",
+      "image_id": 579,
+      "annotation_id": 5797,
+      "file_name": "000579.jpg"
+    },
+    {
+      "split": "test",
+      "image_id": 388,
+      "annotation_id": 10309,
+      "file_name": "000388.jpg"
+    },
+    {
+      "split": "train",
+      "image_id": 620,
+      "annotation_id": 854,
+      "file_name": "000620.jpg"
+    },
+    {
+      "split": "train",
+      "image_id": 687,
+      "annotation_id": 4637,
+      "file_name": "000687.jpg"
+    },
+    {
+      "split": "train",
+      "image_id": 270,
+      "annotation_id": 9667,
+      "file_name": "000270.jpg"
+    },
+    {
+      "split": "train",
+      "image_id": 672,
+      "annotation_id": 10066,
+      "file_name": "000672.jpg"
+    },
+    {
+      "split": "train",
+      "image_id": 509,
+      "annotation_id": 10386,
+      "file_name": "000509.jpg"
+    }
+  ],
+  "Sheet Pile": [
+    {
+      "split": "train",
+      "image_id": 516,
+      "annotation_id": 1982,
+      "file_name": "000516.jpg"
+    },
+    {
+      "split": "valid",
+      "image_id": 98,
+      "annotation_id": 444,
+      "file_name": "000098.jpg"
+    },
+    {
+      "split": "test",
+      "image_id": 530,
+      "annotation_id": 1515,
+      "file_name": "000530.jpg"
+    },
+    {
+      "split": "valid",
+      "image_id": 98,
+      "annotation_id": 471,
+      "file_name": "000098.jpg"
+    },
+    {
+      "split": "test",
+      "image_id": 530,
+      "annotation_id": 1521,
+      "file_name": "000530.jpg"
+    },
+    {
+      "split": "train",
+      "image_id": 516,
+      "annotation_id": 2023,
+      "file_name": "000516.jpg"
+    },
+    {
+      "split": "train",
+      "image_id": 516,
+      "annotation_id": 1979,
+      "file_name": "000516.jpg"
+    },
+    {
+      "split": "valid",
+      "image_id": 98,
+      "annotation_id": 463,
+      "file_name": "000098.jpg"
+    }
+  ]
+}

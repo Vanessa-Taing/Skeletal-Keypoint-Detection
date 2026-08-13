@@ -1,0 +1,32 @@
+{
+  "dataset": "/home/owner/skeletal_keypoint_detection/InnoCount_KeyPoint_YOLO26_Pose_v1",
+  "dataset_yaml": "/home/owner/skeletal_keypoint_detection/InnoCount_KeyPoint_YOLO26_Pose_v1/dataset.yaml",
+  "model": "yolo26n-pose.pt",
+  "epochs": 100,
+  "imgsz": 640,
+  "batch": 4,
+  "device": "0",
+  "seed": 42,
+  "workers": 8,
+  "patience": 30,
+  "pretrained": true,
+  "augmentation_policy": "baseline",
+  "additional_custom_augmentation": false,
+  "system": {
+    "timestamp": "2026-08-13T16:53:38.725164",
+    "python": "3.11.15 | packaged by conda-forge | (main, Jun 11 2026, 03:34:02) [GCC 14.3.0]",
+    "platform": "Linux-6.8.0-53-generic-x86_64-with-glibc2.39",
+    "pytorch": "2.11.0+cu128",
+    "cuda_available": true,
+    "cuda_version": "12.8",
+    "gpu_count": 1,
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 2080 Ti",
+        "total_memory_gb": 10.57,
+        "compute_capability": "7.5"
+      }
+    ]
+  }
+}
