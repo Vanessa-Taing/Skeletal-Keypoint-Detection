@@ -1,0 +1,72 @@
+# InnoCount KeyPoint - YOLO26-Pose
+#
+# Derived from:
+#   InnoCount_KeyPoint_ModelReady_v1
+#
+# Classes:
+#   0 Channel
+#   1 T-beam
+#   2 HI-Beam
+#   3 Angle Bar
+#   4 Sheet Pile
+#
+# Global pose representation:
+#   K = 6
+#   dimensions = 3
+#   [x, y, visibility]
+
+path: /home/owner/skeletal_keypoint_detection/InnoCount_KeyPoint_YOLO26_Pose_v1
+
+train: images/train
+val: images/valid
+test: images/test
+
+kpt_shape: [6, 3]
+
+# No anatomical left/right pairs exist in this dataset.
+# Identity mapping prevents accidental semantic swapping.
+flip_idx: [0, 1, 2, 3, 4, 5]
+
+names:
+  0: Channel
+  1: T-beam
+  2: HI-Beam
+  3: Angle Bar
+  4: Sheet Pile
+
+kpt_names:
+  0:
+    - G1
+    - G2
+    - G3
+    - G4
+    - G5
+    - G6
+  1:
+    - G1
+    - G2
+    - G3
+    - G4
+    - G5
+    - G6
+  2:
+    - G1
+    - G2
+    - G3
+    - G4
+    - G5
+    - G6
+  3:
+    - G1
+    - G2
+    - G3
+    - G4
+    - G5
+    - G6
+  4:
+    - G1
+    - G2
+    - G3
+    - G4
+    - G5
+    - G6

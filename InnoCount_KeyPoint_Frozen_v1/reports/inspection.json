@@ -1,0 +1,13 @@
+{
+  "original_image_records": 750,
+  "original_split_counts": {
+    "train": 600,
+    "valid": 75,
+    "test": 75
+  },
+  "missing_source_name": 0,
+  "images_with_annotations": 724,
+  "negative_images": 26,
+  "dimensions_match": 750,
+  "dimensions_mismatch": 0
+}

@@ -1,0 +1,4 @@
+split,images,image_pct,target_image_pct,negative_images,target_negative_images,Channel,Channel_pct,Channel_target,T-beam,T-beam_pct,T-beam_target,HI-Beam,HI-Beam_pct,HI-Beam_target,Angle Bar,Angle Bar_pct,Angle Bar_target,Sheet Pile,Sheet Pile_pct,Sheet Pile_target
+train,594,80.054,80.0,21,20.8,4547,79.8,4558.4,3182,80.03,3180.8,2994,80.032,2992.8,1393,80.104,1391.2,84,37.668,178.4
+valid,74,9.973,10.0,2,2.6,553,9.705,569.8,397,9.985,397.6,372,9.944,374.1,173,9.948,173.9,56,25.112,22.3
+test,74,9.973,10.0,3,2.6,598,10.495,569.8,397,9.985,397.6,375,10.024,374.1,173,9.948,173.9,83,37.22,22.3

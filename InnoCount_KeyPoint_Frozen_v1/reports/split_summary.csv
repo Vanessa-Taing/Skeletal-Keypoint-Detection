@@ -1,0 +1,4 @@
+split,images,annotations,negative_images,multi_class_images,Channel,T-beam,HI-Beam,Angle Bar,Sheet Pile
+train,602,12221,22,0,4199,3325,2987,1627,83
+valid,68,1811,2,0,1013,353,352,9,84
+test,72,1345,2,1,486,298,402,103,56

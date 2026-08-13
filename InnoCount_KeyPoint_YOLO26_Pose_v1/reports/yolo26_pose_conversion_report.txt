@@ -1,0 +1,61 @@
+InnoCount KeyPoint -> YOLO26-Pose
+======================================================================
+
+SOURCE: InnoCount_KeyPoint_ModelReady_v1
+GLOBAL KEYPOINT COUNT: 6
+KEYPOINT DIMENSIONS: 3 (x, y, visibility)
+CLASS COUNT: 5
+
+CLASS MAPPING
+----------------------------------------------------------------------
+0: Channel
+1: T-beam
+2: HI-Beam
+3: Angle Bar
+4: Sheet Pile
+
+SPLITS
+----------------------------------------------------------------------
+train: 594 images, 12200 objects, 21 negatives
+  Channel: 4547
+  T-beam: 3182
+  HI-Beam: 2994
+  Angle Bar: 1393
+  Sheet Pile: 84
+valid: 74 images, 1551 objects, 2 negatives
+  Channel: 553
+  T-beam: 397
+  HI-Beam: 372
+  Angle Bar: 173
+  Sheet Pile: 56
+test: 74 images, 1626 objects, 3 negatives
+  Channel: 598
+  T-beam: 397
+  HI-Beam: 375
+  Angle Bar: 173
+  Sheet Pile: 83
+
+VALIDATION
+----------------------------------------------------------------------
+train: PASS
+  images: 594
+  labels: 594
+  objects: 12200
+  missing labels: 0
+  invalid rows: 0
+valid: PASS
+  images: 74
+  labels: 74
+  objects: 1551
+  missing labels: 0
+  invalid rows: 0
+test: PASS
+  images: 74
+  labels: 74
+  objects: 1626
+  missing labels: 0
+  invalid rows: 0
+
+OVERALL: PASS
+
+No source ModelReady annotations were modified.
