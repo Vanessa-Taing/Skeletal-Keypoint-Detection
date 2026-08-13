@@ -1,0 +1,11 @@
+name: innocount-freeze
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.11
+  - numpy=1.26
+  - pandas=2.2
+  - pillow=10.4
+  - scikit-learn=1.5

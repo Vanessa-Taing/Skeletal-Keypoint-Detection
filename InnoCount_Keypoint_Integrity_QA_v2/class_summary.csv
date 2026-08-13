@@ -1,0 +1,16 @@
+split,class,objects
+test,Angle Bar,173
+test,Channel,598
+test,HI-Beam,375
+test,Sheet Pile,83
+test,T-beam,397
+train,Angle Bar,1393
+train,Channel,4547
+train,HI-Beam,2994
+train,Sheet Pile,84
+train,T-beam,3182
+valid,Angle Bar,173
+valid,Channel,553
+valid,HI-Beam,372
+valid,Sheet Pile,56
+valid,T-beam,397

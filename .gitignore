@@ -1,0 +1,57 @@
+# ==========================
+# Python
+# ==========================
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.env
+.venv/
+venv/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# ==========================
+# Ultralytics / Training
+# ==========================
+YOLO26_Pose_Runs/
+runs/
+*.cache
+
+# Model checkpoints
+**/weights/
+*.pt
+!yolo26n-pose.pt
+
+# TensorBoard
+events.out.tfevents*
+
+# ==========================
+# Generated QA Images
+# ==========================
+inspect_*.jpg
+
+InnoCount_KeyPoint_Visual_QA/
+InnoCount_Semantic_Keypoint_Inspection/
+
+# Zip exports
+*.zip
+
+# ==========================
+# System
+# ==========================
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
