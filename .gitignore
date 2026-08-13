@@ -19,39 +19,30 @@ ENV/
 .ipynb_checkpoints/
 
 # ==========================
-# Ultralytics / Training
+# Ultralytics
 # ==========================
-YOLO26_Pose_Runs/
 runs/
 *.cache
-
-# Model checkpoints
-**/weights/
-*.pt
-!yolo26n-pose.pt
-
-# TensorBoard
 events.out.tfevents*
 
+# Pretrained checkpoints (re-downloadable)
+yolo26*.pt
+
+# Ignore all experiment weights...
+experiments/**/weights/
+
+# ...except the baseline best model
+!experiments/YOLO26_Pose_Runs/E01_YOLO26n_Baseline/weights/
+!experiments/YOLO26_Pose_Runs/E01_YOLO26n_Baseline/weights/best.pt
+
 # ==========================
-# Generated QA Images
+# Temporary outputs
 # ==========================
 inspect_*.jpg
-
-InnoCount_KeyPoint_Visual_QA/
-InnoCount_Semantic_Keypoint_Inspection/
-
-# Zip exports
 *.zip
 
-# ==========================
 # System
-# ==========================
 .DS_Store
 Thumbs.db
-
-# VS Code
 .vscode/
-
-# Logs
 *.log

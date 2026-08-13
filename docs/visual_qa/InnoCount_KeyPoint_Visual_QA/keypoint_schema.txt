@@ -1,0 +1,57 @@
+Class 0: Channel
+Keypoints: 4
+  K1: new-point-0
+  K2: new-point-1
+  K3: new-point-2
+  K4: new-point-3
+Skeleton:
+  K1 -- K2
+  K2 -- K3
+  K3 -- K4
+
+Class 1: T-beam
+Keypoints: 4
+  K1: new-point-0
+  K2: new-point-1
+  K3: new-point-2
+  K4: new-point-3
+Skeleton:
+  K1 -- K2
+  K1 -- K3
+  K1 -- K4
+
+Class 2: HI-Beam
+Keypoints: 6
+  K1: new-point-0
+  K2: new-point-1
+  K3: new-point-2
+  K4: new-point-3
+  K5: new-point-4
+  K6: new-point-5
+Skeleton:
+  K1 -- K2
+  K1 -- K3
+  K1 -- K4
+  K4 -- K5
+  K4 -- K6
+
+Class 3: Angle Bar
+Keypoints: 3
+  K1: new-point-0
+  K2: new-point-1
+  K3: new-point-3
+Skeleton:
+  K1 -- K3
+  K1 -- K2
+
+Class 4: Sheet Pile
+Keypoints: 4
+  K1: new-point-0
+  K2: new-point-1
+  K3: new-point-2
+  K4: new-point-3
+Skeleton:
+  K1 -- K2
+  K2 -- K3
+  K3 -- K4
+

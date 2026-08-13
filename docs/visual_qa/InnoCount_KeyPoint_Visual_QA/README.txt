@@ -1,0 +1,1 @@
+Read-only visual QA report. K1/K2/... are local class-specific indices; original Roboflow keypoint names are preserved in keypoint_schema.json. No coordinates or annotations are modified. Out-of-image keypoints are not clipped.
