@@ -440,19 +440,13 @@ def train(args):
         "system": system_info,
     }
 
-    metadata_path = output_dir / "experiment_metadata.json"
+    run_dir = output_dir / args.name
+    run_dir.mkdir(parents=True, exist_ok=True)
 
-    with open(
-        metadata_path,
-        "w",
-        encoding="utf-8",
-    ) as f:
+    metadata_path = run_dir / "experiment_metadata.json"
 
-        json.dump(
-            metadata,
-            f,
-            indent=2,
-        )
+    with open(metadata_path, "w", encoding="utf-8") as f:
+        json.dump(metadata, f, indent=2)
 
     print(
         f"Experiment metadata: {metadata_path}"
