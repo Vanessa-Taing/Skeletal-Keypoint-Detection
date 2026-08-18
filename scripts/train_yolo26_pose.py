@@ -34,6 +34,7 @@ import random
 import subprocess
 import sys
 from datetime import datetime
+import os
 
 import numpy as np
 import torch
@@ -387,18 +388,20 @@ def inspect_model(model):
 
 def train(args):
 
-    dataset_dir = Path(args.dataset).resolve()
-    data_yaml = Path(args.data).resolve()
+    # --------------------------------------------------------
+    # Resolve absolute paths BEFORE changing directory
+    # --------------------------------------------------------
 
-    # make Ultralytics interpret path: . correctly
+    repo_root = Path(__file__).resolve().parents[1]
+
+    dataset_dir = (repo_root / args.dataset).resolve()
+    data_yaml = (repo_root / args.data).resolve()
+    output_dir = (repo_root / args.project).resolve()
+
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    # Make Ultralytics interpret `path: .` inside dataset.yaml
     os.chdir(data_yaml.parent)
-
-    output_dir = Path(args.project).resolve()
-
-    output_dir.mkdir(
-        parents=True,
-        exist_ok=True,
-    )
 
     # --------------------------------------------------------
     # Reproducibility
@@ -411,7 +414,6 @@ def train(args):
     # --------------------------------------------------------
 
     system_info = get_system_info()
-
     print_system_info(system_info)
 
     # --------------------------------------------------------
@@ -451,9 +453,7 @@ def train(args):
     with open(metadata_path, "w", encoding="utf-8") as f:
         json.dump(metadata, f, indent=2)
 
-    print(
-        f"Experiment metadata: {metadata_path}"
-    )
+    print(f"Experiment metadata: {metadata_path}")
 
     # --------------------------------------------------------
     # Load pretrained YOLO26-Pose
@@ -467,7 +467,6 @@ def train(args):
     print(f"Model: {args.model}")
 
     model = YOLO(args.model)
-
     inspect_model(model)
 
     # --------------------------------------------------------
@@ -478,12 +477,10 @@ def train(args):
     print("STARTING BASELINE TRAINING")
     print("=" * 70)
 
-    print()
-    print("Dataset:")
+    print("\nDataset:")
     print(f"  {dataset_dir}")
 
-    print()
-    print("Training configuration:")
+    print("\nTraining configuration:")
     print(f"  model       = {args.model}")
     print(f"  epochs      = {args.epochs}")
     print(f"  imgsz       = {args.imgsz}")
@@ -493,53 +490,32 @@ def train(args):
     print(f"  workers     = {args.workers}")
     print(f"  patience    = {args.patience}")
 
-    print()
-    print("Baseline policy:")
+    print("\nBaseline policy:")
     print("  No custom augmentation")
     print("  No synthetic class balancing")
-    print("  Frozen train/valid/test split")
-    print()
+    print("  Frozen train/valid/test split\n")
 
     results = model.train(
 
-        data=str(data_yaml),
+        # Use local filename because cwd = dataset folder
+        data="dataset.yaml",
 
         epochs=args.epochs,
-
         imgsz=args.imgsz,
-
         batch=args.batch,
-
         device=args.device,
-
         workers=args.workers,
-
         seed=args.seed,
-
         patience=args.patience,
 
         project=str(output_dir),
-
         name=args.name,
 
         resume=args.resume,
-
         exist_ok=False,
-
         pretrained=True,
 
-        # ----------------------------------------------------
-        # Baseline augmentation
-        # ----------------------------------------------------
-        #
-        # These are deliberately not specified here.
-        #
-        # Ultralytics defaults therefore remain active.
-        #
-        # We are NOT adding the nine custom augmentations
-        # previously discussed.
-        #
-        # ----- Freeze augmentation -----
+        # ----- Frozen augmentation -----
         mosaic=0.0,
         mixup=0.0,
         copy_paste=0.0,
@@ -558,17 +534,10 @@ def train(args):
         flipud=0.0,
         fliplr=0.0,
 
-        # --------------------------------
-        # ----------------------------------------------------
-        # Save / validation
-        # ----------------------------------------------------
-
+        # ----- Save / validation -----
         save=True,
-
         val=True,
-
         plots=True,
-
         verbose=True,
     )
 
@@ -582,13 +551,9 @@ def train(args):
     print("=" * 70)
 
     print()
-    print(
-        f"Results saved under:\n"
-        f"{output_dir / args.name}"
-    )
+    print(f"Results saved under:\n{output_dir / args.name}")
 
     return results
-
 
 # ============================================================
 # ARGUMENTS
@@ -602,17 +567,17 @@ def parse_args():
 
     parser.add_argument(
         "--dataset",
-        default="InnoCount_KeyPoint_YOLO26_Pose_v1",
-        help="YOLO dataset directory",
+        default="datasets/InnoCount_KeyPoint_YOLO26_Pose_v1",
     )
 
     parser.add_argument(
         "--data",
-        default=(
-            "InnoCount_KeyPoint_YOLO26_Pose_v1/"
-            "dataset.yaml"
-        ),
-        help="YOLO dataset YAML",
+        default="datasets/InnoCount_KeyPoint_YOLO26_Pose_v1/dataset.yaml",
+    )
+
+    parser.add_argument(
+        "--project",
+        default="experiments/YOLO26_Pose_Runs",
     )
 
     parser.add_argument(
@@ -661,11 +626,6 @@ def parse_args():
         "--patience",
         type=int,
         default=30,
-    )
-
-    parser.add_argument(
-        "--project",
-        default="experiments/YOLO26_Pose_Runs",
     )
 
     parser.add_argument(
