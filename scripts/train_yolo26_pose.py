@@ -440,8 +440,13 @@ def train(args):
         "workers": args.workers,
         "patience": args.patience,
         "pretrained": True,
-        "augmentation_policy": "baseline",
-        "additional_custom_augmentation": False,
+        "augmentation": {
+            "mosaic": args.mosaic,
+            "translate": args.translate,
+            "scale": args.scale,
+            "degrees": args.degrees,
+            "fliplr": args.fliplr,
+        },
         "system": system_info,
     }
 
@@ -456,50 +461,49 @@ def train(args):
     print(f"Experiment metadata: {metadata_path}")
 
     # --------------------------------------------------------
-    # Load pretrained YOLO26-Pose
+    # Load model
     # --------------------------------------------------------
 
-    print()
-    print("=" * 70)
+    print("\n" + "=" * 70)
     print("LOADING YOLO26-POSE")
     print("=" * 70)
-
-    print(f"Model: {args.model}")
 
     model = YOLO(args.model)
     inspect_model(model)
 
     # --------------------------------------------------------
-    # Train
+    # Training summary
     # --------------------------------------------------------
 
     print("=" * 70)
-    print("STARTING BASELINE TRAINING")
+    print("STARTING TRAINING")
     print("=" * 70)
 
-    print("\nDataset:")
-    print(f"  {dataset_dir}")
+    print(f"Model      : {args.model}")
+    print(f"Epochs     : {args.epochs}")
+    print(f"Batch      : {args.batch}")
+    print(f"Image size : {args.imgsz}")
+    print(f"Device     : {args.device}")
 
-    print("\nTraining configuration:")
-    print(f"  model       = {args.model}")
-    print(f"  epochs      = {args.epochs}")
-    print(f"  imgsz       = {args.imgsz}")
-    print(f"  batch       = {args.batch}")
-    print(f"  device      = {args.device}")
-    print(f"  seed        = {args.seed}")
-    print(f"  workers     = {args.workers}")
-    print(f"  patience    = {args.patience}")
+    print("\nAugmentation")
+    print(f"  Mosaic    : {args.mosaic}")
+    print(f"  Translate : {args.translate}")
+    print(f"  Scale     : {args.scale}")
+    print(f"  Degrees   : {args.degrees}")
+    print(f"  Flip LR   : {args.fliplr}")
 
-    print("\nBaseline policy:")
-    print("  No custom augmentation")
-    print("  No synthetic class balancing")
-    print("  Frozen train/valid/test split\n")
+    print()
+
+    # --------------------------------------------------------
+    # Train
+    # --------------------------------------------------------
 
     results = model.train(
 
-        # Use local filename because cwd = dataset folder
+        # Dataset
         data="dataset.yaml",
 
+        # Core
         epochs=args.epochs,
         imgsz=args.imgsz,
         batch=args.batch,
@@ -508,50 +512,49 @@ def train(args):
         seed=args.seed,
         patience=args.patience,
 
+        # Output
         project=str(output_dir),
         name=args.name,
-
         resume=args.resume,
         exist_ok=False,
+
+        # Pretrained
         pretrained=True,
 
-        # ----- Frozen augmentation -----
-        mosaic=0.0,
+        # ----------------------------------------------------
+        # Augmentation (configurable)
+        # ----------------------------------------------------
+        mosaic=args.mosaic,
+        translate=args.translate,
+        scale=args.scale,
+        degrees=args.degrees,
+        fliplr=args.fliplr,
+
+        # Disabled for fair comparison
         mixup=0.0,
         copy_paste=0.0,
+        flipud=0.0,
         erasing=0.0,
 
         hsv_h=0.0,
         hsv_s=0.0,
         hsv_v=0.0,
 
-        degrees=0.0,
-        translate=0.0,
-        scale=0.0,
         shear=0.0,
         perspective=0.0,
 
-        flipud=0.0,
-        fliplr=0.0,
-
-        # ----- Save / validation -----
+        # Validation
         save=True,
         val=True,
         plots=True,
         verbose=True,
     )
 
-    # --------------------------------------------------------
-    # Training completed
-    # --------------------------------------------------------
-
-    print()
-    print("=" * 70)
+    print("\n" + "=" * 70)
     print("TRAINING COMPLETE")
     print("=" * 70)
 
-    print()
-    print(f"Results saved under:\n{output_dir / args.name}")
+    print(f"\nResults saved to:\n{output_dir / args.name}")
 
     return results
 
@@ -562,9 +565,10 @@ def train(args):
 def parse_args():
 
     parser = argparse.ArgumentParser(
-        description="Train YOLO26-Pose baseline."
+        description="Train YOLO26-Pose experiments."
     )
 
+    # Dataset
     parser.add_argument(
         "--dataset",
         default="datasets/InnoCount_KeyPoint_YOLO26_Pose_v1",
@@ -580,53 +584,19 @@ def parse_args():
         default="experiments/YOLO26_Pose_Runs",
     )
 
+    # Model
     parser.add_argument(
         "--model",
         default="yolo26n-pose.pt",
-        help="YOLO26-Pose pretrained checkpoint",
     )
 
-    parser.add_argument(
-        "--epochs",
-        type=int,
-        default=100,
-    )
-
-    parser.add_argument(
-        "--imgsz",
-        type=int,
-        default=640,
-    )
-
-    parser.add_argument(
-        "--batch",
-        type=int,
-        default=4,
-    )
-
-    parser.add_argument(
-        "--device",
-        default="0",
-        help="GPU device, e.g. 0 or cpu",
-    )
-
-    parser.add_argument(
-        "--workers",
-        type=int,
-        default=8,
-    )
-
-    parser.add_argument(
-        "--seed",
-        type=int,
-        default=42,
-    )
-
-    parser.add_argument(
-        "--patience",
-        type=int,
-        default=30,
-    )
+    parser.add_argument("--epochs", type=int, default=100)
+    parser.add_argument("--imgsz", type=int, default=640)
+    parser.add_argument("--batch", type=int, default=4)
+    parser.add_argument("--device", default="0")
+    parser.add_argument("--workers", type=int, default=8)
+    parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--patience", type=int, default=30)
 
     parser.add_argument(
         "--name",
@@ -638,6 +608,12 @@ def parse_args():
         action="store_true",
         help="Resume interrupted training",
     )
+
+    parser.add_argument("--mosaic", type=float, default=0.0)
+    parser.add_argument("--translate", type=float, default=0.0)
+    parser.add_argument("--scale", type=float, default=0.0)
+    parser.add_argument("--degrees", type=float, default=0.0)
+    parser.add_argument("--fliplr", type=float, default=0.0)
 
     return parser.parse_args()
 
