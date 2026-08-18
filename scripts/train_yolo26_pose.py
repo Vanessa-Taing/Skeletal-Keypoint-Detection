@@ -390,6 +390,9 @@ def train(args):
     dataset_dir = Path(args.dataset).resolve()
     data_yaml = Path(args.data).resolve()
 
+    # make Ultralytics interpret path: . correctly
+    os.chdir(data_yaml.parent)
+
     output_dir = Path(args.project).resolve()
 
     output_dir.mkdir(
