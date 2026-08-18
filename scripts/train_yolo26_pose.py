@@ -522,6 +522,8 @@ def train(args):
 
         name=args.name,
 
+        resume=args.resume,
+
         exist_ok=False,
 
         pretrained=True,
@@ -669,6 +671,12 @@ def parse_args():
     parser.add_argument(
         "--name",
         default="InnoCount_YOLO26nPose_baseline_v1",
+    )
+
+    parser.add_argument(
+        "--resume",
+        action="store_true",
+        help="Resume interrupted training",
     )
 
     return parser.parse_args()
