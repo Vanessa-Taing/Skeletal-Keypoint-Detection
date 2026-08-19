@@ -425,7 +425,7 @@ def train(args):
     validate_labels(dataset_dir)
 
     # --------------------------------------------------------
-    # Save experiment metadata
+    # Metadata (do NOT save yet)
     # --------------------------------------------------------
 
     metadata = {
@@ -449,16 +449,6 @@ def train(args):
         },
         "system": system_info,
     }
-
-    run_dir = output_dir / args.name
-    run_dir.mkdir(parents=True, exist_ok=True)
-
-    metadata_path = run_dir / "experiment_metadata.json"
-
-    with open(metadata_path, "w", encoding="utf-8") as f:
-        json.dump(metadata, f, indent=2)
-
-    print(f"Experiment metadata: {metadata_path}")
 
     # --------------------------------------------------------
     # Load model
@@ -491,7 +481,6 @@ def train(args):
     print(f"  Scale     : {args.scale}")
     print(f"  Degrees   : {args.degrees}")
     print(f"  Flip LR   : {args.fliplr}")
-
     print()
 
     # --------------------------------------------------------
@@ -521,9 +510,9 @@ def train(args):
         # Pretrained
         pretrained=True,
 
-        # ----------------------------------------------------
-        # Augmentation (configurable)
-        # ----------------------------------------------------
+        # ----------------------------
+        # Configurable augmentation
+        # ----------------------------
         mosaic=args.mosaic,
         translate=args.translate,
         scale=args.scale,
@@ -550,11 +539,27 @@ def train(args):
         verbose=True,
     )
 
+    # --------------------------------------------------------
+    # Save metadata into the ACTUAL run directory
+    # --------------------------------------------------------
+
+    run_dir = Path(model.trainer.save_dir)
+
+    metadata_path = run_dir / "experiment_metadata.json"
+
+    with open(metadata_path, "w", encoding="utf-8") as f:
+        json.dump(metadata, f, indent=2)
+
+    # --------------------------------------------------------
+    # Training completed
+    # --------------------------------------------------------
+
     print("\n" + "=" * 70)
     print("TRAINING COMPLETE")
     print("=" * 70)
 
-    print(f"\nResults saved to:\n{output_dir / args.name}")
+    print(f"\nExperiment metadata: {metadata_path}")
+    print(f"\nResults saved to:\n{run_dir}")
 
     return results
 
