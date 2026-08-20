@@ -27,6 +27,9 @@ events.out.tfevents*
 
 # Pretrained checkpoints (re-downloadable)
 yolo26*.pt
+*.pt
+!README.md
+checkpoints/
 
 # Ignore all experiment weights...
 experiments/**/weights/
