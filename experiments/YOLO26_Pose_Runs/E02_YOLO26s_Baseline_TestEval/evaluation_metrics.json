@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-08-18T14:00:49.989647",
+  "weights": "/content/drive/MyDrive/InnoCount/skeletal_keypoint_detection/experiments/YOLO26_Pose_Runs/E02_YOLO26s_Baseline-2/weights/best.pt",
+  "dataset": "/content/drive/MyDrive/InnoCount/skeletal_keypoint_detection/datasets/InnoCount_KeyPoint_YOLO26_Pose_v1/dataset.yaml",
+  "box": {
+    "map50": 0.7278059907820662,
+    "map50_95": 0.39768327428050726,
+    "precision": 0.8017211122899933,
+    "recall": 0.6736747213649428
+  },
+  "pose": {
+    "map50": 0.3566517968904357,
+    "map50_95": 0.24647972565335557,
+    "precision": 0.4693950249138855,
+    "recall": 0.4154499957286101
+  }
+}
