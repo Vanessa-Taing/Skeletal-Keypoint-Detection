@@ -13,7 +13,7 @@ cache: false
 device: '0'
 workers: 8
 project: /content/drive/MyDrive/InnoCount/skeletal_keypoint_detection/experiments/YOLO26_Pose_Runs
-name: E03_YOLO26s_Augmentation-2
+name: E03_YOLO26s_Augmentation
 exist_ok: false
 pretrained: true
 cls_remap: true
@@ -113,4 +113,4 @@ auto_augment: randaugment
 erasing: 0.0
 cfg: null
 tracker: tracktrack.yaml
-save_dir: /content/drive/MyDrive/InnoCount/skeletal_keypoint_detection/experiments/YOLO26_Pose_Runs/E03_YOLO26s_Augmentation-2
+save_dir: /content/drive/MyDrive/InnoCount/skeletal_keypoint_detection/experiments/YOLO26_Pose_Runs/E03_YOLO26s_Augmentation
