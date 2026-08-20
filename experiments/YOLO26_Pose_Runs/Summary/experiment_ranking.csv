@@ -1,0 +1,6 @@
+Experiment,Checkpoint,Box Precision,Box Recall,Box mAP50,Box mAP50-95,Pose Precision,Pose Recall,Pose mAP50,Pose mAP50-95
+E04_YOLO26s_Augmentation,/content/drive/MyDrive/InnoCount/skeletal_keypoint_detection/experiments/YOLO26_Pose_Runs/E04_YOLO26s_Augmentation-2/weights/best.pt,0.8396,0.7198,0.7808,0.4384,0.4976,0.4899,0.3997,0.2998
+E02_YOLO26s_Baseline,/content/drive/MyDrive/InnoCount/skeletal_keypoint_detection/experiments/YOLO26_Pose_Runs/E02_YOLO26s_Baseline-2/weights/best.pt,0.8017,0.6737,0.7278,0.3977,0.4694,0.4154,0.3567,0.2465
+E05_YOLO26m_Augmentation,/home/owner/skeletal_keypoint_detection/experiments/YOLO26_Pose_Runs/E05_YOLO26m_Augmentation-2/weights/best.pt,0.8534,0.7453,0.8193,0.4787,0.4492,0.4286,0.4317,0.1587
+E01_YOLO26n_Baseline,/content/drive/MyDrive/InnoCount/skeletal_keypoint_detection/experiments/YOLO26_Pose_Runs/E01_YOLO26n_Baseline/weights/best.pt,0.7041,0.6495,0.6712,0.3701,0.3172,0.4092,0.2535,0.1529
+E03_YOLO26s_Augmentation,/content/drive/MyDrive/InnoCount/skeletal_keypoint_detection/experiments/YOLO26_Pose_Runs/E03_YOLO26s_Augmentation-2/weights/best.pt,0.7986,0.7782,0.8034,0.4655,0.4348,0.4102,0.3899,0.1337

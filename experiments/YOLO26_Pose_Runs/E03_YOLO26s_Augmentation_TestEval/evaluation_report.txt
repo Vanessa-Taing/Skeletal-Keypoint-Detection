@@ -1,0 +1,20 @@
+YOLO26-POSE TEST EVALUATION
+==================================================
+
+Checkpoint : /content/drive/MyDrive/InnoCount/skeletal_keypoint_detection/experiments/YOLO26_Pose_Runs/E03_YOLO26s_Augmentation-2/weights/best.pt
+Dataset    : /content/drive/MyDrive/InnoCount/skeletal_keypoint_detection/datasets/InnoCount_KeyPoint_YOLO26_Pose_v1/dataset.yaml
+Timestamp  : 2026-08-18T15:09:12.674136
+
+BOX DETECTION
+--------------------
+Precision : 0.7986
+Recall    : 0.7782
+mAP@50    : 0.8034
+mAP50-95  : 0.4655
+
+POSE ESTIMATION
+--------------------
+Precision : 0.4348
+Recall    : 0.4102
+mAP@50    : 0.3899
+mAP50-95  : 0.1337
