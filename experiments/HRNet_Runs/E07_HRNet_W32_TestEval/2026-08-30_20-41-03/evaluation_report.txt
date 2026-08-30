@@ -1,0 +1,40 @@
+HRNET-W32 TEST EVALUATION
+======================================================================
+
+Timestamp    : 2026-08-30T20:41:40.374400
+Start time   : 2026-08-30T20:41:03.669865
+End time     : 2026-08-30T20:41:40.373852
+Checkpoint   : /home/owner/skeletal_keypoint_detection/experiments/HRNet_Runs/E07_HRNet_W32/innocount/pose_hrnet/hrnet_w32_640/model_best.pth
+Config       : /home/owner/HRNet-Human-Pose-Estimation/experiments/innocount/hrnet_w32_640.yaml
+Test split   : test
+
+STANDARD PCK
+----------------------------------------
+Overall      : 0.298000
+joint_1     : 0.366000
+joint_2     : 0.166000
+joint_3     : 0.415000
+joint_4     : 0.303000
+joint_5     : 0.171000
+joint_6     : 0.168000
+
+ORDER-INVARIANT PCK
+----------------------------------------
+Overall      : 0.426000
+joint_1     : 0.413000
+joint_2     : 0.448000
+joint_3     : 0.476000
+joint_4     : 0.441000
+joint_5     : 0.266000
+joint_6     : 0.266000
+
+ORDER-INVARIANCE ANALYSIS
+----------------------------------------
+Absolute gain : 0.128000
+Percentage pts: 12.80
+
+HRNET TEST ACCURACY
+----------------------------------------
+Final running accuracy: 0.432000
+
+HRNet test.py return code: 0

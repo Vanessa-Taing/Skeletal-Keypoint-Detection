@@ -1,0 +1,38 @@
+{
+  "timestamp": "2026-08-30T20:41:40.374400",
+  "model": "HRNet-W32",
+  "weights": "/home/owner/skeletal_keypoint_detection/experiments/HRNet_Runs/E07_HRNet_W32/innocount/pose_hrnet/hrnet_w32_640/model_best.pth",
+  "config": "/home/owner/HRNet-Human-Pose-Estimation/experiments/innocount/hrnet_w32_640.yaml",
+  "test_split": "test",
+  "start_time": "2026-08-30T20:41:03.669865",
+  "end_time": "2026-08-30T20:41:40.373852",
+  "metrics": {
+    "standard_pck": {
+      "overall": 0.298,
+      "joint_1": 0.366,
+      "joint_2": 0.166,
+      "joint_3": 0.415,
+      "joint_4": 0.303,
+      "joint_5": 0.171,
+      "joint_6": 0.168
+    },
+    "order_invariant_pck": {
+      "overall": 0.426,
+      "joint_1": 0.413,
+      "joint_2": 0.448,
+      "joint_3": 0.476,
+      "joint_4": 0.441,
+      "joint_5": 0.266,
+      "joint_6": 0.266
+    },
+    "test_accuracy": 0.432,
+    "order_invariance_gain": {
+      "absolute": 0.128,
+      "percentage_points": 12.8
+    }
+  },
+  "process": {
+    "return_code": 0,
+    "status": "completed"
+  }
+}

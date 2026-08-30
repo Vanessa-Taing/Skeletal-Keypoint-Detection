@@ -1,0 +1,14 @@
+HRNET-W32 TEST EVALUATION
+============================================================
+
+Timestamp    : 2026-08-25T16:07:11.716821
+Checkpoint   : /home/owner/skeletal_keypoint_detection/experiments/HRNet_Runs/E06_HRNet_W32/innocount/pose_hrnet/hrnet_w32_640/model_best.pth
+Config       : /home/owner/HRNet-Human-Pose-Estimation/experiments/innocount/hrnet_w32_640.yaml
+Test split   : test
+
+POSE ESTIMATION
+------------------------------
+PCK          : Not detected
+Test Accuracy: Not detected
+
+HRNet test.py return code: 0

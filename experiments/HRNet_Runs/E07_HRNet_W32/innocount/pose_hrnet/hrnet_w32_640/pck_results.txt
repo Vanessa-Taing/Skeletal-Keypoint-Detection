@@ -1,0 +1,42 @@
+HRNet InnoCount PCK Evaluation
+============================================================
+
+Threshold : 0.05
+
+STANDARD PCK
+------------------------------
+Prediction joint i is compared with GT joint i.
+
+Valid joints   : 6775
+Correct joints : 2198
+Overall PCK    : 0.324428
+
+Per-joint PCK
+Joint 1: 0.397163
+Joint 2: 0.243069
+Joint 3: 0.245003
+Joint 4: 0.335269
+Joint 5: 0.489247
+Joint 6: 0.486559
+
+ORDER-INVARIANT PCK
+------------------------------
+Predicted joints are matched to visible GT joints using Hungarian minimum-cost matching.
+
+Valid joints   : 6775
+Correct joints : 2592
+Overall PCK    : 0.382583
+
+Per-joint PCK
+Joint 1: 0.346873
+Joint 2: 0.338491
+Joint 3: 0.379755
+Joint 4: 0.382438
+Joint 5: 0.561828
+Joint 6: 0.548387
+
+DIAGNOSTIC
+------------------------------
+Order-invariance gain: +0.058155
+The model performs substantially better when arbitrary joint ordering is ignored.
+This suggests that annotation ordering may be affecting the standard PCK.

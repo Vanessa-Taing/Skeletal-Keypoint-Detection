@@ -1,0 +1,23 @@
+HRNET-W32 TEST EVALUATION
+======================================================================
+
+Timestamp    : 2026-08-30T20:37:27.639528
+Start time   : 2026-08-30T20:36:51.248611
+End time     : 2026-08-30T20:37:27.638967
+Checkpoint   : /home/owner/skeletal_keypoint_detection/experiments/HRNet_Runs/E07_HRNet_W32/innocount/pose_hrnet/hrnet_w32_640/model_best.pth
+Config       : /home/owner/HRNet-Human-Pose-Estimation/experiments/innocount/hrnet_w32_640.yaml
+Test split   : test
+
+STANDARD PCK
+----------------------------------------
+Not detected
+
+ORDER-INVARIANT PCK
+----------------------------------------
+Not detected
+
+ORDER-INVARIANCE ANALYSIS
+----------------------------------------
+Comparison unavailable
+
+HRNet test.py return code: 0
