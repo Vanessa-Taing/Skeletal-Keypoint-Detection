@@ -1,0 +1,54 @@
+HRNet InnoCount Evaluation
+======================================================================
+
+Threshold: 0.05
+Valid joints: 7063
+Correct joints: 2102
+
+Standard PCK
+Overall: 0.297607
+
+Joint 1: 0.365929
+Joint 2: 0.166052
+Joint 3: 0.414514
+Joint 4: 0.302695
+Joint 5: 0.170732
+Joint 6: 0.168022
+
+Profile Analysis
+----------------------------------------------------------------------
+
+Angle Bar
+  Instances: 179
+  Valid joints: 537
+  Standard PCK: 0.314711
+  Role-aware PCK: 0.253259
+  Gain: -0.061453
+
+Channel
+  Instances: 598
+  Valid joints: 2392
+  Standard PCK: 0.315635
+  Role-aware PCK: 0.389632
+  Gain: 0.073997
+
+T-beam
+  Instances: 397
+  Valid joints: 1588
+  Standard PCK: 0.316121
+  Role-aware PCK: 0.361461
+  Gain: 0.045340
+
+HI-Beam
+  Instances: 369
+  Valid joints: 2214
+  Standard PCK: 0.201445
+  Role-aware PCK: 0.235321
+  Gain: 0.033875
+
+Sheet Pile
+  Instances: 83
+  Valid joints: 332
+  Standard PCK: 0.692771
+  Role-aware PCK: 0.864458
+  Gain: 0.171687

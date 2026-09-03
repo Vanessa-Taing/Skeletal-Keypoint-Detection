@@ -1,0 +1,65 @@
+HRNET-W32 PROFILE-AWARE TEST EVALUATION
+======================================================================
+
+Start time : 2026-09-04T00:17:06.678470
+End time   : 2026-09-04T00:17:43.237814
+Checkpoint : /home/owner/skeletal_keypoint_detection/experiments/HRNet_Runs/E08_HRNet_W32/innocount/pose_hrnet/hrnet_w32_640/model_best.pth
+Evaluation Config     : /home/owner/HRNet-Human-Pose-Estimation/experiments/innocount/hrnet_w32_640.yaml
+Test split : test
+
+STANDARD PCK
+--------------------------------------------------
+Overall : 0.288124
+joint_1     : 0.340951
+joint_2     : 0.172862
+joint_3     : 0.373838
+joint_4     : 0.323045
+joint_5     : 0.180851
+joint_6     : 0.159574
+
+ORDER-INVARIANT PCK
+--------------------------------------------------
+Overall : 0.295068
+Angle Bar       0.264706
+Channel         0.313963
+T-beam          0.383125
+HI-Beam         0.173759
+Sheet Pile      0.602410
+
+Order-invariance gain : 0.006944
+Percentage points     : 0.69
+
+PROFILE-LEVEL PCK
+--------------------------------------------------
+Angle Bar       instances=168   PCK=0.262605
+Channel         instances=598   PCK=0.313963
+T-beam          instances=401   PCK=0.383125
+HI-Beam         instances=376   PCK=0.173759
+Sheet Pile      instances=83    PCK=0.457831
+
+SEMANTIC ROLE PCK
+--------------------------------------------------
+corner                             : 0.369423
+tip                                : 0.277446
+flange_center                      : 0.575000
+flange_tip                         : 0.267835
+web_tip                            : 0.421446
+upper_web_flange_junction          : 0.250000
+upper_flange_tip                   : 0.109043
+lower_web_flange_junction          : 0.234043
+lower_flange_tip                   : 0.170213
+
+STRUCTURAL EDGE ACCURACY
+--------------------------------------------------
+Overall : 0.171455
+Angle Bar       0.081169
+Channel         0.126533
+T-beam          0.288574
+HI-Beam         0.135638
+Sheet Pile      0.313253
+
+HRNET TEST ACCURACY
+--------------------------------------------------
+Final running accuracy: 0.401000
+
+HRNet test.py return code: 0

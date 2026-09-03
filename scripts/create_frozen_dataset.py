@@ -8,10 +8,10 @@ This is the canonical dataset-engineering pipeline for the InnoCount
 KeyPoint COCO export.
 
 Input:
-    InnoCount KeyPoint.v3i.coco.zip
+    InnoCount KeyPoint.v4i.coco.zip
 
 Output:
-    InnoCount_KeyPoint_Frozen_v1/
+    InnoCount_KeyPoint_Frozen_v3/
 
 Pipeline:
     1. Inspect the original COCO export
@@ -75,6 +75,7 @@ from sklearn.model_selection import StratifiedGroupKFold
 # CONFIGURATION
 # ---------------------------------------------------------------------------
 
+FROZEN_VERSION = "Frozen-v3"
 SEED = 19
 
 FINAL_CLASSES = {
@@ -838,7 +839,7 @@ def build_coco(df, split):
     return {
         "info": {
             "description": "InnoCount KeyPoint Frozen Dataset",
-            "version": "Frozen-v1",
+            "version": FROZEN_VERSION,
         },
         "licenses": [],
         "images": images,
@@ -1061,7 +1062,7 @@ def write_freeze_metadata(
 ):
     freeze = {
         "dataset": "InnoCount KeyPoint",
-        "version": "Frozen-v1",
+        "version": FROZEN_VERSION,
         "input_zip": input_zip.name,
         "input_zip_sha256": input_sha256,
         "seed": SEED,
@@ -1138,8 +1139,8 @@ Run:
 
 ```bash
 python create_frozen_dataset.py \
-    --input "InnoCount KeyPoint.v3i.coco.zip" \
-    --output "InnoCount_KeyPoint_Frozen_v1"
+    --input "InnoCount KeyPoint.v4i.coco.zip" \
+    --output "InnoCount_KeyPoint_Frozen_v3"
 ```
 
 For a previously frozen dataset, `reports/master_manifest.csv` should be
@@ -1158,7 +1159,7 @@ kept permanently as the assignment lockfile.
 def main():
     parser = argparse.ArgumentParser(
         description=(
-            "Create InnoCount_KeyPoint_Frozen_v1 from "
+            "Create InnoCount_KeyPoint_Frozen_v3 from "
             "the original Roboflow COCO ZIP."
         )
     )

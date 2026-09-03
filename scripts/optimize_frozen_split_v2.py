@@ -43,8 +43,8 @@ local-search moves/swaps and multiple restarts.
 Usage:
 
     python optimize_frozen_split_v2.py \
-        --input "InnoCount_KeyPoint_Frozen_v1" \
-        --output "InnoCount_KeyPoint_Frozen_v2"
+        --input "InnoCount_KeyPoint_Frozen_v3" \
+        --output "InnoCount_KeyPoint_Frozen_v3_Optimized"
 
 Optional:
 
@@ -1450,9 +1450,9 @@ def create_v2_dataset(
         split_data[split] = {
             "info": {
                 "description": (
-                    "InnoCount KeyPoint Frozen v2"
+                    "InnoCount KeyPoint Frozen v3"
                 ),
-                "version": "v2",
+                "version": "v3",
             },
             "licenses": [],
             "categories": categories,

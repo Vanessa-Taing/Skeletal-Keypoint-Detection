@@ -1,0 +1,349 @@
+{
+  "timestamp": "2026-09-01T02:49:17.411015",
+  "model": "HRNet-W32",
+  "weights": "/home/owner/skeletal_keypoint_detection/experiments/HRNet_Runs/E07_HRNet_W32/innocount/pose_hrnet/hrnet_w32_640/model_best.pth",
+  "config": "/home/owner/HRNet-Human-Pose-Estimation/experiments/innocount/hrnet_w32_640.yaml",
+  "test_split": "test",
+  "start_time": "2026-09-01T02:48:41.145163",
+  "end_time": "2026-09-01T02:49:17.298809",
+  "metrics": {
+    "model": "HRNet-W32",
+    "test_split": "test",
+    "threshold": 0.05,
+    "standard_pck": {
+      "overall": 0.29760724904431546,
+      "joint_pck": {
+        "joint_1": 0.36592865928659285,
+        "joint_2": 0.16605166051660517,
+        "joint_3": 0.4145141451414514,
+        "joint_4": 0.30269523151347616,
+        "joint_5": 0.17073170731707318,
+        "joint_6": 0.16802168021680217
+      },
+      "total_correct": 2102,
+      "total_valid": 7063
+    },
+    "order_invariant_pck": {
+      "overall": 0.2993898895990703,
+      "correct": 2061,
+      "total": 6884,
+      "profile": {
+        "Angle Bar": {
+          "instances": 179,
+          "correct": 71,
+          "valid": 358,
+          "pck": 0.19832402234636873
+        },
+        "Channel": {
+          "instances": 598,
+          "correct": 755,
+          "valid": 2392,
+          "pck": 0.3156354515050167
+        },
+        "T-beam": {
+          "instances": 397,
+          "correct": 502,
+          "valid": 1588,
+          "pck": 0.3161209068010076
+        },
+        "HI-Beam": {
+          "instances": 369,
+          "correct": 446,
+          "valid": 2214,
+          "pck": 0.2014453477868112
+        },
+        "Sheet Pile": {
+          "instances": 83,
+          "correct": 287,
+          "valid": 332,
+          "pck": 0.8644578313253012
+        }
+      }
+    },
+    "profile_pck": {
+      "Angle Bar": {
+        "instances": 179,
+        "correct": 104,
+        "valid": 358,
+        "pck": 0.2905027932960894
+      },
+      "Channel": {
+        "instances": 598,
+        "correct": 755,
+        "valid": 2392,
+        "pck": 0.3156354515050167
+      },
+      "T-beam": {
+        "instances": 397,
+        "correct": 502,
+        "valid": 1588,
+        "pck": 0.3161209068010076
+      },
+      "HI-Beam": {
+        "instances": 369,
+        "correct": 446,
+        "valid": 2214,
+        "pck": 0.2014453477868112
+      },
+      "Sheet Pile": {
+        "instances": 83,
+        "correct": 230,
+        "valid": 332,
+        "pck": 0.6927710843373494
+      }
+    },
+    "semantic_roles": {
+      "overall_role_pck": {
+        "corner": 0.3932511356262167,
+        "tip": 0.31343283582089554,
+        "flange_center": 0.5188916876574308,
+        "flange_tip": 0.22418136020151133,
+        "web_tip": 0.2972292191435768,
+        "upper_web_flange_junction": 0.25203252032520324,
+        "upper_flange_tip": 0.1802168021680217,
+        "lower_web_flange_junction": 0.25745257452574527,
+        "lower_flange_tip": 0.16937669376693767
+      },
+      "profile_role_pck": {
+        "Angle Bar": {
+          "corner": {
+            "correct": 71,
+            "valid": 179,
+            "pck": 0.39664804469273746
+          },
+          "tip": {
+            "correct": 33,
+            "valid": 179,
+            "pck": 0.18435754189944134
+          }
+        },
+        "Channel": {
+          "tip": {
+            "correct": 340,
+            "valid": 1196,
+            "pck": 0.2842809364548495
+          },
+          "corner": {
+            "correct": 415,
+            "valid": 1196,
+            "pck": 0.34698996655518394
+          }
+        },
+        "T-beam": {
+          "flange_center": {
+            "correct": 206,
+            "valid": 397,
+            "pck": 0.5188916876574308
+          },
+          "flange_tip": {
+            "correct": 178,
+            "valid": 794,
+            "pck": 0.22418136020151133
+          },
+          "web_tip": {
+            "correct": 118,
+            "valid": 397,
+            "pck": 0.2972292191435768
+          }
+        },
+        "HI-Beam": {
+          "upper_web_flange_junction": {
+            "correct": 93,
+            "valid": 369,
+            "pck": 0.25203252032520324
+          },
+          "upper_flange_tip": {
+            "correct": 133,
+            "valid": 738,
+            "pck": 0.1802168021680217
+          },
+          "lower_web_flange_junction": {
+            "correct": 95,
+            "valid": 369,
+            "pck": 0.25745257452574527
+          },
+          "lower_flange_tip": {
+            "correct": 125,
+            "valid": 738,
+            "pck": 0.16937669376693767
+          }
+        },
+        "Sheet Pile": {
+          "tip": {
+            "correct": 110,
+            "valid": 166,
+            "pck": 0.6626506024096386
+          },
+          "corner": {
+            "correct": 120,
+            "valid": 166,
+            "pck": 0.7228915662650602
+          }
+        }
+      }
+    },
+    "structural_edges": {
+      "overall": 0.18809433244579687,
+      "correct": 989,
+      "total": 5258,
+      "profile": {
+        "Angle Bar": {
+          "edges": 179,
+          "correct": 19,
+          "accuracy": 0.10614525139664804
+        },
+        "Channel": {
+          "edges": 1794,
+          "correct": 218,
+          "accuracy": 0.12151616499442586
+        },
+        "T-beam": {
+          "edges": 1191,
+          "correct": 253,
+          "accuracy": 0.21242653232577666
+        },
+        "HI-Beam": {
+          "edges": 1845,
+          "correct": 331,
+          "accuracy": 0.17940379403794038
+        },
+        "Sheet Pile": {
+          "edges": 249,
+          "correct": 168,
+          "accuracy": 0.6746987951807228
+        }
+      }
+    },
+    "profile_schemas": {
+      "Angle Bar": {
+        "roles": {
+          "0": "corner",
+          "1": "tip",
+          "2": "unused",
+          "3": "tip",
+          "4": "unused",
+          "5": "unused"
+        },
+        "edges": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            3
+          ]
+        ]
+      },
+      "Channel": {
+        "roles": {
+          "0": "tip",
+          "1": "corner",
+          "2": "corner",
+          "3": "tip",
+          "4": "unused",
+          "5": "unused"
+        },
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      "T-beam": {
+        "roles": {
+          "0": "flange_center",
+          "1": "flange_tip",
+          "2": "flange_tip",
+          "3": "web_tip",
+          "4": "unused",
+          "5": "unused"
+        },
+        "edges": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ]
+      },
+      "HI-Beam": {
+        "roles": {
+          "0": "upper_web_flange_junction",
+          "1": "upper_flange_tip",
+          "2": "upper_flange_tip",
+          "3": "lower_web_flange_junction",
+          "4": "lower_flange_tip",
+          "5": "lower_flange_tip"
+        },
+        "edges": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            3,
+            4
+          ]
+        ]
+      },
+      "Sheet Pile": {
+        "roles": {
+          "0": "tip",
+          "1": "corner",
+          "2": "corner",
+          "3": "tip",
+          "4": "unused",
+          "5": "unused"
+        },
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      }
+    },
+    "hrnet_test_accuracy": 0.432
+  },
+  "process": {
+    "return_code": 0,
+    "status": "completed"
+  }
+}

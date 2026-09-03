@@ -1,0 +1,160 @@
+=> creating /home/owner/skeletal_keypoint_detection/experiments/HRNet_Runs/E08_HRNet_W32_FinalTest/2026-09-04_00-17-06/innocount/pose_hrnet/hrnet_eval_config
+=> creating log/innocount/pose_hrnet/hrnet_eval_config_2026-09-04-00-17
+loading annotations into memory...
+Done (t=0.01s)
+creating index...
+index created!
+
+
+======================================================================
+STDERR
+======================================================================
+Namespace(cfg='/home/owner/skeletal_keypoint_detection/experiments/HRNet_Runs/E08_HRNet_W32_FinalTest/2026-09-04_00-17-06/hrnet_eval_config.yaml', opts=['TEST.MODEL_FILE', '/home/owner/skeletal_keypoint_detection/experiments/HRNet_Runs/E08_HRNet_W32/innocount/pose_hrnet/hrnet_w32_640/model_best.pth'], modelDir='', logDir='', dataDir='', prevModelDir='')
+AUTO_RESUME: False
+CUDNN:
+  BENCHMARK: True
+  DETERMINISTIC: False
+  ENABLED: True
+DATASET:
+  COLOR_RGB: False
+  DATASET: innocount
+  DATA_FORMAT: jpg
+  FLIP: False
+  HYBRID_JOINTS_TYPE: 
+  NUM_JOINTS_HALF_BODY: 8
+  PROB_HALF_BODY: 0.0
+  ROOT: data/InnoCount
+  ROT_FACTOR: 5
+  SCALE_FACTOR: 0.3
+  SELECT_DATA: False
+  TEST_SET: test
+  TRAIN_SET: train
+DATA_DIR: 
+DEBUG:
+  DEBUG: False
+  SAVE_BATCH_IMAGES_GT: False
+  SAVE_BATCH_IMAGES_PRED: False
+  SAVE_HEATMAPS_GT: False
+  SAVE_HEATMAPS_PRED: False
+GPUS: (0,)
+LOG_DIR: log
+LOSS:
+  TOPK: 8
+  USE_DIFFERENT_JOINTS_WEIGHT: False
+  USE_OHKM: False
+  USE_TARGET_WEIGHT: True
+MODEL:
+  EXTRA:
+    FINAL_CONV_KERNEL: 1
+    PRETRAINED_LAYERS: ['*']
+    STAGE2:
+      BLOCK: BASIC
+      FUSE_METHOD: SUM
+      NUM_BLOCKS: [4, 4]
+      NUM_BRANCHES: 2
+      NUM_CHANNELS: [32, 64]
+      NUM_MODULES: 1
+    STAGE3:
+      BLOCK: BASIC
+      FUSE_METHOD: SUM
+      NUM_BLOCKS: [4, 4, 4]
+      NUM_BRANCHES: 3
+      NUM_CHANNELS: [32, 64, 128]
+      NUM_MODULES: 4
+    STAGE4:
+      BLOCK: BASIC
+      FUSE_METHOD: SUM
+      NUM_BLOCKS: [4, 4, 4, 4]
+      NUM_BRANCHES: 4
+      NUM_CHANNELS: [32, 64, 128, 256]
+      NUM_MODULES: 3
+    STEM_INPLANES: 64
+  HEATMAP_SIZE: [160, 160]
+  IMAGE_SIZE: [640, 640]
+  INIT_WEIGHTS: True
+  NAME: pose_hrnet
+  NUM_JOINTS: 6
+  PRETRAINED: models/pytorch/pose_coco/pose_hrnet_w32_256x192.pth
+  SIGMA: 2
+  TAG_PER_JOINT: True
+  TARGET_TYPE: gaussian
+OUTPUT_DIR: /home/owner/skeletal_keypoint_detection/experiments/HRNet_Runs/E08_HRNet_W32_FinalTest/2026-09-04_00-17-06
+PIN_MEMORY: True
+PRINT_FREQ: 20
+RANK: 0
+TEST:
+  BATCH_SIZE_PER_GPU: 2
+  BBOX_THRE: 1.0
+  COCO_BBOX_FILE: 
+  FLIP_TEST: False
+  IMAGE_THRE: 0.1
+  IN_VIS_THRE: 0.0
+  MODEL_FILE: /home/owner/skeletal_keypoint_detection/experiments/HRNet_Runs/E08_HRNet_W32/innocount/pose_hrnet/hrnet_w32_640/model_best.pth
+  NMS_THRE: 0.6
+  OKS_THRE: 0.5
+  POST_PROCESS: False
+  SHIFT_HEATMAP: False
+  SOFT_NMS: False
+  USE_GT_BBOX: False
+TRAIN:
+  BATCH_SIZE_PER_GPU: 2
+  BEGIN_EPOCH: 0
+  CHECKPOINT: 
+  END_EPOCH: 100
+  GAMMA1: 0.99
+  GAMMA2: 0.0
+  LR: 0.001
+  LR_FACTOR: 0.1
+  LR_STEP: [90, 110]
+  MOMENTUM: 0.9
+  NESTEROV: False
+  OPTIMIZER: adam
+  RESUME: False
+  SHUFFLE: True
+  WD: 0.0001
+WORKERS: 2
+=> loading model from /home/owner/skeletal_keypoint_detection/experiments/HRNet_Runs/E08_HRNet_W32/innocount/pose_hrnet/hrnet_w32_640/model_best.pth
+Test: [0/813]	Time 1.159 (1.159)	Loss 0.0001 (0.0001)	Accuracy 0.750 (0.750)
+Test: [20/813]	Time 0.038 (0.092)	Loss 0.0000 (0.0001)	Accuracy 0.000 (0.500)
+Test: [40/813]	Time 0.038 (0.066)	Loss 0.0000 (0.0000)	Accuracy 0.000 (0.500)
+Test: [60/813]	Time 0.041 (0.057)	Loss 0.0000 (0.0000)	Accuracy 0.000 (0.500)
+Test: [80/813]	Time 0.041 (0.053)	Loss 0.0002 (0.0000)	Accuracy 0.917 (0.606)
+Test: [100/813]	Time 0.040 (0.051)	Loss 0.0001 (0.0001)	Accuracy 0.500 (0.676)
+Test: [120/813]	Time 0.040 (0.049)	Loss 0.0002 (0.0001)	Accuracy 0.000 (0.444)
+Test: [140/813]	Time 0.040 (0.048)	Loss 0.0000 (0.0001)	Accuracy 0.000 (0.446)
+Test: [160/813]	Time 0.040 (0.047)	Loss 0.0000 (0.0001)	Accuracy 0.000 (0.446)
+Test: [180/813]	Time 0.040 (0.046)	Loss 0.0000 (0.0001)	Accuracy 0.000 (0.446)
+Test: [200/813]	Time 0.040 (0.045)	Loss 0.0001 (0.0001)	Accuracy 0.167 (0.427)
+Test: [220/813]	Time 0.040 (0.045)	Loss 0.0001 (0.0001)	Accuracy 0.625 (0.440)
+Test: [240/813]	Time 0.040 (0.044)	Loss 0.0001 (0.0001)	Accuracy 0.417 (0.444)
+Test: [260/813]	Time 0.040 (0.044)	Loss 0.0000 (0.0001)	Accuracy 0.000 (0.439)
+Test: [280/813]	Time 0.040 (0.044)	Loss 0.0001 (0.0001)	Accuracy 0.750 (0.441)
+Test: [300/813]	Time 0.039 (0.043)	Loss 0.0001 (0.0001)	Accuracy 0.000 (0.439)
+Test: [320/813]	Time 0.040 (0.043)	Loss 0.0000 (0.0001)	Accuracy 1.000 (0.430)
+Test: [340/813]	Time 0.039 (0.043)	Loss 0.0001 (0.0001)	Accuracy 0.667 (0.441)
+Test: [360/813]	Time 0.039 (0.043)	Loss 0.0001 (0.0001)	Accuracy 0.500 (0.460)
+Test: [380/813]	Time 0.040 (0.042)	Loss 0.0002 (0.0001)	Accuracy 0.333 (0.472)
+Test: [400/813]	Time 0.045 (0.042)	Loss 0.0001 (0.0001)	Accuracy 0.750 (0.484)
+Test: [420/813]	Time 0.039 (0.042)	Loss 0.0002 (0.0001)	Accuracy 0.250 (0.493)
+Test: [440/813]	Time 0.039 (0.042)	Loss 0.0002 (0.0001)	Accuracy 0.250 (0.478)
+Test: [460/813]	Time 0.039 (0.042)	Loss 0.0001 (0.0001)	Accuracy 0.250 (0.461)
+Test: [480/813]	Time 0.039 (0.042)	Loss 0.0002 (0.0001)	Accuracy 0.000 (0.442)
+Test: [500/813]	Time 0.039 (0.042)	Loss 0.0002 (0.0001)	Accuracy 0.125 (0.427)
+Test: [520/813]	Time 0.040 (0.042)	Loss 0.0001 (0.0001)	Accuracy 0.375 (0.416)
+Test: [540/813]	Time 0.039 (0.042)	Loss 0.0001 (0.0001)	Accuracy 0.000 (0.402)
+Test: [560/813]	Time 0.040 (0.041)	Loss 0.0002 (0.0001)	Accuracy 0.250 (0.392)
+Test: [580/813]	Time 0.039 (0.041)	Loss 0.0000 (0.0001)	Accuracy 0.000 (0.385)
+Test: [600/813]	Time 0.039 (0.041)	Loss 0.0001 (0.0001)	Accuracy 0.750 (0.394)
+Test: [620/813]	Time 0.040 (0.041)	Loss 0.0001 (0.0001)	Accuracy 0.250 (0.401)
+Test: [640/813]	Time 0.039 (0.041)	Loss 0.0002 (0.0001)	Accuracy 0.400 (0.398)
+Test: [660/813]	Time 0.039 (0.041)	Loss 0.0001 (0.0001)	Accuracy 0.000 (0.400)
+Test: [680/813]	Time 0.040 (0.041)	Loss 0.0002 (0.0001)	Accuracy 0.500 (0.400)
+Test: [700/813]	Time 0.040 (0.041)	Loss 0.0002 (0.0001)	Accuracy 0.500 (0.404)
+Test: [720/813]	Time 0.040 (0.041)	Loss 0.0001 (0.0001)	Accuracy 0.500 (0.409)
+Test: [740/813]	Time 0.039 (0.041)	Loss 0.0001 (0.0001)	Accuracy 0.375 (0.404)
+Test: [760/813]	Time 0.039 (0.041)	Loss 0.0001 (0.0001)	Accuracy 0.625 (0.404)
+Test: [780/813]	Time 0.039 (0.041)	Loss 0.0001 (0.0001)	Accuracy 0.500 (0.404)
+Test: [800/813]	Time 0.039 (0.041)	Loss 0.0000 (0.0001)	Accuracy 0.000 (0.401)
+| Arch | PCK | PCK_joint_1 | PCK_joint_2 | PCK_joint_3 | PCK_joint_4 | PCK_joint_5 | PCK_joint_6 |
+|---|---|---|---|---|---|---|---|
+| pose_hrnet | 0.288 | 0.341 | 0.173 | 0.374 | 0.323 | 0.181 | 0.160 |

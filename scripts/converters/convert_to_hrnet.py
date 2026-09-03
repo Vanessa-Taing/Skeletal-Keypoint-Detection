@@ -4,7 +4,7 @@ import shutil
 # scripts/converter/convert_to_hrnet.py
 ROOT = Path(__file__).resolve().parents[2]
 
-SRC = ROOT / "datasets" / "InnoCount_KeyPoint_Frozen_v2"
+SRC = ROOT / "datasets" / "InnoCount_KeyPoint_ModelReady_v2"
 DST = ROOT / "datasets" / "HRNet_COCO"
 
 SPLITS = ["train", "valid", "test"]

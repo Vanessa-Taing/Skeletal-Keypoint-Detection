@@ -1,41 +1,55 @@
 import os
+import itertools
 from collections import OrderedDict
 
 import numpy as np
-from scipy.optimize import linear_sum_assignment
 from pycocotools.coco import COCO
 
 from dataset.JointsDataset import JointsDataset
 
 
 class InnoCountDataset(JointsDataset):
-    """
-    HRNet dataset loader for InnoCount.
-
-    Original annotations contain variable-length keypoints:
-        Angle Bar : 3
-        Channel   : 4
-        T-beam    : 4
-        Sheet Pile : 4
-        HI-Beam   : 6
-
-    HRNet requires a fixed K=6, therefore missing joints are
-    padded with invisible (0, 0, 0).
-
-    Evaluation provides two metrics:
-
-    1. Standard PCK
-       Assumes prediction joint i corresponds to GT joint i.
-
-    2. Order-Invariant PCK
-       Does not assume that the arbitrary annotation numbering
-       corresponds to the prediction numbering.
-
-       Visible GT joints are matched to predicted joints using
-       minimum-cost Hungarian matching.
-    """
 
     NUM_JOINTS = 6
+
+    # ------------------------------------------------------------------
+    # Profile-aware equivalent keypoint groups
+    # ------------------------------------------------------------------
+    #
+    # Keypoint indices are zero-based.
+    #
+    # These groups define keypoints that are geometrically equivalent
+    # within a particular structural profile.
+    #
+    PROFILE_GROUPS = {
+
+        "Angle Bar": [
+            [1, 2],     # two equivalent tips
+        ],
+
+        "Channel": [
+            [0, 3],     # two equivalent tips
+            [1, 2],     # two equivalent corners
+        ],
+
+        "T-beam": [
+            [1, 2],     # two flange tips
+        ],
+
+        "HI-Beam": [
+            [1, 2],     # upper flange tips
+            [4, 5],     # lower flange tips
+        ],
+
+        "Sheet Pile": [
+            [0, 3],     # two equivalent tips
+            [1, 2],     # two equivalent corners
+        ],
+    }
+
+    # ------------------------------------------------------------------
+    # Initialization
+    # ------------------------------------------------------------------
 
     def __init__(
         self,
@@ -43,75 +57,68 @@ class InnoCountDataset(JointsDataset):
         root,
         image_set,
         is_train,
-        transform=None
+        transform=None,
     ):
+
         super().__init__(
             cfg,
             root,
             image_set,
             is_train,
-            transform
+            transform,
         )
 
         self.num_joints = self.NUM_JOINTS
-
-        # No left/right semantic symmetry is assumed.
         self.flip_pairs = []
         self.parent_ids = []
 
         ann_file = os.path.join(
             root,
             "annotations",
-            f"{image_set}.json"
+            f"{image_set}.json",
         )
 
-        self.coco = COCO(ann_file)
+        self.coco = COCO(
+            ann_file
+        )
 
         self.db = self._get_db()
 
     # ------------------------------------------------------------------
-    # Annotation loading
+    # Keypoint padding
     # ------------------------------------------------------------------
 
-    def _pad_keypoints(self, keypoints):
-        """
-        Convert variable-length COCO keypoints into fixed K=6 format.
-
-        Example:
-
-            3 joints:
-                [x1,y1,v1, x2,y2,v2, x3,y3,v3]
-                ->
-                [joint0, joint1, joint2, 0, 0, 0]
-
-            4 joints:
-                ->
-                [joint0, joint1, joint2, joint3, 0, 0]
-
-            6 joints:
-                ->
-                [joint0 ... joint5]
-        """
+    def _pad_keypoints(
+        self,
+        keypoints,
+    ):
 
         kp = np.array(
             keypoints,
-            dtype=np.float32
+            dtype=np.float32,
         ).reshape(-1, 3)
 
         if len(kp) > self.NUM_JOINTS:
+
             raise ValueError(
-                f"Annotation contains {len(kp)} joints, "
-                f"but NUM_JOINTS={self.NUM_JOINTS}."
+                f"Annotation contains {len(kp)} keypoints, "
+                f"but NUM_JOINTS={self.NUM_JOINTS}"
             )
 
         padded = np.zeros(
             (self.NUM_JOINTS, 3),
-            dtype=np.float32
+            dtype=np.float32,
         )
 
-        padded[:len(kp)] = kp
+        padded[
+            :len(kp)
+        ] = kp
 
         return padded
+
+    # ------------------------------------------------------------------
+    # Dataset
+    # ------------------------------------------------------------------
 
     def _get_db(self):
 
@@ -119,7 +126,9 @@ class InnoCountDataset(JointsDataset):
 
         for img_id in self.coco.getImgIds():
 
-            img = self.coco.loadImgs(img_id)[0]
+            img = self.coco.loadImgs(
+                img_id
+            )[0]
 
             ann_ids = self.coco.getAnnIds(
                 imgIds=img_id
@@ -137,6 +146,18 @@ class InnoCountDataset(JointsDataset):
 
                 x, y, w, h = ann["bbox"]
 
+                category_id = ann[
+                    "category_id"
+                ]
+
+                category = self.coco.loadCats(
+                    category_id
+                )[0]
+
+                category_name = category[
+                    "name"
+                ]
+
                 gt_db.append(
                     {
                         "image": os.path.join(
@@ -149,7 +170,7 @@ class InnoCountDataset(JointsDataset):
                         "center": np.array(
                             [
                                 x + w / 2,
-                                y + h / 2
+                                y + h / 2,
                             ],
                             dtype=np.float32,
                         ),
@@ -157,7 +178,7 @@ class InnoCountDataset(JointsDataset):
                         "scale": np.array(
                             [
                                 w / 200,
-                                h / 200
+                                h / 200,
                             ],
                             dtype=np.float32,
                         ),
@@ -166,7 +187,9 @@ class InnoCountDataset(JointsDataset):
 
                         "joints_3d_vis": (
                             kp[:, 2:] > 0
-                        ).astype(np.float32),
+                        ).astype(
+                            np.float32
+                        ),
 
                         "bbox": ann["bbox"],
 
@@ -175,319 +198,159 @@ class InnoCountDataset(JointsDataset):
                         "filename": "",
 
                         "imgnum": 0,
+
+                        "category_id": (
+                            category_id
+                        ),
+
+                        "category_name": (
+                            category_name
+                        ),
+
+                        # Keep the COCO annotation ID
+                        # for reference only.
+                        "annotation_id": int(
+                            ann["id"]
+                        ),
+
+                        "image_id": int(
+                            ann["image_id"]
+                        ),
                     }
                 )
 
         return gt_db
 
     # ------------------------------------------------------------------
-    # Utility functions
+    # Profile-aware matching
     # ------------------------------------------------------------------
 
-    @staticmethod
-    def _bbox_scale(bbox):
-        """
-        Return the normalization scale used by PCK.
-
-        scale = max(width, height)
-        """
-
-        x, y, w, h = bbox
-
-        scale = max(
-            float(w),
-            float(h)
-        )
-
-        if scale <= 0:
-            scale = 1.0
-
-        return scale
-
-    @staticmethod
-    def _normalized_distance_matrix(
-        pred_xy,
-        gt_xy,
-        scale
-    ):
-        """
-        Calculate pairwise normalized Euclidean distances.
-
-        pred_xy:
-            [N_pred, 2]
-
-        gt_xy:
-            [N_gt, 2]
-
-        Returns:
-            [N_pred, N_gt]
-        """
-
-        diff = (
-            pred_xy[:, None, :]
-            - gt_xy[None, :, :]
-        )
-
-        distances = np.linalg.norm(
-            diff,
-            axis=2
-        )
-
-        return distances / scale
-
-    # ------------------------------------------------------------------
-    # Standard PCK
-    # ------------------------------------------------------------------
-
-    def _standard_pck(
+    def _role_aware_distances(
         self,
-        pred_xy,
-        gt_xy,
-        gt_vis,
-        scales,
-        threshold
+        pred,
+        gt,
+        valid,
+        scale,
+        profile_name,
     ):
-        """
-        Existing index-based PCK.
 
-        Prediction joint i is compared directly against
-        GT joint i.
-        """
+        if profile_name not in self.PROFILE_GROUPS:
 
-        distances = np.linalg.norm(
-            pred_xy - gt_xy,
-            axis=2
-        )
-
-        normalized_distances = (
-            distances / scales[:, None]
-        )
-
-        correct = (
-            normalized_distances <= threshold
-        )
-
-        valid = gt_vis > 0
-
-        num_correct = np.sum(
-            correct & valid
-        )
-
-        num_valid = np.sum(valid)
-
-        if num_valid == 0:
-            pck = 0.0
-        else:
-            pck = float(
-                num_correct / num_valid
+            raise ValueError(
+                f"Unknown profile "
+                f"'{profile_name}'. "
+                f"Known profiles: "
+                f"{list(self.PROFILE_GROUPS)}"
             )
 
-        joint_pck = {}
-
-        for j in range(self.NUM_JOINTS):
-
-            joint_valid = valid[:, j]
-
-            if np.sum(joint_valid) == 0:
-
-                joint_pck[j] = 0.0
-
-            else:
-
-                joint_pck[j] = float(
-                    np.sum(
-                        correct[:, j]
-                        & joint_valid
-                    )
-                    / np.sum(joint_valid)
-                )
-
-        return (
-            pck,
-            joint_pck,
-            num_correct,
-            num_valid
-        )
-
-    # ------------------------------------------------------------------
-    # Order-invariant PCK
-    # ------------------------------------------------------------------
-
-    def _order_invariant_pck(
-        self,
-        pred_xy,
-        gt_xy,
-        gt_vis,
-        scales,
-        threshold
-    ):
-        """
-        Order-invariant PCK.
-
-        For each object:
-
-            1. Extract visible GT joints.
-            2. Consider all six predicted joint locations.
-            3. Construct a pairwise normalized-distance matrix.
-            4. Use Hungarian matching to find the minimum-cost
-               assignment.
-            5. Count matched pairs whose normalized distance
-               <= threshold.
-
-        Importantly, GT annotation indices are NOT assumed
-        to carry semantic meaning.
-
-        Returns:
-            overall PCK
-            per-GT-joint PCK
-            number of correct matches
-            number of valid GT joints
-        """
-
-        total_correct = 0
-        total_valid = 0
-
-        # Per original GT index.
-        # This is mainly useful diagnostically.
-        joint_correct = np.zeros(
+        matched = np.zeros(
             self.NUM_JOINTS,
-            dtype=np.int64
+            dtype=bool,
         )
 
-        joint_valid = np.zeros(
-            self.NUM_JOINTS,
-            dtype=np.int64
-        )
+        # --------------------------------------------------------------
+        # First match all fixed / non-equivalent joints.
+        # --------------------------------------------------------------
 
-        num_samples = len(pred_xy)
+        grouped_indices = set()
 
-        for i in range(num_samples):
+        for group in self.PROFILE_GROUPS[
+            profile_name
+        ]:
+            grouped_indices.update(
+                group
+            )
 
-            # ----------------------------------------------------------
-            # Visible GT joints
-            # ----------------------------------------------------------
+        for joint_idx in range(
+            self.NUM_JOINTS
+        ):
 
-            valid_gt_indices = np.where(
-                gt_vis[i] > 0
-            )[0]
-
-            if len(valid_gt_indices) == 0:
+            if joint_idx in grouped_indices:
                 continue
 
-            current_gt = gt_xy[
-                i,
-                valid_gt_indices
+            if not valid[joint_idx]:
+                continue
+
+            error = np.linalg.norm(
+                pred[joint_idx]
+                - gt[joint_idx]
+            )
+
+            matched[joint_idx] = (
+                error <= 0.05 * scale
+            )
+
+        # --------------------------------------------------------------
+        # Match equivalent groups using minimum total distance.
+        # --------------------------------------------------------------
+
+        for group in self.PROFILE_GROUPS[
+            profile_name
+        ]:
+
+            valid_gt = [
+                idx
+                for idx in group
+                if valid[idx]
             ]
 
-            # ----------------------------------------------------------
-            # Predictions
-            # ----------------------------------------------------------
+            if not valid_gt:
+                continue
 
-            current_pred = pred_xy[i]
+            valid_pred = [
+                idx
+                for idx in group
+            ]
 
-            # ----------------------------------------------------------
-            # Pairwise normalized distances
-            # ----------------------------------------------------------
+            if len(valid_gt) != len(
+                valid_pred
+            ):
+                continue
 
-            distance_matrix = (
-                self._normalized_distance_matrix(
-                    current_pred,
-                    current_gt,
-                    scales[i]
-                )
-            )
+            best_assignment = None
+            best_total = float("inf")
 
-            # ----------------------------------------------------------
-            # Hungarian matching
-            #
-            # linear_sum_assignment expects:
-            #
-            #     rows = predictions
-            #     cols = GT joints
-            #
-            # Since there are always 6 predictions and at most
-            # 6 visible GT joints, every GT joint receives a
-            # unique prediction.
-            # ----------------------------------------------------------
-
-            pred_indices, gt_indices = (
-                linear_sum_assignment(
-                    distance_matrix
-                )
-            )
-
-            # ----------------------------------------------------------
-            # Evaluate matched pairs
-            # ----------------------------------------------------------
-
-            for pred_idx, gt_local_idx in zip(
-                pred_indices,
-                gt_indices
+            for permutation in itertools.permutations(
+                valid_pred
             ):
 
-                gt_original_idx = (
-                    valid_gt_indices[
-                        gt_local_idx
-                    ]
+                total = 0.0
+
+                for gt_idx, pred_idx in zip(
+                    valid_gt,
+                    permutation,
+                ):
+
+                    total += np.linalg.norm(
+                        pred[pred_idx]
+                        - gt[gt_idx]
+                    )
+
+                if total < best_total:
+
+                    best_total = total
+                    best_assignment = (
+                        permutation
+                    )
+
+            if best_assignment is None:
+                continue
+
+            for gt_idx, pred_idx in zip(
+                valid_gt,
+                best_assignment,
+            ):
+
+                error = np.linalg.norm(
+                    pred[pred_idx]
+                    - gt[gt_idx]
                 )
 
-                distance = (
-                    distance_matrix[
-                        pred_idx,
-                        gt_local_idx
-                    ]
+                matched[gt_idx] = (
+                    error <= 0.05 * scale
                 )
 
-                joint_valid[
-                    gt_original_idx
-                ] += 1
-
-                total_valid += 1
-
-                if distance <= threshold:
-
-                    joint_correct[
-                        gt_original_idx
-                    ] += 1
-
-                    total_correct += 1
-
-        # --------------------------------------------------------------
-        # Overall PCK
-        # --------------------------------------------------------------
-
-        if total_valid == 0:
-            pck = 0.0
-        else:
-            pck = float(
-                total_correct / total_valid
-            )
-
-        # --------------------------------------------------------------
-        # Per-joint PCK
-        # --------------------------------------------------------------
-
-        joint_pck = {}
-
-        for j in range(self.NUM_JOINTS):
-
-            if joint_valid[j] == 0:
-
-                joint_pck[j] = 0.0
-
-            else:
-
-                joint_pck[j] = float(
-                    joint_correct[j]
-                    / joint_valid[j]
-                )
-
-        return (
-            pck,
-            joint_pck,
-            total_correct,
-            total_valid
-        )
+        return matched
 
     # ------------------------------------------------------------------
     # Evaluation
@@ -503,27 +366,134 @@ class InnoCountDataset(JointsDataset):
         *args,
         **kwargs,
     ):
-        """
-        Evaluate HRNet predictions using two PCK metrics.
-
-        Standard PCK:
-            prediction[i] <-> GT[i]
-
-        Order-Invariant PCK:
-            predicted points are optimally matched to visible
-            GT points using Hungarian matching.
-
-        Normalization:
-            Euclidean distance / max(bbox_width, bbox_height)
-
-        Correct threshold:
-            normalized distance <= 0.05
-        """
 
         preds = np.asarray(
             preds,
-            dtype=np.float32
+            dtype=np.float32,
         )
+
+        # --------------------------------------------------------------
+        # IMPORTANT
+        #
+        # HRNet's `preds[i]` corresponds directly to `self.db[i]`.
+        #
+        # We therefore save the exact GT, visibility, bbox and metadata
+        # in this same order.
+        #
+        # This avoids trying to reconstruct HRNet's internal ordering
+        # from COCO annotation IDs.
+        # --------------------------------------------------------------
+
+        if output_dir is not None:
+
+            os.makedirs(
+                output_dir,
+                exist_ok=True,
+            )
+
+            np.save(
+                os.path.join(
+                    output_dir,
+                    "hrnet_predictions.npy",
+                ),
+                preds,
+            )
+
+            hrnet_gt = np.asarray(
+                [
+                    record["joints_3d"]
+                    for record in self.db
+                ],
+                dtype=np.float32,
+            )
+
+            hrnet_gt_vis = np.asarray(
+                [
+                    record["joints_3d_vis"]
+                    for record in self.db
+                ],
+                dtype=np.float32,
+            )
+
+            hrnet_bboxes = np.asarray(
+                [
+                    record["bbox"]
+                    for record in self.db
+                ],
+                dtype=np.float32,
+            )
+
+            hrnet_image_ids = np.asarray(
+                [
+                    record["image_id"]
+                    for record in self.db
+                ],
+                dtype=np.int64,
+            )
+
+            hrnet_category_ids = np.asarray(
+                [
+                    record["category_id"]
+                    for record in self.db
+                ],
+                dtype=np.int64,
+            )
+
+            hrnet_annotation_ids = np.asarray(
+                [
+                    record["annotation_id"]
+                    for record in self.db
+                ],
+                dtype=np.int64,
+            )
+
+            np.save(
+                os.path.join(
+                    output_dir,
+                    "hrnet_gt.npy",
+                ),
+                hrnet_gt,
+            )
+
+            np.save(
+                os.path.join(
+                    output_dir,
+                    "hrnet_gt_visibility.npy",
+                ),
+                hrnet_gt_vis,
+            )
+
+            np.save(
+                os.path.join(
+                    output_dir,
+                    "hrnet_bboxes.npy",
+                ),
+                hrnet_bboxes,
+            )
+
+            np.save(
+                os.path.join(
+                    output_dir,
+                    "hrnet_image_ids.npy",
+                ),
+                hrnet_image_ids,
+            )
+
+            np.save(
+                os.path.join(
+                    output_dir,
+                    "hrnet_category_ids.npy",
+                ),
+                hrnet_category_ids,
+            )
+
+            np.save(
+                os.path.join(
+                    output_dir,
+                    "hrnet_annotation_ids.npy",
+                ),
+                hrnet_annotation_ids,
+            )
 
         # --------------------------------------------------------------
         # Validate prediction shape
@@ -531,52 +501,56 @@ class InnoCountDataset(JointsDataset):
 
         if (
             preds.ndim != 3
-            or preds.shape[1] != self.NUM_JOINTS
-            or preds.shape[2] < 2
+            or preds.shape[1]
+            != self.NUM_JOINTS
         ):
+
             raise ValueError(
-                f"Unexpected prediction shape: {preds.shape}. "
-                f"Expected [N, {self.NUM_JOINTS}, 2+]."
+                f"Unexpected prediction shape: "
+                f"{preds.shape}. "
+                f"Expected "
+                f"[N, {self.NUM_JOINTS}, 2+]."
             )
 
-        # HRNet gives:
-        #
-        # [x, y, confidence]
-        #
-        pred_xy = preds[:, :, :2]
-
-        # --------------------------------------------------------------
-        # Ground truth
-        # --------------------------------------------------------------
+        pred_xy = preds[
+            :,
+            :,
+            :2,
+        ]
 
         gt_xy = np.array(
             [
-                record["joints_3d"][:, :2]
+                record["joints_3d"][
+                    :,
+                    :2
+                ]
                 for record in self.db
             ],
-            dtype=np.float32
+            dtype=np.float32,
         )
 
         gt_vis = np.array(
             [
-                record["joints_3d_vis"][:, 0]
+                record["joints_3d_vis"][
+                    :,
+                    0
+                ]
                 for record in self.db
             ],
-            dtype=np.float32
+            dtype=np.float32,
         )
-
-        # --------------------------------------------------------------
-        # Prediction / GT count
-        # --------------------------------------------------------------
 
         n = min(
             len(pred_xy),
-            len(gt_xy)
+            len(gt_xy),
+            len(self.db),
         )
 
         if n == 0:
+
             raise RuntimeError(
-                "No predictions available for evaluation."
+                "No predictions available "
+                "for evaluation."
             )
 
         pred_xy = pred_xy[:n]
@@ -584,156 +558,276 @@ class InnoCountDataset(JointsDataset):
         gt_vis = gt_vis[:n]
 
         # --------------------------------------------------------------
-        # Bounding-box normalization
+        # Normalization scale
         # --------------------------------------------------------------
 
-        scales = np.asarray(
+        scales = np.array(
             [
-                self._bbox_scale(
-                    record["bbox"]
+                max(
+                    float(
+                        record["bbox"][2]
+                    ),
+                    float(
+                        record["bbox"][3]
+                    ),
                 )
                 for record in self.db[:n]
             ],
-            dtype=np.float32
+            dtype=np.float32,
         )
 
+        scales[
+            scales <= 0
+        ] = 1.0
+
         # --------------------------------------------------------------
-        # PCK threshold
+        # Standard fixed-index PCK
         # --------------------------------------------------------------
+
+        distances = np.linalg.norm(
+            pred_xy - gt_xy,
+            axis=2,
+        )
+
+        normalized_distances = (
+            distances
+            / scales[:, None]
+        )
 
         threshold = 0.05
 
-        # ==============================================================
-        # 1. STANDARD PCK
-        # ==============================================================
-
-        (
-            standard_pck,
-            standard_joint_pck,
-            standard_correct,
-            standard_valid
-        ) = self._standard_pck(
-            pred_xy,
-            gt_xy,
-            gt_vis,
-            scales,
-            threshold
+        correct = (
+            normalized_distances
+            <= threshold
         )
 
-        # ==============================================================
-        # 2. ORDER-INVARIANT PCK
-        # ==============================================================
-
-        (
-            invariant_pck,
-            invariant_joint_pck,
-            invariant_correct,
-            invariant_valid
-        ) = self._order_invariant_pck(
-            pred_xy,
-            gt_xy,
-            gt_vis,
-            scales,
-            threshold
+        valid = (
+            gt_vis > 0
         )
+
+        num_correct = np.sum(
+            correct & valid
+        )
+
+        num_valid = np.sum(
+            valid
+        )
+
+        pck = (
+            float(
+                num_correct
+                / num_valid
+            )
+            if num_valid > 0
+            else 0.0
+        )
+
+        # --------------------------------------------------------------
+        # Standard per-joint PCK
+        # --------------------------------------------------------------
+
+        joint_pck = {}
+
+        for j in range(
+            self.NUM_JOINTS
+        ):
+
+            joint_valid = (
+                valid[:, j]
+            )
+
+            if np.sum(
+                joint_valid
+            ) == 0:
+
+                joint_pck[j] = 0.0
+
+            else:
+
+                joint_pck[j] = float(
+                    np.sum(
+                        correct[:, j]
+                        & joint_valid
+                    )
+                    / np.sum(
+                        joint_valid
+                    )
+                )
+
+        # --------------------------------------------------------------
+        # Profile-specific analysis
+        # --------------------------------------------------------------
+
+        profiles = [
+            "Angle Bar",
+            "Channel",
+            "T-beam",
+            "HI-Beam",
+            "Sheet Pile",
+        ]
+
+        profile_stats = {}
+
+        for profile in profiles:
+
+            indices = [
+                i
+                for i, record
+                in enumerate(
+                    self.db[:n]
+                )
+                if record[
+                    "category_name"
+                ] == profile
+            ]
+
+            if not indices:
+                continue
+
+            profile_correct = 0
+            profile_valid = 0
+            role_correct = 0
+
+            for i in indices:
+
+                valid_i = valid[i]
+
+                profile_valid += int(
+                    np.sum(valid_i)
+                )
+
+                profile_correct += int(
+                    np.sum(
+                        correct[i]
+                        & valid_i
+                    )
+                )
+
+                matched = (
+                    self._role_aware_distances(
+                        pred_xy[i],
+                        gt_xy[i],
+                        valid_i,
+                        scales[i],
+                        profile,
+                    )
+                )
+
+                role_correct += int(
+                    np.sum(
+                        matched
+                        & valid_i
+                    )
+                )
+
+            standard = (
+                profile_correct
+                / profile_valid
+                if profile_valid > 0
+                else 0.0
+            )
+
+            role_aware = (
+                role_correct
+                / profile_valid
+                if profile_valid > 0
+                else 0.0
+            )
+
+            profile_stats[
+                profile
+            ] = {
+                "instances": len(
+                    indices
+                ),
+                "valid_joints": int(
+                    profile_valid
+                ),
+                "standard_pck": float(
+                    standard
+                ),
+                "role_aware_pck": float(
+                    role_aware
+                ),
+                "gain": float(
+                    role_aware
+                    - standard
+                ),
+            }
 
         # --------------------------------------------------------------
         # Results
         # --------------------------------------------------------------
 
-        name_values = OrderedDict()
+        name_values = (
+            OrderedDict()
+        )
 
-        # Existing metric
-        name_values["PCK"] = standard_pck
+        name_values[
+            "PCK"
+        ] = pck
 
-        for j in range(self.NUM_JOINTS):
+        for j in range(
+            self.NUM_JOINTS
+        ):
 
             name_values[
                 f"PCK_joint_{j + 1}"
-            ] = standard_joint_pck[j]
-
-        # New diagnostic metric
-        name_values[
-            "OrderInvariant_PCK"
-        ] = invariant_pck
-
-        for j in range(self.NUM_JOINTS):
-
-            name_values[
-                f"OrderInvariant_PCK_joint_{j + 1}"
-            ] = invariant_joint_pck[j]
-
-        # For now, keep the original PCK as the official
-        # performance indicator used by HRNet.
-        perf_indicator = standard_pck
+            ] = joint_pck[j]
 
         # --------------------------------------------------------------
-        # Save detailed results
+        # Save profile analysis
         # --------------------------------------------------------------
 
         if output_dir is not None:
 
             os.makedirs(
                 output_dir,
-                exist_ok=True
+                exist_ok=True,
             )
 
             result_file = os.path.join(
                 output_dir,
-                "pck_results.txt"
+                "pck_results.txt",
             )
 
             with open(
                 result_file,
-                "w"
+                "w",
+                encoding="utf-8",
             ) as f:
 
                 f.write(
-                    "HRNet InnoCount PCK Evaluation\n"
+                    "HRNet InnoCount Evaluation\n"
                 )
 
                 f.write(
-                    "=" * 60 + "\n\n"
+                    "=" * 70
+                    + "\n\n"
                 )
 
                 f.write(
-                    f"Threshold : {threshold}\n\n"
-                )
-
-                # ------------------------------------------------------
-                # Standard
-                # ------------------------------------------------------
-
-                f.write(
-                    "STANDARD PCK\n"
+                    f"Threshold: "
+                    f"{threshold}\n"
                 )
 
                 f.write(
-                    "-" * 30 + "\n"
+                    f"Valid joints: "
+                    f"{num_valid}\n"
                 )
 
                 f.write(
-                    "Prediction joint i is compared "
-                    "with GT joint i.\n\n"
+                    f"Correct joints: "
+                    f"{num_correct}\n\n"
                 )
 
                 f.write(
-                    f"Valid joints   : "
-                    f"{standard_valid}\n"
+                    "Standard PCK\n"
                 )
 
                 f.write(
-                    f"Correct joints : "
-                    f"{standard_correct}\n"
-                )
-
-                f.write(
-                    f"Overall PCK    : "
-                    f"{standard_pck:.6f}\n\n"
-                )
-
-                f.write(
-                    "Per-joint PCK\n"
+                    f"Overall: "
+                    f"{pck:.6f}\n\n"
                 )
 
                 for j in range(
@@ -742,111 +836,52 @@ class InnoCountDataset(JointsDataset):
 
                     f.write(
                         f"Joint {j + 1}: "
-                        f"{standard_joint_pck[j]:.6f}\n"
+                        f"{joint_pck[j]:.6f}\n"
                     )
 
-                # ------------------------------------------------------
-                # Order invariant
-                # ------------------------------------------------------
-
                 f.write(
-                    "\n"
+                    "\nProfile Analysis\n"
                 )
 
                 f.write(
-                    "ORDER-INVARIANT PCK\n"
+                    "-" * 70
+                    + "\n"
                 )
 
-                f.write(
-                    "-" * 30 + "\n"
-                )
-
-                f.write(
-                    "Predicted joints are matched "
-                    "to visible GT joints using "
-                    "Hungarian minimum-cost matching.\n\n"
-                )
-
-                f.write(
-                    f"Valid joints   : "
-                    f"{invariant_valid}\n"
-                )
-
-                f.write(
-                    f"Correct joints : "
-                    f"{invariant_correct}\n"
-                )
-
-                f.write(
-                    f"Overall PCK    : "
-                    f"{invariant_pck:.6f}\n\n"
-                )
-
-                f.write(
-                    "Per-joint PCK\n"
-                )
-
-                for j in range(
-                    self.NUM_JOINTS
+                for profile, stats in (
+                    profile_stats.items()
                 ):
 
                     f.write(
-                        f"Joint {j + 1}: "
-                        f"{invariant_joint_pck[j]:.6f}\n"
-                    )
-
-                # ------------------------------------------------------
-                # Diagnostic interpretation
-                # ------------------------------------------------------
-
-                gap = (
-                    invariant_pck
-                    - standard_pck
-                )
-
-                f.write(
-                    "\n"
-                )
-
-                f.write(
-                    "DIAGNOSTIC\n"
-                )
-
-                f.write(
-                    "-" * 30 + "\n"
-                )
-
-                f.write(
-                    f"Order-invariance gain: "
-                    f"{gap:+.6f}\n"
-                )
-
-                if gap > 0.05:
-
-                    f.write(
-                        "The model performs substantially "
-                        "better when arbitrary joint ordering "
-                        "is ignored.\n"
+                        f"\n{profile}\n"
                     )
 
                     f.write(
-                        "This suggests that annotation ordering "
-                        "may be affecting the standard PCK.\n"
-                    )
-
-                else:
-
-                    f.write(
-                        "There is no large improvement from "
-                        "ignoring joint ordering.\n"
+                        f"  Instances: "
+                        f"{stats['instances']}\n"
                     )
 
                     f.write(
-                        "Poor localization may therefore be "
-                        "a more important source of error.\n"
+                        f"  Valid joints: "
+                        f"{stats['valid_joints']}\n"
+                    )
+
+                    f.write(
+                        f"  Standard PCK: "
+                        f"{stats['standard_pck']:.6f}\n"
+                    )
+
+                    f.write(
+                        f"  Role-aware PCK: "
+                        f"{stats['role_aware_pck']:.6f}\n"
+                    )
+
+                    f.write(
+                        f"  Gain: "
+                        f"{stats['gain']:.6f}\n"
                     )
 
         return (
             name_values,
-            perf_indicator
+            pck,
         )

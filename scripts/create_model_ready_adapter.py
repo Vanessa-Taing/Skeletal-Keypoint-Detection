@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Create InnoCount_KeyPoint_ModelReady_v1 from InnoCount_KeyPoint_Frozen_v2.
+Create InnoCount_KeyPoint_ModelReady_v2 from InnoCount_KeyPoint_Frozen_v3_Optimized.
 
 Purpose
 -------
@@ -53,8 +53,8 @@ No augmentation, resizing, clipping, class balancing, or split changes occur.
 Usage
 -----
 python create_model_ready_adapter.py \
-    --dataset "InnoCount_KeyPoint_Frozen_v2" \
-    --output "InnoCount_KeyPoint_ModelReady_v1"
+    --dataset "InnoCount_KeyPoint_Frozen_v3_Optimized" \
+    --output "InnoCount_KeyPoint_ModelReady_v2"
 """
 
 from __future__ import annotations
@@ -102,7 +102,7 @@ EXPECTED_SOURCE_KEYPOINTS = {
     "Angle Bar": [
         "new-point-0",
         "new-point-1",
-        "new-point-3",
+        "new-point-2",
     ],
     "Sheet Pile": [
         "new-point-0",
@@ -146,6 +146,13 @@ SEMANTICS = {
     ],
 }
 
+EQUIVALENT_GROUPS = {
+    "Channel": [(0, 3), (1, 2)],
+    "T-beam": [(1, 2)],
+    "HI-Beam": [(1, 2), (4, 5)],
+    "Angle Bar": [(1, 2)],
+    "Sheet Pile": [(0, 3), (1, 2)],
+}
 
 def sha256_file(path: Path) -> str:
     h = hashlib.sha256()
@@ -426,8 +433,8 @@ def process_split(
     adapter_data = {
         "info": {
             **source_data.get("info", {}),
-            "dataset_name": "InnoCount_KeyPoint_ModelReady_v1",
-            "source_dataset": "InnoCount_KeyPoint_Frozen_v2",
+            "dataset_name": "InnoCount_KeyPoint_ModelReady_v2",
+            "source_dataset": "InnoCount_KeyPoint_Frozen_v3_Optimized",
             "adapter_version": "1.0",
             "global_keypoint_count": 6,
             "coordinate_units": "source-image pixels",
@@ -813,7 +820,7 @@ def write_summary(
     lines = []
 
     lines.append(
-        "InnoCount KeyPoint ModelReady v1"
+        "InnoCount KeyPoint ModelReady v2"
     )
     lines.append(
         "Common Model-Ready Adapter Report"
@@ -821,7 +828,7 @@ def write_summary(
     lines.append("=" * 70)
     lines.append("")
     lines.append(
-        "SOURCE: InnoCount_KeyPoint_Frozen_v2"
+        "SOURCE: InnoCount_KeyPoint_Frozen_v3_Optimized"
     )
     lines.append(
         "GLOBAL KEYPOINT COUNT: 6"
@@ -932,7 +939,7 @@ def main():
         )
 
     print(
-        "InnoCount KeyPoint -> ModelReady Adapter v1"
+        "InnoCount KeyPoint -> ModelReady Adapter v2"
     )
     print("=" * 70)
 
