@@ -1,0 +1,739 @@
+{
+  "test_annotations_original": 1626,
+  "test_annotations_deduplicated": 1623,
+  "duplicate_annotation_ids": [
+    4753,
+    10996,
+    11004
+  ],
+  "metrics_original": {
+    "standard_pck": {
+      "overall": 0.2881235827664399,
+      "joint_pck": {
+        "joint_1": 0.3409512044471896,
+        "joint_2": 0.17286245353159851,
+        "joint_3": 0.3738375697458152,
+        "joint_4": 0.3230452674897119,
+        "joint_5": 0.18085106382978725,
+        "joint_6": 0.1595744680851064
+      },
+      "total_correct": 2033,
+      "total_valid": 7056
+    },
+    "profile_pck": {
+      "Angle Bar": {
+        "instances": 168,
+        "correct": 125,
+        "valid": 476,
+        "pck": 0.26260504201680673
+      },
+      "Channel": {
+        "instances": 598,
+        "correct": 751,
+        "valid": 2392,
+        "pck": 0.3139632107023411
+      },
+      "T-beam": {
+        "instances": 401,
+        "correct": 613,
+        "valid": 1600,
+        "pck": 0.383125
+      },
+      "HI-Beam": {
+        "instances": 376,
+        "correct": 392,
+        "valid": 2256,
+        "pck": 0.17375886524822695
+      },
+      "Sheet Pile": {
+        "instances": 83,
+        "correct": 152,
+        "valid": 332,
+        "pck": 0.4578313253012048
+      }
+    },
+    "semantic_roles": {
+      "overall_role_pck": {
+        "corner": 0.3694225721784777,
+        "tip": 0.27744630071599047,
+        "flange_center": 0.575,
+        "flange_tip": 0.26783479349186484,
+        "web_tip": 0.42144638403990026,
+        "upper_web_flange_junction": 0.25,
+        "upper_flange_tip": 0.10904255319148937,
+        "lower_web_flange_junction": 0.23404255319148937,
+        "lower_flange_tip": 0.1702127659574468
+      },
+      "profile_role_pck": {
+        "Angle Bar": {
+          "corner": {
+            "correct": 51,
+            "valid": 162,
+            "pck": 0.3148148148148148
+          },
+          "tip": {
+            "correct": 74,
+            "valid": 314,
+            "pck": 0.2356687898089172
+          }
+        },
+        "Channel": {
+          "tip": {
+            "correct": 336,
+            "valid": 1196,
+            "pck": 0.2809364548494983
+          },
+          "corner": {
+            "correct": 415,
+            "valid": 1196,
+            "pck": 0.34698996655518394
+          }
+        },
+        "T-beam": {
+          "flange_center": {
+            "correct": 230,
+            "valid": 400,
+            "pck": 0.575
+          },
+          "flange_tip": {
+            "correct": 214,
+            "valid": 799,
+            "pck": 0.26783479349186484
+          },
+          "web_tip": {
+            "correct": 169,
+            "valid": 401,
+            "pck": 0.42144638403990026
+          }
+        },
+        "HI-Beam": {
+          "upper_web_flange_junction": {
+            "correct": 94,
+            "valid": 376,
+            "pck": 0.25
+          },
+          "upper_flange_tip": {
+            "correct": 82,
+            "valid": 752,
+            "pck": 0.10904255319148937
+          },
+          "lower_web_flange_junction": {
+            "correct": 88,
+            "valid": 376,
+            "pck": 0.23404255319148937
+          },
+          "lower_flange_tip": {
+            "correct": 128,
+            "valid": 752,
+            "pck": 0.1702127659574468
+          }
+        },
+        "Sheet Pile": {
+          "tip": {
+            "correct": 55,
+            "valid": 166,
+            "pck": 0.3313253012048193
+          },
+          "corner": {
+            "correct": 97,
+            "valid": 166,
+            "pck": 0.5843373493975904
+          }
+        }
+      }
+    },
+    "order_invariant_pck": {
+      "overall": 0.2881235827664399,
+      "correct": 2033,
+      "total": 7056,
+      "profile": {
+        "Angle Bar": {
+          "instances": 168,
+          "correct": 125,
+          "valid": 476,
+          "pck": 0.26260504201680673
+        },
+        "Channel": {
+          "instances": 598,
+          "correct": 751,
+          "valid": 2392,
+          "pck": 0.3139632107023411
+        },
+        "T-beam": {
+          "instances": 401,
+          "correct": 613,
+          "valid": 1600,
+          "pck": 0.383125
+        },
+        "HI-Beam": {
+          "instances": 376,
+          "correct": 392,
+          "valid": 2256,
+          "pck": 0.17375886524822695
+        },
+        "Sheet Pile": {
+          "instances": 83,
+          "correct": 152,
+          "valid": 332,
+          "pck": 0.4578313253012048
+        }
+      }
+    },
+    "structural_edges": {
+      "overall": 0.1714548802946593,
+      "correct": 931,
+      "total": 5430,
+      "profile": {
+        "Angle Bar": {
+          "edges": 308,
+          "correct": 25,
+          "accuracy": 0.08116883116883117
+        },
+        "Channel": {
+          "edges": 1794,
+          "correct": 227,
+          "accuracy": 0.1265328874024526
+        },
+        "T-beam": {
+          "edges": 1199,
+          "correct": 346,
+          "accuracy": 0.2885738115095913
+        },
+        "HI-Beam": {
+          "edges": 1880,
+          "correct": 255,
+          "accuracy": 0.1356382978723404
+        },
+        "Sheet Pile": {
+          "edges": 249,
+          "correct": 78,
+          "accuracy": 0.3132530120481928
+        }
+      }
+    },
+    "profile_schemas": {
+      "Angle Bar": {
+        "roles": {
+          "0": "corner",
+          "1": "tip",
+          "2": "tip",
+          "3": "unused",
+          "4": "unused",
+          "5": "unused"
+        },
+        "equivalent_groups": [
+          [
+            1,
+            2
+          ]
+        ],
+        "edges": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ]
+      },
+      "Channel": {
+        "roles": {
+          "0": "tip",
+          "1": "corner",
+          "2": "corner",
+          "3": "tip",
+          "4": "unused",
+          "5": "unused"
+        },
+        "equivalent_groups": [],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      "T-beam": {
+        "roles": {
+          "0": "flange_center",
+          "1": "flange_tip",
+          "2": "flange_tip",
+          "3": "web_tip",
+          "4": "unused",
+          "5": "unused"
+        },
+        "equivalent_groups": [
+          [
+            1,
+            2
+          ]
+        ],
+        "edges": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ]
+      },
+      "HI-Beam": {
+        "roles": {
+          "0": "upper_web_flange_junction",
+          "1": "upper_flange_tip",
+          "2": "upper_flange_tip",
+          "3": "lower_web_flange_junction",
+          "4": "lower_flange_tip",
+          "5": "lower_flange_tip"
+        },
+        "equivalent_groups": [
+          [
+            1,
+            2
+          ],
+          [
+            4,
+            5
+          ]
+        ],
+        "edges": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            3,
+            4
+          ]
+        ]
+      },
+      "Sheet Pile": {
+        "roles": {
+          "0": "tip",
+          "1": "corner",
+          "2": "corner",
+          "3": "tip",
+          "4": "unused",
+          "5": "unused"
+        },
+        "equivalent_groups": [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      }
+    }
+  },
+  "metrics_deduplicated": {
+    "standard_pck": {
+      "overall": 0.2884915566907904,
+      "joint_pck": {
+        "joint_1": 0.3415841584158416,
+        "joint_2": 0.17318435754189945,
+        "joint_3": 0.3743016759776536,
+        "joint_4": 0.32326698695950584,
+        "joint_5": 0.18085106382978725,
+        "joint_6": 0.1595744680851064
+      },
+      "total_correct": 2033,
+      "total_valid": 7047
+    },
+    "profile_pck": {
+      "Angle Bar": {
+        "instances": 166,
+        "correct": 125,
+        "valid": 471,
+        "pck": 0.2653927813163482
+      },
+      "Channel": {
+        "instances": 598,
+        "correct": 751,
+        "valid": 2392,
+        "pck": 0.3139632107023411
+      },
+      "T-beam": {
+        "instances": 400,
+        "correct": 613,
+        "valid": 1596,
+        "pck": 0.3840852130325815
+      },
+      "HI-Beam": {
+        "instances": 376,
+        "correct": 392,
+        "valid": 2256,
+        "pck": 0.17375886524822695
+      },
+      "Sheet Pile": {
+        "instances": 83,
+        "correct": 152,
+        "valid": 332,
+        "pck": 0.4578313253012048
+      }
+    },
+    "semantic_roles": {
+      "overall_role_pck": {
+        "corner": 0.36990801576872534,
+        "tip": 0.2779438135086671,
+        "flange_center": 0.5764411027568922,
+        "flange_tip": 0.2685069008782936,
+        "web_tip": 0.4225,
+        "upper_web_flange_junction": 0.25,
+        "upper_flange_tip": 0.10904255319148937,
+        "lower_web_flange_junction": 0.23404255319148937,
+        "lower_flange_tip": 0.1702127659574468
+      },
+      "profile_role_pck": {
+        "Angle Bar": {
+          "corner": {
+            "correct": 51,
+            "valid": 160,
+            "pck": 0.31875
+          },
+          "tip": {
+            "correct": 74,
+            "valid": 311,
+            "pck": 0.2379421221864952
+          }
+        },
+        "Channel": {
+          "tip": {
+            "correct": 336,
+            "valid": 1196,
+            "pck": 0.2809364548494983
+          },
+          "corner": {
+            "correct": 415,
+            "valid": 1196,
+            "pck": 0.34698996655518394
+          }
+        },
+        "T-beam": {
+          "flange_center": {
+            "correct": 230,
+            "valid": 399,
+            "pck": 0.5764411027568922
+          },
+          "flange_tip": {
+            "correct": 214,
+            "valid": 797,
+            "pck": 0.2685069008782936
+          },
+          "web_tip": {
+            "correct": 169,
+            "valid": 400,
+            "pck": 0.4225
+          }
+        },
+        "HI-Beam": {
+          "upper_web_flange_junction": {
+            "correct": 94,
+            "valid": 376,
+            "pck": 0.25
+          },
+          "upper_flange_tip": {
+            "correct": 82,
+            "valid": 752,
+            "pck": 0.10904255319148937
+          },
+          "lower_web_flange_junction": {
+            "correct": 88,
+            "valid": 376,
+            "pck": 0.23404255319148937
+          },
+          "lower_flange_tip": {
+            "correct": 128,
+            "valid": 752,
+            "pck": 0.1702127659574468
+          }
+        },
+        "Sheet Pile": {
+          "tip": {
+            "correct": 55,
+            "valid": 166,
+            "pck": 0.3313253012048193
+          },
+          "corner": {
+            "correct": 97,
+            "valid": 166,
+            "pck": 0.5843373493975904
+          }
+        }
+      }
+    },
+    "order_invariant_pck": {
+      "overall": 0.2884915566907904,
+      "correct": 2033,
+      "total": 7047,
+      "profile": {
+        "Angle Bar": {
+          "instances": 166,
+          "correct": 125,
+          "valid": 471,
+          "pck": 0.2653927813163482
+        },
+        "Channel": {
+          "instances": 598,
+          "correct": 751,
+          "valid": 2392,
+          "pck": 0.3139632107023411
+        },
+        "T-beam": {
+          "instances": 400,
+          "correct": 613,
+          "valid": 1596,
+          "pck": 0.3840852130325815
+        },
+        "HI-Beam": {
+          "instances": 376,
+          "correct": 392,
+          "valid": 2256,
+          "pck": 0.17375886524822695
+        },
+        "Sheet Pile": {
+          "instances": 83,
+          "correct": 152,
+          "valid": 332,
+          "pck": 0.4578313253012048
+        }
+      }
+    },
+    "structural_edges": {
+      "overall": 0.17164454277286137,
+      "correct": 931,
+      "total": 5424,
+      "profile": {
+        "Angle Bar": {
+          "edges": 305,
+          "correct": 25,
+          "accuracy": 0.08196721311475409
+        },
+        "Channel": {
+          "edges": 1794,
+          "correct": 227,
+          "accuracy": 0.1265328874024526
+        },
+        "T-beam": {
+          "edges": 1196,
+          "correct": 346,
+          "accuracy": 0.28929765886287623
+        },
+        "HI-Beam": {
+          "edges": 1880,
+          "correct": 255,
+          "accuracy": 0.1356382978723404
+        },
+        "Sheet Pile": {
+          "edges": 249,
+          "correct": 78,
+          "accuracy": 0.3132530120481928
+        }
+      }
+    },
+    "profile_schemas": {
+      "Angle Bar": {
+        "roles": {
+          "0": "corner",
+          "1": "tip",
+          "2": "tip",
+          "3": "unused",
+          "4": "unused",
+          "5": "unused"
+        },
+        "equivalent_groups": [
+          [
+            1,
+            2
+          ]
+        ],
+        "edges": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ]
+      },
+      "Channel": {
+        "roles": {
+          "0": "tip",
+          "1": "corner",
+          "2": "corner",
+          "3": "tip",
+          "4": "unused",
+          "5": "unused"
+        },
+        "equivalent_groups": [],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      "T-beam": {
+        "roles": {
+          "0": "flange_center",
+          "1": "flange_tip",
+          "2": "flange_tip",
+          "3": "web_tip",
+          "4": "unused",
+          "5": "unused"
+        },
+        "equivalent_groups": [
+          [
+            1,
+            2
+          ]
+        ],
+        "edges": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ]
+      },
+      "HI-Beam": {
+        "roles": {
+          "0": "upper_web_flange_junction",
+          "1": "upper_flange_tip",
+          "2": "upper_flange_tip",
+          "3": "lower_web_flange_junction",
+          "4": "lower_flange_tip",
+          "5": "lower_flange_tip"
+        },
+        "equivalent_groups": [
+          [
+            1,
+            2
+          ],
+          [
+            4,
+            5
+          ]
+        ],
+        "edges": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            3,
+            4
+          ]
+        ]
+      },
+      "Sheet Pile": {
+        "roles": {
+          "0": "tip",
+          "1": "corner",
+          "2": "corner",
+          "3": "tip",
+          "4": "unused",
+          "5": "unused"
+        },
+        "equivalent_groups": [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      }
+    }
+  }
+}

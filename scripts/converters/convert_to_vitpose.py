@@ -1,15 +1,28 @@
 #!/usr/bin/env python3
 """
-Convert InnoCount Frozen V2 -> ViTPose COCO format
+Convert InnoCount KeyPoint ModelReady v2 -> ViTPose COCO format.
+
+This adapter is a format conversion only.
+
+Source:
+    datasets/InnoCount_KeyPoint_ModelReady_v2
+
+Destination:
+    datasets/ViTPose_COCO
+
+The ModelReady v2 split assignments, annotations, categories,
+keypoints, and images are preserved. No augmentation, resizing,
+clipping, class balancing, or split changes are performed here.
 """
 
 from pathlib import Path
 import json
 import shutil
 
+
 ROOT = Path(__file__).resolve().parents[2]
 
-SRC = ROOT / "datasets" / "InnoCount_KeyPoint_Frozen_v2"
+SRC = ROOT / "datasets" / "InnoCount_KeyPoint_ModelReady_v2"
 DST = ROOT / "datasets" / "ViTPose_COCO"
 
 SPLITS = ["train", "valid", "test"]
@@ -17,31 +30,61 @@ SPLITS = ["train", "valid", "test"]
 
 def convert(split):
 
-    (DST / "images" / split).mkdir(parents=True, exist_ok=True)
-    (DST / "annotations").mkdir(parents=True, exist_ok=True)
+    src_split = SRC / "splits" / split
+    dst_images = DST / "images" / split
+    dst_annotations = DST / "annotations"
 
-    # copy images
-    for img in (SRC / "splits" / split / "images").glob("*"):
-        shutil.copy2(img, DST / "images" / split / img.name)
+    dst_images.mkdir(parents=True, exist_ok=True)
+    dst_annotations.mkdir(parents=True, exist_ok=True)
 
-    with open(SRC / "splits" / split / "annotations.json") as f:
-        ann = json.load(f)
+    # Copy images without modification.
+    for img in (src_split / "images").glob("*"):
+        if img.is_file():
+            shutil.copy2(img, dst_images / img.name)
 
-    with open(DST / "annotations" / f"{split}.json", "w") as f:
-        json.dump(ann, f, indent=2)
+    # Copy the ModelReady COCO annotation structure unchanged.
+    with open(
+        src_split / "annotations.json",
+        "r",
+        encoding="utf-8",
+    ) as f:
+        annotations = json.load(f)
 
-    print(split, "done")
+    with open(
+        dst_annotations / f"{split}.json",
+        "w",
+        encoding="utf-8",
+    ) as f:
+        json.dump(
+            annotations,
+            f,
+            indent=2,
+        )
+
+    print(
+        f"{split}: "
+        f"{len(annotations['images'])} images, "
+        f"{len(annotations['annotations'])} annotations"
+    )
 
 
 def main():
 
+    if not SRC.exists():
+        raise FileNotFoundError(
+            f"ModelReady v2 dataset not found: {SRC}"
+        )
+
     if DST.exists():
         shutil.rmtree(DST)
 
-    for s in SPLITS:
-        convert(s)
+    for split in SPLITS:
+        convert(split)
 
-    print("ViTPose dataset ready.")
+    print()
+    print("ViTPose COCO dataset ready.")
+    print(f"Source:      {SRC}")
+    print(f"Destination: {DST}")
 
 
 if __name__ == "__main__":
