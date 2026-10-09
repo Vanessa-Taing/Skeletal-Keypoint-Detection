@@ -32,6 +32,10 @@ checkpoints/
 
 # Ignore all experiment weights...
 experiments/**/weights/
+experiments/HRNet_Runs//output/
+experiments/HRNet_Runs//checkpoint.pth
+experiments/HRNet_Runs//final_state.pth
+experiments/HRNet_Runs/**/model_best.pth
 
 # ...except the baseline best model
 !experiments/YOLO26_Pose_Runs/E01_YOLO26n_Baseline/weights/
