@@ -1,3 +1,4 @@
+```gitignore
 # ==========================
 # Python
 # ==========================
@@ -9,8 +10,10 @@ __pycache__/
 .mypy_cache/
 .ruff_cache/
 
-# Virtual environments
+# Virtual environments and secrets
 .env
+.env.*
+!.env.example
 .venv/
 venv/
 ENV/
@@ -19,36 +22,112 @@ ENV/
 .ipynb_checkpoints/
 
 # ==========================
-# Ultralytics
+# IDE and system files
+# ==========================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+
+# ==========================
+# Model weights and checkpoints
+# ==========================
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.engine
+*.safetensors
+*.weights
+
+# Experiment-specific model artifacts
+experiments/**/weights/
+experiments/**/checkpoint.pth
+experiments/**/final_state.pth
+experiments/**/model_best.pth
+experiments/**/checkpoint.pt
+experiments/**/best.pt
+experiments/**/last.pt
+
+# ==========================
+# Training logs and caches
 # ==========================
 runs/
+wandb/
+mlruns/
+lightning_logs/
+tensorboard/
 *.cache
 events.out.tfevents*
 
-# Pretrained checkpoints (re-downloadable)
-yolo26*.pt
-*.pt
-checkpoints/
-
-# Ignore all experiment weights...
-experiments/**/weights/
-experiments/HRNet_Runs//output/
-experiments/HRNet_Runs//checkpoint.pth
-experiments/HRNet_Runs//final_state.pth
-experiments/HRNet_Runs/**/model_best.pth
-
-# ...except the baseline best model
-!experiments/YOLO26_Pose_Runs/E01_YOLO26n_Baseline/weights/
-!experiments/YOLO26_Pose_Runs/E01_YOLO26n_Baseline/weights/best.pt
+# ==========================
+# Large generated artifacts
+# ==========================
+# Keep experiment metrics, reports, audit JSON and selected plots.
+# Ignore bulky prediction/data artifacts only when appropriate.
+*.prof
+*.trace
+*.npy
+*.npz
+*.parquet
 
 # ==========================
-# Temporary outputs
+# Dataset archives
+# ==========================
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+*.tgz
+
+# COCO datasets
+datasets/HRNet_COCO/
+datasets/ViTPose_COCO/
+
+# YOLO dataset images and labels
+datasets/InnoCount_KeyPoint_YOLO26_Pose_v*/images/
+datasets/InnoCount_KeyPoint_YOLO26_Pose_v*/labels/
+datasets/InnoCount_KeyPoint_YOLO26_Pose_v*/checkpoints/
+
+# ==========================
+# Verified training dataset: explicitly keep
+# ==========================
+!datasets/InnoCount_KeyPoint_ModelReady_v2/
+!datasets/InnoCount_KeyPoint_ModelReady_v2/**
+
+# Still exclude model weights and archives inside this dataset
+datasets/InnoCount_KeyPoint_ModelReady_v2/checkpoints/
+datasets/InnoCount_KeyPoint_ModelReady_v2/weights/
+datasets/InnoCount_KeyPoint_ModelReady_v2/**/*.pt
+datasets/InnoCount_KeyPoint_ModelReady_v2/**/*.pth
+datasets/InnoCount_KeyPoint_ModelReady_v2/**/*.ckpt
+datasets/InnoCount_KeyPoint_ModelReady_v2/**/*.onnx
+datasets/InnoCount_KeyPoint_ModelReady_v2/**/*.safetensors
+datasets/InnoCount_KeyPoint_ModelReady_v2/**/*.zip
+
+# Extracted Roboflow COCO dataset
+/InnoCount KeyPoint.v4i.coco/
+
+# Dataset images elsewhere under datasets/
+datasets/**/*.jpg
+datasets/**/*.jpeg
+datasets/**/*.png
+datasets/**/*.bmp
+datasets/**/*.webp
+datasets/**/*.tif
+datasets/**/*.tiff
+
+# ==========================
+# Temporary files
 # ==========================
 inspect_*.jpg
-*.zip
-
-# System
-.DS_Store
-Thumbs.db
-.vscode/
-*.log
+tmp/
+temp/
+.cache/
+*.tmp
+*.bak
+*.swp
+```
