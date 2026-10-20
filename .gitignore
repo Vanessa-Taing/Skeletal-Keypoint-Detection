@@ -131,3 +131,37 @@ temp/
 *.bak
 *.swp
 ```
+
+# ==========================
+# ViTPose experiment artifacts
+# ==========================
+# Keep configs, logs, scalar metrics, and compact evaluation reports.
+# Exclude model checkpoints; see docs/checkpoints.md for download instructions.
+experiments/ViTPose_Runs/**/*.pth
+experiments/ViTPose_Runs/**/*.pt
+experiments/ViTPose_Runs/**/*.ckpt
+experiments/ViTPose_Runs/**/*.onnx
+experiments/ViTPose_Runs/**/*.safetensors
+
+# Large per-instance prediction audits and generated visualizations.
+experiments/ViTPose_Runs/**/vitpose_prediction_audit.jsonl
+experiments/ViTPose_Runs/**/vis_data/
+experiments/ViTPose_Runs/**/visualizations/
+experiments/ViTPose_Runs/**/predictions/
+
+# Generated defect-inference images; keep scripts and summary reports.
+experiments/Defect_Inference/**/annotated/
+experiments/Defect_Inference/**/*.jpg
+experiments/Defect_Inference/**/*.jpeg
+experiments/Defect_Inference/**/*.png
+experiments/Defect_Inference/**/*.webp
+
+# ==========================
+# Third-party MMPose source
+# ==========================
+# Exclude the cloned repository and its Git history.
+# Document the pinned version and clone command in docs/checkpoints.md.
+third_party/mmpose/
+
+# ViTPose runner state pointers may reference excluded checkpoint files
+experiments/ViTPose_Runs/**/last_checkpoint

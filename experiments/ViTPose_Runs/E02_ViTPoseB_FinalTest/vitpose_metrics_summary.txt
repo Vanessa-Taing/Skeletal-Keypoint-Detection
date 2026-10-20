@@ -1,0 +1,18 @@
+ViTPose-B Final Test Evaluation
+Images: 74
+Instances: 1626
+Threshold: 0.05
+Boxes: ground-truth boxes
+
+Standard fixed-index PCK@0.05: 0.593559 (4184/7049)
+Order-invariant PCK@0.05: 0.593559 (4184/7049)
+Structural edge accuracy@0.05: 0.494376 (2681/5423)
+
+Profile PCK:
+  Angle Bar: 0.696538 (342/491; 173 instances)
+  Channel: 0.352843 (844/2392; 598 instances)
+  T-beam: 0.762626 (1208/1584; 397 instances)
+  HI-Beam: 0.680444 (1531/2250; 375 instances)
+  Sheet Pile: 0.780120 (259/332; 83 instances)
+
+Full report: /home/owner/skeletal_keypoint_detection/experiments/ViTPose_Runs/E02_ViTPoseB_FinalTest/vitpose_metrics.json
