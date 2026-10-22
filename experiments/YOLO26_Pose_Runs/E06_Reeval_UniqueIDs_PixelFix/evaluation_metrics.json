@@ -1,0 +1,575 @@
+{
+  "timestamp": "2026-10-22T16:45:28.719149",
+  "model": "YOLO26-Pose",
+  "weights": "/home/owner/skeletal_keypoint_detection/experiments/YOLO26_Pose_Runs/E06_YOLO26n_Corrected-2/weights/best.pt",
+  "dataset": "/home/owner/skeletal_keypoint_detection/datasets/InnoCount_KeyPoint_YOLO26_Pose_v2/dataset.yaml",
+  "dataset_root": "/home/owner/skeletal_keypoint_detection/datasets/InnoCount_KeyPoint_YOLO26_Pose_v2",
+  "annotation_file": "/home/owner/skeletal_keypoint_detection/datasets/InnoCount_COCO_UniqueIDs_v1/annotations/test.json",
+  "test_split": "test",
+  "start_time": "2026-10-22T16:45:08.589580",
+  "end_time": "2026-10-22T16:45:28.719149",
+  "imgsz": 640,
+  "batch": 16,
+  "device": "0",
+  "threshold": 0.05,
+  "match_iou_threshold": 0.5,
+  "prediction_confidence": 0.001,
+  "nms_iou": 0.7,
+  "max_det": 300,
+  "native_metrics": {
+    "box_precision": 0.5786363401725143,
+    "box_recall": 0.6175973706619331,
+    "box_map50": 0.5710823155931817,
+    "box_map50_95": 0.31844880057696706,
+    "pose_precision": 0.2424676671562091,
+    "pose_recall": 0.23202196063866304,
+    "pose_map50": 0.1671402919114215,
+    "pose_map50_95": 0.10123040753254646
+  },
+  "matching": {
+    "total_gt": 1626,
+    "total_predictions": 7264,
+    "total_matched": 1279,
+    "unmatched_gt": 347,
+    "unmatched_predictions": 5985,
+    "match_rate": 0.7865928659286593
+  },
+  "metrics": {
+    "standard_pck": {
+      "overall": 0.12242871329266562,
+      "joint_pck": {
+        "joint_1": 0.2038295243977764,
+        "joint_2": 0.0762081784386617,
+        "joint_3": 0.09361438313701177,
+        "joint_4": 0.13420509291121818,
+        "joint_5": 0.104,
+        "joint_6": 0.06666666666666667
+      },
+      "total_correct": 863,
+      "total_valid": 7049
+    },
+    "profile_pck": {
+      "Angle Bar": {
+        "instances": 173,
+        "correct": 70,
+        "valid": 491,
+        "pck": 0.1425661914460285
+      },
+      "Channel": {
+        "instances": 598,
+        "correct": 26,
+        "valid": 2392,
+        "pck": 0.010869565217391304
+      },
+      "T-beam": {
+        "instances": 397,
+        "correct": 464,
+        "valid": 1584,
+        "pck": 0.29292929292929293
+      },
+      "HI-Beam": {
+        "instances": 375,
+        "correct": 301,
+        "valid": 2250,
+        "pck": 0.13377777777777777
+      },
+      "Sheet Pile": {
+        "instances": 83,
+        "correct": 2,
+        "valid": 332,
+        "pck": 0.006024096385542169
+      }
+    },
+    "semantic_roles": {
+      "overall_role_pck": {
+        "corner": 0.03793328973185088,
+        "tip": 0.02372479240806643,
+        "flange_center": 0.41919191919191917,
+        "flange_tip": 0.21238938053097345,
+        "web_tip": 0.327455919395466,
+        "upper_web_flange_junction": 0.32,
+        "upper_flange_tip": 0.07733333333333334,
+        "lower_web_flange_junction": 0.15733333333333333,
+        "lower_flange_tip": 0.08533333333333333
+      },
+      "profile_role_pck": {
+        "Angle Bar": {
+          "corner": {
+            "correct": 40,
+            "valid": 167,
+            "pck": 0.23952095808383234
+          },
+          "tip": {
+            "correct": 30,
+            "valid": 324,
+            "pck": 0.09259259259259259
+          }
+        },
+        "Channel": {
+          "tip": {
+            "correct": 8,
+            "valid": 1196,
+            "pck": 0.006688963210702341
+          },
+          "corner": {
+            "correct": 18,
+            "valid": 1196,
+            "pck": 0.015050167224080268
+          }
+        },
+        "T-beam": {
+          "flange_center": {
+            "correct": 166,
+            "valid": 396,
+            "pck": 0.41919191919191917
+          },
+          "flange_tip": {
+            "correct": 168,
+            "valid": 791,
+            "pck": 0.21238938053097345
+          },
+          "web_tip": {
+            "correct": 130,
+            "valid": 397,
+            "pck": 0.327455919395466
+          }
+        },
+        "HI-Beam": {
+          "upper_web_flange_junction": {
+            "correct": 120,
+            "valid": 375,
+            "pck": 0.32
+          },
+          "upper_flange_tip": {
+            "correct": 58,
+            "valid": 750,
+            "pck": 0.07733333333333334
+          },
+          "lower_web_flange_junction": {
+            "correct": 59,
+            "valid": 375,
+            "pck": 0.15733333333333333
+          },
+          "lower_flange_tip": {
+            "correct": 64,
+            "valid": 750,
+            "pck": 0.08533333333333333
+          }
+        },
+        "Sheet Pile": {
+          "tip": {
+            "correct": 2,
+            "valid": 166,
+            "pck": 0.012048192771084338
+          },
+          "corner": {
+            "correct": 0,
+            "valid": 166,
+            "pck": 0.0
+          }
+        }
+      }
+    },
+    "order_invariant_pck": {
+      "overall": 0.14569442474109803,
+      "correct": 1027,
+      "total": 7049,
+      "profile": {
+        "Angle Bar": {
+          "instances": 173,
+          "correct": 72,
+          "valid": 491,
+          "pck": 0.14663951120162932
+        },
+        "Channel": {
+          "instances": 598,
+          "correct": 26,
+          "valid": 2392,
+          "pck": 0.010869565217391304
+        },
+        "T-beam": {
+          "instances": 397,
+          "correct": 529,
+          "valid": 1584,
+          "pck": 0.33396464646464646
+        },
+        "HI-Beam": {
+          "instances": 375,
+          "correct": 398,
+          "valid": 2250,
+          "pck": 0.1768888888888889
+        },
+        "Sheet Pile": {
+          "instances": 83,
+          "correct": 2,
+          "valid": 332,
+          "pck": 0.006024096385542169
+        }
+      }
+    },
+    "structural_edges": {
+      "overall": 0.09090909090909091,
+      "correct": 493,
+      "total": 5423,
+      "profile": {
+        "Angle Bar": {
+          "edges": 318,
+          "correct": 21,
+          "accuracy": 0.0660377358490566
+        },
+        "Channel": {
+          "edges": 1794,
+          "correct": 2,
+          "accuracy": 0.0011148272017837235
+        },
+        "T-beam": {
+          "edges": 1187,
+          "correct": 312,
+          "accuracy": 0.2628475147430497
+        },
+        "HI-Beam": {
+          "edges": 1875,
+          "correct": 158,
+          "accuracy": 0.08426666666666667
+        },
+        "Sheet Pile": {
+          "edges": 249,
+          "correct": 0,
+          "accuracy": 0.0
+        }
+      }
+    },
+    "profile_schemas": {
+      "Angle Bar": {
+        "roles": {
+          "0": "corner",
+          "1": "tip",
+          "2": "tip",
+          "3": "unused",
+          "4": "unused",
+          "5": "unused"
+        },
+        "equivalent_groups": [
+          [
+            1,
+            2
+          ]
+        ],
+        "edges": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ]
+      },
+      "Channel": {
+        "roles": {
+          "0": "tip",
+          "1": "corner",
+          "2": "corner",
+          "3": "tip",
+          "4": "unused",
+          "5": "unused"
+        },
+        "equivalent_groups": [],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      "T-beam": {
+        "roles": {
+          "0": "flange_center",
+          "1": "flange_tip",
+          "2": "flange_tip",
+          "3": "web_tip",
+          "4": "unused",
+          "5": "unused"
+        },
+        "equivalent_groups": [
+          [
+            1,
+            2
+          ]
+        ],
+        "edges": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ]
+      },
+      "HI-Beam": {
+        "roles": {
+          "0": "upper_web_flange_junction",
+          "1": "upper_flange_tip",
+          "2": "upper_flange_tip",
+          "3": "lower_web_flange_junction",
+          "4": "lower_flange_tip",
+          "5": "lower_flange_tip"
+        },
+        "equivalent_groups": [
+          [
+            1,
+            2
+          ],
+          [
+            4,
+            5
+          ]
+        ],
+        "edges": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            3,
+            4
+          ]
+        ]
+      },
+      "Sheet Pile": {
+        "roles": {
+          "0": "tip",
+          "1": "corner",
+          "2": "corner",
+          "3": "tip",
+          "4": "unused",
+          "5": "unused"
+        },
+        "equivalent_groups": [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      }
+    }
+  },
+  "common_metrics_coordinate_space": "original image pixel coordinates",
+  "normalization": "pixel Euclidean distance / max(pixel bbox width, pixel bbox height)",
+  "prediction_files": {
+    "normalized": "/home/owner/skeletal_keypoint_detection/experiments/YOLO26_Pose_Runs/E06_Reeval_UniqueIDs_PixelFix/predictions/yolo_predictions.npy",
+    "pixels": "/home/owner/skeletal_keypoint_detection/experiments/YOLO26_Pose_Runs/E06_Reeval_UniqueIDs_PixelFix/predictions/yolo_predictions_pixels.npy",
+    "gt": "/home/owner/skeletal_keypoint_detection/experiments/YOLO26_Pose_Runs/E06_Reeval_UniqueIDs_PixelFix/predictions/gt.npy",
+    "visibility": "/home/owner/skeletal_keypoint_detection/experiments/YOLO26_Pose_Runs/E06_Reeval_UniqueIDs_PixelFix/predictions/gt_visibility.npy",
+    "bboxes": "/home/owner/skeletal_keypoint_detection/experiments/YOLO26_Pose_Runs/E06_Reeval_UniqueIDs_PixelFix/predictions/bboxes.npy",
+    "category_ids": "/home/owner/skeletal_keypoint_detection/experiments/YOLO26_Pose_Runs/E06_Reeval_UniqueIDs_PixelFix/predictions/category_ids.npy",
+    "image_ids": "/home/owner/skeletal_keypoint_detection/experiments/YOLO26_Pose_Runs/E06_Reeval_UniqueIDs_PixelFix/predictions/image_ids.npy",
+    "annotation_ids": "/home/owner/skeletal_keypoint_detection/experiments/YOLO26_Pose_Runs/E06_Reeval_UniqueIDs_PixelFix/predictions/annotation_ids.npy",
+    "prediction_valid": "/home/owner/skeletal_keypoint_detection/experiments/YOLO26_Pose_Runs/E06_Reeval_UniqueIDs_PixelFix/predictions/prediction_valid.npy",
+    "matching_audit": "/home/owner/skeletal_keypoint_detection/experiments/YOLO26_Pose_Runs/E06_Reeval_UniqueIDs_PixelFix/predictions/matching_audit.json"
+  },
+  "profile_schemas": {
+    "Angle Bar": {
+      "roles": {
+        "0": "corner",
+        "1": "tip",
+        "2": "tip",
+        "3": "unused",
+        "4": "unused",
+        "5": "unused"
+      },
+      "equivalent_groups": [
+        [
+          1,
+          2
+        ]
+      ],
+      "edges": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    "Channel": {
+      "roles": {
+        "0": "tip",
+        "1": "corner",
+        "2": "corner",
+        "3": "tip",
+        "4": "unused",
+        "5": "unused"
+      },
+      "equivalent_groups": [],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ]
+    },
+    "T-beam": {
+      "roles": {
+        "0": "flange_center",
+        "1": "flange_tip",
+        "2": "flange_tip",
+        "3": "web_tip",
+        "4": "unused",
+        "5": "unused"
+      },
+      "equivalent_groups": [
+        [
+          1,
+          2
+        ]
+      ],
+      "edges": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ]
+      ]
+    },
+    "HI-Beam": {
+      "roles": {
+        "0": "upper_web_flange_junction",
+        "1": "upper_flange_tip",
+        "2": "upper_flange_tip",
+        "3": "lower_web_flange_junction",
+        "4": "lower_flange_tip",
+        "5": "lower_flange_tip"
+      },
+      "equivalent_groups": [
+        [
+          1,
+          2
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "edges": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          3,
+          4
+        ]
+      ]
+    },
+    "Sheet Pile": {
+      "roles": {
+        "0": "tip",
+        "1": "corner",
+        "2": "corner",
+        "3": "tip",
+        "4": "unused",
+        "5": "unused"
+      },
+      "equivalent_groups": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ]
+    }
+  }
+}
