@@ -83,8 +83,13 @@ def patch_train_scheduler(hrnet_repo: Path):
 
         text = text.replace(marker, replacement, 1)
 
+        backup = train_py.with_name(
+            "train.py.before_scheduler_patch.bak"
+        )
+        if not backup.exists():
+            shutil.copy2(train_py, backup)
         train_py.write_text(text, encoding="utf-8")
-        print("✓ Patched HRNet LR scheduler order")
+        print("✓ Patched HRNet LR scheduler order (backup retained)")
     else:
         print("✓ HRNet LR scheduler already patched")
 
@@ -94,6 +99,26 @@ def train(args):
 
     if not hrnet_repo.exists():
         raise FileNotFoundError(hrnet_repo)
+
+    # PRE-FLIGHT before modifying the external HRNet runtime, its scheduler,
+    # dataset registry, or its experiment configuration.
+    dataset_source = Path(args.dataset_root).expanduser().resolve()
+    if dataset_source.name == "InnoCount_KeyPoint_Frozen_v3_Optimized":
+        raise ValueError("Select a NEW, unique-ID derived COCO dataset; do not train from the frozen source directly.")
+    if not (dataset_source / "annotations" / "train.json").is_file():
+        raise FileNotFoundError(f"Prepared COCO dataset not found: {dataset_source}")
+    for split in ("train", "valid", "test"):
+        ann_file = dataset_source / "annotations" / f"{split}.json"
+        image_dir = dataset_source / "images" / split
+        if not ann_file.is_file() or not image_dir.is_dir():
+            raise FileNotFoundError(f"Dataset split incomplete: {ann_file} or {image_dir}")
+        if not any(image_dir.iterdir()):
+            raise FileNotFoundError(f"Dataset split has no images: {image_dir}")
+    if (hrnet_repo / "data" / "InnoCount").exists():
+        raise FileExistsError(
+            f"Existing HRNet runtime dataset: {hrnet_repo / 'data' / 'InnoCount'}. "
+            "Back up / move it manually first; automatic deletion is disabled."
+        )
     
         # --------------------------------------------------
     # Create run directory and timestamp
@@ -102,6 +127,11 @@ def train(args):
     save_dir = (
         ROOT / "experiments" / "HRNet_Runs" / args.name
     )
+    if save_dir.exists() and any(save_dir.iterdir()):
+        raise FileExistsError(
+            f"Experiment directory already contains files: {save_dir}. "
+            "Choose a new --name to preserve existing results."
+        )
     save_dir.mkdir(parents=True, exist_ok=True)
 
     timestamp = datetime.now().strftime(
@@ -120,22 +150,23 @@ def train(args):
     # Copy dataset loader
     # --------------------------------------------------
 
-    shutil.copy2(
-        ROOT / "hrnet" / "innocount.py",
-        hrnet_repo / "lib" / "dataset" / "innocount.py",
-    )
+    runtime_dataset_loader = hrnet_repo / "lib" / "dataset" / "innocount.py"
+    if runtime_dataset_loader.is_file():
+        backup = runtime_dataset_loader.with_name(f"innocount.py.before_{timestamp}.bak")
+        shutil.copy2(runtime_dataset_loader, backup)
+    shutil.copy2(ROOT / "hrnet" / "innocount.py", runtime_dataset_loader)
 
-    # Patch dataset registry
+    # Preserve the external dataset registry; add only our registration.
     init_file = hrnet_repo / "lib" / "dataset" / "__init__.py"
-
-    init_file.write_text(
-        """from .JointsDataset import JointsDataset
-from .innocount import InnoCountDataset
-
-innocount = InnoCountDataset
-""",
-        encoding="utf-8",
-    )
+    init_original = init_file.read_text(encoding="utf-8") if init_file.exists() else ""
+    marker = "innocount = InnoCountDataset"
+    if marker not in init_original:
+        if init_file.exists():
+            shutil.copy2(init_file, init_file.with_name(f"__init__.py.before_{timestamp}.bak"))
+        init_file.write_text(
+            init_original.rstrip() + "\n\nfrom .innocount import InnoCountDataset\ninnocount = InnoCountDataset\n",
+            encoding="utf-8",
+        )
 
     # --------------------------------------------------
     # Patch YAML dynamically
@@ -175,14 +206,23 @@ innocount = InnoCountDataset
     # --------------------------------------------------
 
     data_dst = hrnet_repo / "data" / "InnoCount"
+    dataset_source = Path(args.dataset_root).expanduser().resolve()
+    if not (dataset_source / "annotations" / "train.json").is_file():
+        raise FileNotFoundError(f"Prepared COCO training set not found: {dataset_source}")
+    for split in ("train", "valid", "test"):
+        if not (dataset_source / "annotations" / f"{split}.json").is_file():
+            raise FileNotFoundError(f"Missing {split} annotations in {dataset_source}")
+        if not (dataset_source / "images" / split).is_dir():
+            raise FileNotFoundError(f"Missing {split} image directory in {dataset_source}")
 
     if data_dst.exists():
-        shutil.rmtree(data_dst)
+        raise FileExistsError(
+            f"HRNet runtime dataset already exists: {data_dst}. "
+            "Back it up or move it manually before starting a new experiment; "
+            "this script will not delete it."
+        )
 
-    shutil.copytree(
-        ROOT / "datasets" / "HRNet_COCO",
-        data_dst,
-    )
+    shutil.copytree(dataset_source, data_dst)
 
     # --------------------------------------------------
     # Pretrained weights
@@ -203,7 +243,10 @@ innocount = InnoCountDataset
     ):
 
         if pretrained.exists():
-            pretrained.unlink()
+            raise RuntimeError(
+                f"Existing pretrained file looks incomplete: {pretrained}. "
+                "Move it manually after checking, rather than deleting it."
+            )
 
         print("Downloading pretrained HRNet weights...")
 
@@ -250,6 +293,7 @@ innocount = InnoCountDataset
         log.write(f"Repository: {hrnet_repo}\n")
         log.write(f"Config: {hrnet_repo / 'experiments/innocount/hrnet_w32_640.yaml'}\n")
         log.write(f"Command: {' '.join(cmd)}\n")
+        log.write(f"Dataset source: {dataset_source}\n")
         log.write(f"Batch size: {args.batch}\n")
         log.write(f"Image size: {args.imgsz}\n")
         log.write("=" * 80 + "\n\n")
@@ -347,6 +391,12 @@ innocount = InnoCountDataset
 def main():
 
     parser = argparse.ArgumentParser()
+
+    parser.add_argument(
+        "--dataset-root",
+        default=str(ROOT / "datasets" / "InnoCount_COCO_UniqueIDs_v1"),
+        help="Prepared images/{train,valid,test} and annotations/{train,valid,test}.json; use versioned unique-ID export",
+    )
 
     parser.add_argument(
         "--hrnet-repo",

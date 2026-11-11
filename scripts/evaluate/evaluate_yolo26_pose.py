@@ -2101,11 +2101,13 @@ def evaluate(args):
         "\nCalculating common thesis metrics..."
     )
 
+    # FIX (2026-10-22): evaluate all common metrics in original-image pixels.
+    # The separately saved normalized arrays remain unchanged for compatibility.
     metrics = calculate_all_metrics(
-        predictions=predictions,
-        gt=gt,
+        predictions=predictions_px,
+        gt=gt_px,
         gt_vis=gt_vis,
-        bboxes=bboxes,
+        bboxes=bboxes_px,
         category_ids=category_ids,
         category_map=category_map,
         threshold=args.threshold,
@@ -2329,6 +2331,8 @@ def evaluate(args):
         },
 
         "metrics": metrics,
+        "common_metrics_coordinate_space": "original image pixel coordinates",
+        "normalization": "pixel Euclidean distance / max(pixel bbox width, pixel bbox height)",
 
         "prediction_files": {
             "normalized":

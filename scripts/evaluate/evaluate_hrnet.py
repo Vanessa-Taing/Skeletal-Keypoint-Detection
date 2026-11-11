@@ -188,10 +188,13 @@ def synchronize_innocount_loader(
         exist_ok=True,
     )
 
-    shutil.copy2(
-        source,
-        destination,
-    )
+    if destination.is_file():
+        backup = destination.with_name(
+            f"innocount.py.before_eval_sync_{datetime.now().strftime('%Y%m%d_%H%M%S')}.bak"
+        )
+        shutil.copy2(destination, backup)
+        print(f"Backed up previous external HRNet loader to: {backup}")
+    shutil.copy2(source, destination)
 
     print(
         "\n✓ Synced InnoCount dataset loader:"
@@ -428,6 +431,13 @@ def load_hrnet_arrays(
             f"expected 6."
         )
 
+    if predictions.shape[-1] < 2 or gt.shape[-1] != 2:
+        raise ValueError(
+            f"HRNet common evaluation requires prediction XY and GT XY arrays: "
+            f"pred={predictions.shape}, gt={gt.shape}. "
+            "Use the 2026-10-22 HRNet loader XY-export patch and rerun inference."
+        )
+
     if gt_vis.ndim == 3:
         if gt_vis.shape[-1] == 1:
             arrays["gt_vis"] = (
@@ -458,6 +468,52 @@ def load_hrnet_arrays(
     )
 
     return arrays
+
+
+# ============================================================
+# ANNOTATION PROVENANCE AUDIT (2026-10-22)
+# ============================================================
+
+def assert_hrnet_gt_alignment(
+    coco, gt, gt_vis, bboxes, image_ids, category_ids, annotation_ids,
+):
+    """Refuse to score exported HRNet arrays paired with wrong COCO GT rows.
+
+    Match annotations by composite (image_id, annotation_id), then compare
+    category, pixel-space bbox, GT XY, and visibility. Run fresh inference
+    and export after fixing the loader when this audit fails.
+    """
+    by_pair = {}
+    for ann in coco.get("annotations", []):
+        pair = (int(ann["image_id"]), int(ann["id"]))
+        if pair in by_pair:
+            raise ValueError(f"Non-unique composite annotation identity: {pair}")
+        by_pair[pair] = ann
+    if len(gt) != len(by_pair):
+        raise ValueError(
+            f"HRNet exported array rows={len(gt)} vs source annotation rows={len(by_pair)}. "
+            "Possible split/data version mismatch."
+        )
+    for i in range(len(gt)):
+        pair = (int(image_ids[i]), int(annotation_ids[i]))
+        ann = by_pair.get(pair)
+        if ann is None:
+            raise ValueError(f"Exported HRNet row {i}: unknown annotation identity {pair}")
+        orig = np.asarray(ann["keypoints"], dtype=np.float32).reshape(6, 3)
+        checks = {
+            "category": int(category_ids[i]) == int(ann["category_id"]),
+            "bbox": bool(np.allclose(bboxes[i], ann["bbox"], atol=1e-3, rtol=0)),
+            "keypoint coordinates": bool(np.allclose(gt[i], orig[:, :2], atol=1e-3, rtol=0)),
+            "visibility": bool(np.array_equal(np.asarray(gt_vis[i]) > 0, orig[:, 2] > 0)),
+        }
+        failures = [key for key, ok in checks.items() if not ok]
+        if failures:
+            raise ValueError(
+                f"HRNet exported GT mismatch at row={i} composite_id={pair}: {failures}. "
+                "Stop: do not score mismatched GT. Rebuild unique-ID annotations "
+                "and rerun HRNet inference with the corrected loader."
+            )
+    print(f"Verified HRNet GT alignment: {len(gt)} unique composite identities and exact pixel GT values")
 
 
 # ============================================================
@@ -951,23 +1007,21 @@ def run_hrnet_test(
         / "test.py"
     )
 
+    # Historical E08 evidence: `Namespace(cfg=..., opts=['TEST.MODEL_FILE',
+    # <checkpoint>])`. HRNet's tools/test.py accepts --cfg + config options.
+    # It does NOT accept the old positional config/weights + --out syntax.
     command = [
         sys.executable,
         str(test_script),
+        "--cfg",
         str(cfg),
+        "TEST.MODEL_FILE",
         str(weights),
-        "--out",
-        str(
-            output_dir
-            / "hrnet_predictions.pkl"
-        ),
     ]
 
-    if device:
-
-        os.environ[
-            "CUDA_VISIBLE_DEVICES"
-        ] = str(device)
+    env = os.environ.copy()
+    if device is not None and str(device).strip():
+        env["CUDA_VISIBLE_DEVICES"] = str(device)
 
     print(
         "\nRunning HRNet test inference:"
@@ -987,6 +1041,7 @@ def run_hrnet_test(
         cwd=str(
             hrnet_repo
         ),
+        env=env,
         check=False,
     )
 
@@ -1034,6 +1089,11 @@ def evaluate(args):
         args.output_dir
     )
 
+    if args.run_inference and output_dir.exists() and any(output_dir.iterdir()):
+        raise FileExistsError(
+            f"Inference output directory already contains files: {output_dir}. "
+            "Use a fresh --output-dir to preserve historical results."
+        )
     output_dir.mkdir(
         parents=True,
         exist_ok=True,
@@ -1086,11 +1146,8 @@ def evaluate(args):
     # Synchronize loader
     # --------------------------------------------------------
 
-    if not args.skip_loader_sync:
-
-        synchronize_innocount_loader(
-            hrnet_repo
-        )
+    if args.run_inference and not args.skip_loader_sync:
+        synchronize_innocount_loader(hrnet_repo)
 
     # --------------------------------------------------------
     # Optional fresh inference
@@ -1214,6 +1271,15 @@ def evaluate(args):
             "annotation_ids are not aligned "
             "with predictions."
         )
+
+    # --------------------------------------------------------
+    # Verify GT export matches the user-selected COCO annotations.
+    # --------------------------------------------------------
+    assert_hrnet_gt_alignment(
+        coco=coco, gt=gt, gt_vis=gt_vis, bboxes=bboxes,
+        image_ids=image_ids, category_ids=category_ids,
+        annotation_ids=annotation_ids,
+    )
 
     # --------------------------------------------------------
     # Common metrics

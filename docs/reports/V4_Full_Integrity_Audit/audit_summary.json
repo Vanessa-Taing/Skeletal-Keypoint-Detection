@@ -1,0 +1,23 @@
+{
+  "raw_v4_to_frozen_v3": {
+    "frozen_records": 15377,
+    "matched": 15377,
+    "near_coincident_raw": 906
+  },
+  "frozen_v3_to_optimized": {
+    "frozen_records": 15377
+  },
+  "optimized_to_modelready_v2": {
+    "optimized_records": 15377,
+    "expected_outside_image_masks": 383
+  },
+  "near_coincident_raw_by_class": {
+    "Channel": 901,
+    "HI-Beam": 1,
+    "T-beam": 3,
+    "Angle Bar": 1
+  },
+  "unresolved_issues": [],
+  "issue_count": 0,
+  "interpretation": "Compares serialized COCO data only. Cannot verify current Roboflow UI annotation placement or image pixels."
+}

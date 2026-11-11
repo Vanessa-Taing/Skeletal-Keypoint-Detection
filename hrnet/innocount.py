@@ -124,19 +124,21 @@ class InnoCountDataset(JointsDataset):
 
         gt_db = []
 
+        # COCO.loadAnns(id_list) may silently substitute annotations when
+        # the source JSON reuses annotation IDs across different images.
+        # Group original raw rows by their image_id instead; preserve full
+        # composite (image_id, annotation_id) provenance.
+        anns_by_img = {}
+        for ann in self.coco.dataset.get("annotations", []):
+            anns_by_img.setdefault(int(ann["image_id"]), []).append(ann)
+
         for img_id in self.coco.getImgIds():
 
             img = self.coco.loadImgs(
                 img_id
             )[0]
 
-            ann_ids = self.coco.getAnnIds(
-                imgIds=img_id
-            )
-
-            anns = self.coco.loadAnns(
-                ann_ids
-            )
+            anns = anns_by_img.get(int(img_id), [])
 
             for ann in anns:
 
@@ -181,7 +183,7 @@ class InnoCountDataset(JointsDataset):
                                 h / 200,
                             ],
                             dtype=np.float32,
-                        ),
+                        ) * 1.25,
 
                         "joints_3d": kp,
 
@@ -391,17 +393,22 @@ class InnoCountDataset(JointsDataset):
                 exist_ok=True,
             )
 
+            # Native HRNet test.py commonly passes [N, 6, 3] where the
+            # third component is confidence, not a spatial coordinate.
+            # Common pose metrics require just [N, 6, 2] XY pixels.
             np.save(
                 os.path.join(
                     output_dir,
                     "hrnet_predictions.npy",
                 ),
-                preds,
+                preds[:, :, :2],
             )
 
             hrnet_gt = np.asarray(
                 [
-                    record["joints_3d"]
+                    # COCO evaluation uses XY only; training still retains
+                    # six 3-component `joints_3d` records in self.db.
+                    record["joints_3d"][:, :2]
                     for record in self.db
                 ],
                 dtype=np.float32,

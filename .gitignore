@@ -165,3 +165,38 @@ third_party/mmpose/
 
 # ViTPose runner state pointers may reference excluded checkpoint files
 experiments/ViTPose_Runs/**/last_checkpoint
+
+# =========================================
+# MCS patched dataset exports
+# =========================================
+
+# Do not version generated YOLO image/label copies
+/datasets/InnoCount_KeyPoint_YOLO26_Pose_Patched_v1/images/
+/datasets/InnoCount_KeyPoint_YOLO26_Pose_Patched_v1/labels/
+
+# Preserve COCO annotations, not duplicated images
+/datasets/InnoCount_COCO_Patched_UniqueIDs_v1/images/
+
+# Preserve patched ModelReady metadata, not images
+/datasets/InnoCount_KeyPoint_ModelReady_Patched_v1/splits/*/images/
+
+# =========================================
+# RO2 generated artifacts
+# =========================================
+
+# Native YOLO evaluation visualizations/cache
+/experiments/RO2_Final_Patched/**/native_val/
+
+# Heavy individual prediction exports
+/experiments/RO2_Final_Patched/**/vitpose_prediction_audit.jsonl
+
+# Generated visualization directories
+/experiments/RO2_Final_Patched/**/visualizations/
+
+# =========================================
+# Miscellaneous
+# =========================================
+*.sqlite
+*.sqlite3
+*.db
+*.core

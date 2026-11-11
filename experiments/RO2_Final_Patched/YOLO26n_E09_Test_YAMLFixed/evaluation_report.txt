@@ -1,0 +1,90 @@
+YOLO26-POSE PROFILE-AWARE TEST EVALUATION
+======================================================================
+
+Start time : 2026-11-11T22:06:38.280924
+End time   : 2026-11-11T22:06:51.898851
+Checkpoint : /home/owner/skeletal_keypoint_detection/experiments/YOLO26_Pose_Runs/E09_YOLO26n_Patched_v1/weights/best.pt
+Dataset    : /home/owner/skeletal_keypoint_detection/experiments/RO2_Final_Patched/yolo26_patched_test.yaml
+Annotations: /home/owner/skeletal_keypoint_detection/datasets/InnoCount_KeyPoint_ModelReady_Patched_v1/splits/test/annotations.json
+Test split : test
+
+NATIVE ULTRALYTICS METRICS
+--------------------------------------------------
+box_precision            : 0.686600
+box_recall               : 0.540730
+box_map50                : 0.501310
+box_map50_95             : 0.287172
+pose_precision           : 0.471341
+pose_recall              : 0.284418
+pose_map50               : 0.181680
+pose_map50_95            : 0.096715
+
+STANDARD PCK
+--------------------------------------------------
+Overall : 0.126117
+joint_1     : 0.210006
+joint_2     : 0.091698
+joint_3     : 0.104154
+joint_4     : 0.132829
+joint_5     : 0.050667
+joint_6     : 0.056000
+Correct : 889
+Valid   : 7049
+
+ORDER-INVARIANT PCK
+--------------------------------------------------
+Overall : 0.140020
+Angle Bar       0.215886
+Channel         0.028428
+T-beam          0.329545
+HI-Beam         0.129333
+Sheet Pile      0.000000
+
+Order-invariance gain : 0.013903
+Percentage points     : 1.39
+
+PROFILE-LEVEL PCK
+--------------------------------------------------
+Angle Bar       instances=173   PCK=0.213849
+Channel         instances=598   PCK=0.028428
+T-beam          instances=397   PCK=0.287247
+HI-Beam         instances=375   PCK=0.116000
+Sheet Pile      instances=83    PCK=0.000000
+
+SEMANTIC ROLE PCK
+--------------------------------------------------
+corner                             : 0.075867
+tip                                : 0.033808
+flange_center                      : 0.421717
+flange_tip                         : 0.212389
+web_tip                            : 0.302267
+upper_web_flange_junction          : 0.277333
+upper_flange_tip                   : 0.070667
+lower_web_flange_junction          : 0.170667
+lower_flange_tip                   : 0.053333
+
+STRUCTURAL EDGE ACCURACY
+--------------------------------------------------
+Overall : 0.097547
+Angle Bar       0.144654
+Channel         0.000557
+T-beam          0.276327
+HI-Beam         0.082133
+Sheet Pile      0.000000
+
+INSTANCE MATCHING
+--------------------------------------------------
+GT instances      : 1626
+YOLO predictions   : 9670
+Matched instances : 1424
+Unmatched GT       : 202
+Match rate         : 0.875769
+
+Evaluation settings
+--------------------------------------------------
+PCK threshold      : 0.05
+Instance IoU       : 0.5
+YOLO confidence    : 0.001
+Image size         : 640
+
+No source annotations were modified.

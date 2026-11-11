@@ -774,287 +774,98 @@ def calculate_order_invariant_pck(
     threshold=0.05,
     prediction_valid=None,
 ):
+    """PCK with one-to-one reassignment *inside* equivalent-keypoint groups.
+
+    All distances are computed between the reassigned prediction and the
+    corresponding GT location. Missing predictions count as misses. We maximize
+    the number of correct GT points at the PCK threshold; normalized distance
+    breaks ties. The fixed-index metric is unaffected by this change.
+
+    Note: class equivalences are a research assumption encoded in
+    PROFILE_SCHEMAS and should still be checked against the annotation schema.
     """
-    Equivalence-aware PCK.
-
-    Equivalent keypoints may exchange prediction assignments.
-
-    Corrected equivalence definitions:
-
-        Angle Bar:
-            G2 <-> G3
-
-        T-beam:
-            G2 <-> G3
-
-        HI-Beam:
-            G2 <-> G3
-            G5 <-> G6
-
-        Sheet Pile:
-            G1 <-> G4
-            G2 <-> G3
-
-        Channel:
-            none
-
-    Each GT keypoint can receive at most one prediction.
-    """
-
     (
-        predictions,
-        gt,
-        gt_vis,
-        bboxes,
-        category_ids,
-        prediction_valid,
-        n,
+        predictions, gt, gt_vis, bboxes, category_ids,
+        prediction_valid, n,
     ) = _as_arrays(
-        predictions,
-        gt,
-        gt_vis,
-        bboxes,
-        category_ids,
-        prediction_valid,
+        predictions, gt, gt_vis, bboxes,
+        category_ids, prediction_valid,
     )
 
-    equivalent_groups = {
-        profile: schema["equivalent_groups"]
-        for profile, schema in PROFILE_SCHEMAS.items()
+    scales = bbox_scales(bboxes)
+    stats = {
+        name: {"instances": 0, "correct": 0, "valid": 0}
+        for name in PROFILE_SCHEMAS
     }
-
     total_correct = 0
     total_valid = 0
 
-    profile_stats = {}
-
-    for profile in PROFILE_SCHEMAS:
-
-        profile_stats[profile] = {
-            "instances": 0,
-            "correct": 0,
-            "valid": 0,
-        }
-
-    errors = normalized_errors(
-        predictions,
-        gt,
-        bboxes,
-    )
-
     for i in range(n):
-
-        profile = category_map.get(
-            int(category_ids[i])
-        )
-
+        profile = category_map.get(int(category_ids[i]))
         if profile not in PROFILE_SCHEMAS:
             continue
-
         schema = PROFILE_SCHEMAS[profile]
-
-        schema_joints = []
-
-        for joint_id, role in schema["roles"].items():
-
-            if role == "unused":
-                continue
-
-            if joint_id >= GLOBAL_K:
-                continue
-
-            if gt_vis[i, joint_id] > 0:
-                schema_joints.append(joint_id)
-
-        valid_count = len(schema_joints)
-
-        if valid_count == 0:
+        visible = {
+            j for j, role in schema["roles"].items()
+            if role != "unused" and j < GLOBAL_K and gt_vis[i, j] > 0
+        }
+        if not visible:
             continue
+        equivalent_groups = schema["equivalent_groups"]
+        grouped = set().union(*(set(group) for group in equivalent_groups)) if equivalent_groups else set()
+        scale = float(scales[i])
+        good = set()
 
-        matched = np.zeros(
-            GLOBAL_K,
-            dtype=bool,
-        )
-
-        grouped_joints = set()
-
-        for group in equivalent_groups.get(
-            profile,
-            [],
-        ):
-            grouped_joints.update(group)
-
-        # ----------------------------------------------------
-        # Fixed-index joints
-        # ----------------------------------------------------
-
-        for joint_id in schema_joints:
-
-            if joint_id in grouped_joints:
+        for j in visible - grouped:
+            if not prediction_valid[i, j]:
                 continue
+            distance = float(np.linalg.norm(predictions[i, j] - gt[i, j])) / scale
+            if np.isfinite(distance) and distance <= threshold:
+                good.add(j)
 
-            if (
-                prediction_valid[i, joint_id]
-                and errors[i, joint_id] <= threshold
-            ):
-                matched[joint_id] = True
-
-        # ----------------------------------------------------
-        # Equivalent groups
-        # ----------------------------------------------------
-
-        for group in equivalent_groups.get(
-            profile,
-            [],
-        ):
-
-            valid_gt = [
-                joint_id
-                for joint_id in group
-                if (
-                    joint_id in schema_joints
-                    and gt_vis[i, joint_id] > 0
-                )
-            ]
-
-            if not valid_gt:
+        for group in equivalent_groups:
+            group_gt = [j for j in group if j in visible]
+            group_pred = [j for j in group if prediction_valid[i, j]]
+            if not group_gt or not group_pred:
                 continue
-
-            valid_pred = [
-                joint_id
-                for joint_id in group
-                if prediction_valid[i, joint_id]
-            ]
-
-            # If a prediction is missing, the corresponding GT
-            # remains incorrect rather than disappearing.
-            #
-            # We solve the assignment only over available
-            # predictions, then count unmatched GT as failures.
-
-            if not valid_pred:
-                continue
-
-            best_assignment = None
-            best_total = float("inf")
-
-            for permutation_length in range(
-                min(
-                    len(valid_gt),
-                    len(valid_pred),
-                ),
-                min(
-                    len(valid_gt),
-                    len(valid_pred),
-                ) + 1,
-            ):
-                pass
-
-            # Because groups are tiny (maximum 2), enumerate
-            # all assignments directly.
-
-            if len(valid_gt) == 1:
-
-                gt_idx = valid_gt[0]
-
-                best_pred = min(
-                    valid_pred,
-                    key=lambda p: errors[i, p]
-                )
-
-                if errors[i, best_pred] <= threshold:
-                    matched[gt_idx] = True
-
-            else:
-
-                for permutation in itertools.permutations(
-                    valid_pred,
-                    len(valid_gt),
-                ):
-
+            # Allow partial assignments; invisible GTs do not consume predictions.
+            num_assigned = min(len(group_gt), len(group_pred))
+            best_gt_matches = set()
+            best_key = None
+            for gt_subset in itertools.combinations(group_gt, num_assigned):
+                for pred_perm in itertools.permutations(group_pred, num_assigned):
+                    matches = set()
                     total_distance = 0.0
+                    for gt_j, pred_j in zip(gt_subset, pred_perm):
+                        distance = float(np.linalg.norm(predictions[i, pred_j] - gt[i, gt_j])) / scale
+                        if not np.isfinite(distance):
+                            distance = float('inf')
+                        total_distance += distance
+                        if distance <= threshold:
+                            matches.add(gt_j)
+                    # Highest number of correct GTs wins; smallest sum breaks ties.
+                    key = (len(matches), -total_distance)
+                    if best_key is None or key > best_key:
+                        best_key = key
+                        best_gt_matches = matches
+            good.update(best_gt_matches)
 
-                    for gt_idx, pred_idx in zip(
-                        valid_gt,
-                        permutation,
-                    ):
-                        total_distance += (
-                            errors[i, pred_idx]
-                        )
+        correct = len(good)
+        valid = len(visible)
+        stats[profile]["instances"] += 1
+        stats[profile]["correct"] += correct
+        stats[profile]["valid"] += valid
+        total_correct += correct
+        total_valid += valid
 
-                    if total_distance < best_total:
-
-                        best_total = total_distance
-                        best_assignment = permutation
-
-                if best_assignment is not None:
-
-                    for gt_idx, pred_idx in zip(
-                        valid_gt,
-                        best_assignment,
-                    ):
-
-                        if (
-                            errors[i, pred_idx]
-                            <= threshold
-                        ):
-                            matched[gt_idx] = True
-
-        correct_count = int(
-            np.sum(
-                matched[schema_joints]
-            )
-        )
-
-        total_correct += correct_count
-        total_valid += valid_count
-
-        profile_stats[
-            profile
-        ]["instances"] += 1
-
-        profile_stats[
-            profile
-        ]["correct"] += correct_count
-
-        profile_stats[
-            profile
-        ]["valid"] += valid_count
-
-    overall = (
-        float(
-            total_correct
-            / total_valid
-        )
-        if total_valid > 0
-        else 0.0
-    )
-
-    if not (
-        0.0 <= overall <= 1.0
-    ):
-        raise RuntimeError(
-            "Order-invariant PCK outside [0,1]: "
-            f"{overall}"
-        )
-
-    for profile, item in profile_stats.items():
-
-        if item["valid"] > 0:
-            item["pck"] = float(
-                item["correct"]
-                / item["valid"]
-            )
-        else:
-            item["pck"] = 0.0
-
+    for row in stats.values():
+        row["pck"] = float(row["correct"] / row["valid"]) if row["valid"] else 0.0
     return {
-        "overall": overall,
+        "overall": float(total_correct / total_valid) if total_valid else 0.0,
         "correct": int(total_correct),
         "total": int(total_valid),
-        "profile": profile_stats,
+        "profile": stats,
     }
-
 
 # ============================================================
 # STRUCTURAL EDGE ACCURACY
