@@ -1,0 +1,30 @@
+{
+  "protocol": "RO3_R1_FrozenEvidence_v1",
+  "created_utc": "2026-11-19T16:11:44.283775+00:00",
+  "model": "ViTPose-B E03 epoch 90",
+  "test_gt_instances": 1626,
+  "test_source_images_with_annotations": 71,
+  "test_gt_valid_keypoints": 7049,
+  "clean_correct_keypoints": 4325,
+  "clean_pck": 0.6135622074053058,
+  "test_50pct_pck": 0.37877713150801534,
+  "test_50pct_delta_pp": -23.47850758972904,
+  "evaluation": "GT-box-conditioned fixed-index PCK@0.05",
+  "model_checkpoint_sha256": "c0aa19b1c3ab0e953b87f6f528107d021c35d8fedcc6cb222b44c174a5cfbb26",
+  "model_config_sha256": "9ad959a2df012f8ba521490b4edb8c4fa4e3496254b001f5888d498364cbb66a",
+  "result_directories": [
+    "experiments/RO3/R1_Occlusion_v1",
+    "experiments/RO3/R1_Eval_v1",
+    "experiments/RO3/R1_Validation_PairedSummary_v1",
+    "experiments/RO3/R1_Test_PairedSummary_v1",
+    "experiments/RO3/R1_NaturalStackingAudit_v1"
+  ],
+  "included_file_count": 256,
+  "included_original_bytes": 67610492,
+  "contents_ledger": "docs/RO3/evidence/R1_contents_v1.sha256",
+  "external_input_ledger": "docs/RO3/evidence/R1_external_inputs_v1.sha256",
+  "source_image_hash_file": "docs/RO3/evidence/R1_source_images_v1.csv",
+  "archive_path": "experiments/RO3/R1_FrozenEvidence_v1.tar.gz",
+  "archive_policy": "Derived evidence and source scripts only. Original dataset images and model weights are external and fingerprinted, not archived.",
+  "immutability_policy": "Versioned output names; refuse overwrite; verified SHA-256 archive; Git commit and tag."
+}
