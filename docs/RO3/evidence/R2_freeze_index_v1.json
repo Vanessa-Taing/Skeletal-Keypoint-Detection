@@ -1,0 +1,27 @@
+{
+  "protocol": "RO3_R2_FrozenEvidence_v1",
+  "created_utc": "2026-11-20T15:43:41.210788+00:00",
+  "research_scope": "R2-A exposure and R2-B contrast",
+  "checkpoint": "experiments/ViTPose_Runs/E03_ViTPoseB_Patched_v1/epoch_90.pth",
+  "validation_baseline": "5196/6720",
+  "test_baseline": "4325/7049",
+  "file_count_before_ledgers": 187,
+  "source_image_count": 148,
+  "result_directories": [
+    "experiments/RO3/R2_Lighting_v1",
+    "experiments/RO3/R2_Eval_v1",
+    "experiments/RO3/R2_Validation_PairedSummary_v1",
+    "experiments/RO3/R2_Test_PairedSummary_v1",
+    "experiments/RO3/R2_LightingDiagnostics_v1",
+    "experiments/RO3/R2_SceneAttribution_v1"
+  ],
+  "contents_ledger": "docs/RO3/evidence/R2_contents_v1.sha256",
+  "external_inputs_ledger": "docs/RO3/evidence/R2_external_inputs_v1.sha256",
+  "protocol_lock_sha256": "ca4764e784fdddb699c911eef2aea91bb3203ba776283bcddee113cb65a1db26",
+  "archive_path": "experiments/RO3/R2_FrozenEvidence_v1.tar.gz",
+  "archive_excludes": [
+    "Original full-resolution dataset photographs",
+    "Frozen model checkpoint",
+    "Original R1 and RO2 evidence archives"
+  ]
+}
