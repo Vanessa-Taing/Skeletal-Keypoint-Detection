@@ -1,0 +1,20 @@
+{
+  "protocol": "RO3_R2_GlobalLighting_FrozenTest_v1",
+  "validation_fixed_baseline": "5196/6720",
+  "test_fixed_baseline_expected": "4325/7049",
+  "files_sha256": {
+    "scripts/ro3/prepare_r2_lighting.py": "d5a8ac95beb82b353d7a8da86b8ee8c82caf931eb0d8790e38085d3e900d5f77",
+    "scripts/ro3/evaluate_r2_vitpose.py": "347ad597a4f796e6d17d20ae342f746fba4a1de36e3a6eaeb01bd53f961b068b",
+    "scripts/ro3/summarize_r2_test.py": "b71b583f9d722de6f4755473e51b26c162d035c1a64e5a0e03e99a9749d28e49",
+    "experiments/RO3/R2_Validation_PairedSummary_v1/validation_lighting_summary.csv": "eba91b8d9e4dd979fc6e5fcb7415a3506820a051ed05f2e7be9db7b51ee56605",
+    "experiments/RO3/R2_LightingDiagnostics_v1/valid/lighting_clipping_summary.csv": "3180106fb5ea331e4a0dbfd5a31786081ca80f4b855cd5dd14521b3af3d12bdb",
+    "experiments/RO3/R2_Lighting_v1/valid_exposure/lighting_manifest.jsonl": "f87065da09f861db825a8cc0e271c1493f1712c206e2b732ce0829a14723066e",
+    "experiments/RO3/R2_Lighting_v1/valid_exposure/protocol_metadata.json": "faf2ed1aff0ba11722449ac984dc0e73b40fe1a60bdaebe1a7815b6251523516",
+    "experiments/RO3/R2_Lighting_v1/valid_contrast/lighting_manifest.jsonl": "e8f7f99eb9d4d9a4d0bf9d23bea2ec855951b945bd23bafd0abdc60e80f745c3",
+    "experiments/RO3/R2_Lighting_v1/valid_contrast/protocol_metadata.json": "eefd8b97cef467ff0fe1123c59b2a961ca1cc1a7924bff39195be6b90c27bde9",
+    "experiments/RO3/R2_Lighting_v1/test_exposure/lighting_manifest.jsonl": "46d50bdaadd794d9a80ff574570c2b2ce01757cff32cfda8fed861c7a7179369",
+    "experiments/RO3/R2_Lighting_v1/test_exposure/protocol_metadata.json": "62caf42b26e04b5c725671e2809928c5ae0115ba4fe2c21abce1eb6a5b59a93a",
+    "experiments/RO3/R2_Lighting_v1/test_contrast/lighting_manifest.jsonl": "c74997200558140ea11f8cb4df3bd2898717637f6ce71d1b0deac9b8ad8c6400",
+    "experiments/RO3/R2_Lighting_v1/test_contrast/protocol_metadata.json": "345ca0586fa9da05fbb9592338fde4f6ecf37c47101ee9332bc138292ebe60cc"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "protocol": "RO3_R3B_ValidationLock_v1",
+  "conditions": [
+    "vp_neutral",
+    "vp_yaw_left_06",
+    "vp_yaw_right_06",
+    "vp_pitch_top_06",
+    "vp_pitch_bottom_06",
+    "vp_yaw_left_12",
+    "vp_yaw_right_12",
+    "vp_pitch_top_12",
+    "vp_pitch_bottom_12"
+  ],
+  "validation_baseline": "5196/6720",
+  "primary_metric": "Fixed-index PCK@0.05 using original GT-box scale",
+  "files_sha256": {
+    "scripts/ro3/prepare_r3_viewpoint.py": "6319bcd913ed50f1b9d7e590529770de07e3276b90e6f802584dae5f94abb2cd",
+    "scripts/ro3/evaluate_r3_viewpoint.py": "63027f0f4c8e13f6b98bce1698f5b7003c95dcba8494968b40057bd05818196c",
+    "scripts/ro3/summarize_r3b_validation.py": "cf1c1a87ac42c94a1ac21bb36d48416869cd011604781011c131da8e393cdea5",
+    "scripts/ro3/run_r3b_validation.sh": "118b176d944e66d65c96da4aa5467cff1186e5bda514f75be5cdb723a225ebd0",
+    "experiments/RO3/R3_Viewpoint_v1/valid/viewpoint_manifest.jsonl": "15f2ec01f9745ef396c66f7bb4afa7daadc99140bcadbed00a4589d95f44f1c7",
+    "experiments/RO3/R3_Viewpoint_v1/valid/protocol_metadata.json": "1f904f113e574559846f61aa655c54150437289cdd500971ffc76f9209608c9d",
+    "experiments/RO3/R1_Eval_v1/valid_uniform_p00_r0/metrics.json": "c98821d4689b5b78991904b6feeec8e42df25c7655317b6d693e943a9beb223b",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_neutral/metrics.json": "961735043026a8c6579b85d33d8b7aad4c112f4c1affbd345d321abe204c4e7e",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_neutral/vitpose_predictions.npy": "4c6657a3bc1865b62e176ca6924b8d49ce9d1a18e1d7881b4a214b9d7b394249",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_neutral/vitpose_image_ids.npy": "1e54fd7a9159c2147d81b76decd5bddcdfb072f4416498efdf9707c04a844b9f",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_neutral/vitpose_annotation_ids.npy": "111b231b2a3324774631413e7a945ee11b4406c81aa04bc0a3339fe9980613e9"
+  }
+}

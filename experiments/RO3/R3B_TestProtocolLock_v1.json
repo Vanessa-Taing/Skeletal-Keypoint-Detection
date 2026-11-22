@@ -1,0 +1,139 @@
+{
+  "protocol": "RO3_R3B_FrozenTest_v1",
+  "conditions": [
+    {
+      "condition_id": "vp_neutral",
+      "axis": "neutral",
+      "compressed_edge": "none",
+      "inset_fraction": 0.0
+    },
+    {
+      "condition_id": "vp_yaw_left_06",
+      "axis": "yaw",
+      "compressed_edge": "left",
+      "inset_fraction": 0.06
+    },
+    {
+      "condition_id": "vp_yaw_right_06",
+      "axis": "yaw",
+      "compressed_edge": "right",
+      "inset_fraction": 0.06
+    },
+    {
+      "condition_id": "vp_pitch_top_06",
+      "axis": "pitch",
+      "compressed_edge": "top",
+      "inset_fraction": 0.06
+    },
+    {
+      "condition_id": "vp_pitch_bottom_06",
+      "axis": "pitch",
+      "compressed_edge": "bottom",
+      "inset_fraction": 0.06
+    },
+    {
+      "condition_id": "vp_yaw_left_12",
+      "axis": "yaw",
+      "compressed_edge": "left",
+      "inset_fraction": 0.12
+    },
+    {
+      "condition_id": "vp_yaw_right_12",
+      "axis": "yaw",
+      "compressed_edge": "right",
+      "inset_fraction": 0.12
+    },
+    {
+      "condition_id": "vp_pitch_top_12",
+      "axis": "pitch",
+      "compressed_edge": "top",
+      "inset_fraction": 0.12
+    },
+    {
+      "condition_id": "vp_pitch_bottom_12",
+      "axis": "pitch",
+      "compressed_edge": "bottom",
+      "inset_fraction": 0.12
+    }
+  ],
+  "model": "Frozen ViTPose-B E03 epoch 90",
+  "validation_baseline": "5196/6720",
+  "test_baseline_expected": "4325/7049",
+  "primary_metric": "Fixed-index PCK@0.05, original GT-box scale",
+  "secondary_metric": "Fixed-index PCK@0.05, transformed GT-box scale",
+  "paired_analysis": {
+    "unit": "Original annotated source photograph",
+    "test_source_clusters": 71,
+    "bootstrap_replications": 2000,
+    "bootstrap_seed": 20261121,
+    "confidence_interval": "Percentile 95%",
+    "comparisons": "All eight nonneutral conditions",
+    "profile_categories": [
+      "Angle Bar",
+      "Channel",
+      "T-beam",
+      "HI-Beam",
+      "Sheet Pile"
+    ]
+  },
+  "files_sha256": {
+    "datasets/InnoCount_COCO_Patched_UniqueIDs_v1/annotations/test.json": "c8f1bc2520efec61a54db4a21134d296d25000815a322d8910822258af2148eb",
+    "experiments/RO3/R1_Eval_v1/test_uniform_p00_r0/metrics.json": "54406a1c4a914a61fd622153cb99f8012ae5b0d8f32227fd782d8e49e1c84d12",
+    "experiments/RO3/R1_Eval_v1/test_uniform_p00_r0/vitpose_annotation_ids.npy": "a569d5adc2fffe2369d18542f34a27e34cd9880c01776a55856d277ae4aa815a",
+    "experiments/RO3/R1_Eval_v1/test_uniform_p00_r0/vitpose_image_ids.npy": "046885b5fd98d79a0585bbd06830de342eac97d2efc74b4a6a2469bdbe821253",
+    "experiments/RO3/R1_Eval_v1/test_uniform_p00_r0/vitpose_predictions.npy": "bff4655e41b92fcf127f7895817dab39cb0dd5eb0f1fa0cc5439de028bfdc069",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_neutral/metrics.json": "961735043026a8c6579b85d33d8b7aad4c112f4c1affbd345d321abe204c4e7e",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_neutral/vitpose_annotation_ids.npy": "111b231b2a3324774631413e7a945ee11b4406c81aa04bc0a3339fe9980613e9",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_neutral/vitpose_image_ids.npy": "1e54fd7a9159c2147d81b76decd5bddcdfb072f4416498efdf9707c04a844b9f",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_neutral/vitpose_predictions.npy": "4c6657a3bc1865b62e176ca6924b8d49ce9d1a18e1d7881b4a214b9d7b394249",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_pitch_bottom_06/metrics.json": "29775285ea92b5758689bd11141c1989fc5cbb47ed33d04655d13804c8562406",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_pitch_bottom_06/vitpose_annotation_ids.npy": "111b231b2a3324774631413e7a945ee11b4406c81aa04bc0a3339fe9980613e9",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_pitch_bottom_06/vitpose_image_ids.npy": "1e54fd7a9159c2147d81b76decd5bddcdfb072f4416498efdf9707c04a844b9f",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_pitch_bottom_06/vitpose_predictions.npy": "13054932aa3052fc9afb0cb410c566e3718f682bfd1d8789994fdd30bddd8293",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_pitch_bottom_12/metrics.json": "a96efa1cee5b8396d96755d2ad7cb82fc3333716199b7ce43ded7928d9381274",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_pitch_bottom_12/vitpose_annotation_ids.npy": "111b231b2a3324774631413e7a945ee11b4406c81aa04bc0a3339fe9980613e9",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_pitch_bottom_12/vitpose_image_ids.npy": "1e54fd7a9159c2147d81b76decd5bddcdfb072f4416498efdf9707c04a844b9f",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_pitch_bottom_12/vitpose_predictions.npy": "52dbb1308fb2f1c1a1b99581946805be0f7cb28e5cb0e902b2bb7074bbd40ff2",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_pitch_top_06/metrics.json": "973b84cb2deee9c399251c86f36c89db68571dd831a77ae4e0ac98e246b03dbb",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_pitch_top_06/vitpose_annotation_ids.npy": "111b231b2a3324774631413e7a945ee11b4406c81aa04bc0a3339fe9980613e9",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_pitch_top_06/vitpose_image_ids.npy": "1e54fd7a9159c2147d81b76decd5bddcdfb072f4416498efdf9707c04a844b9f",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_pitch_top_06/vitpose_predictions.npy": "79aabdeab8588d260a179569f5ca962dec9c7ec23835b54eb606d6ef8b3cbfc8",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_pitch_top_12/metrics.json": "1d83914e216f24c0a293f050a882a936fff45848a17c3676a8ca4c9c16760664",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_pitch_top_12/vitpose_annotation_ids.npy": "111b231b2a3324774631413e7a945ee11b4406c81aa04bc0a3339fe9980613e9",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_pitch_top_12/vitpose_image_ids.npy": "1e54fd7a9159c2147d81b76decd5bddcdfb072f4416498efdf9707c04a844b9f",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_pitch_top_12/vitpose_predictions.npy": "c4a140bb03de34a2183fa5b25e9c5e094866072ea7d7aa74392b6809df76acc8",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_yaw_left_06/metrics.json": "31efa6dffe94dca60731f1db41dcccdf6a049f7fdf1d96e3632c8a02e9ca4659",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_yaw_left_06/vitpose_annotation_ids.npy": "111b231b2a3324774631413e7a945ee11b4406c81aa04bc0a3339fe9980613e9",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_yaw_left_06/vitpose_image_ids.npy": "1e54fd7a9159c2147d81b76decd5bddcdfb072f4416498efdf9707c04a844b9f",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_yaw_left_06/vitpose_predictions.npy": "72d0e51c907e40d1dee000300a9cf7e46a01e7ab4da461b3f850adc8fba5dc64",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_yaw_left_12/metrics.json": "af8f1e5f650825b2a1a83cdfaaea2ca688e37221a3a4e98fb03e9da1041de9fb",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_yaw_left_12/vitpose_annotation_ids.npy": "111b231b2a3324774631413e7a945ee11b4406c81aa04bc0a3339fe9980613e9",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_yaw_left_12/vitpose_image_ids.npy": "1e54fd7a9159c2147d81b76decd5bddcdfb072f4416498efdf9707c04a844b9f",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_yaw_left_12/vitpose_predictions.npy": "36cd5fa33fd94d327324b888b086ff25c5225ae94a9e96bb9b9e526a1e1de108",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_yaw_right_06/metrics.json": "0b66c687ef3d2a8c00f747f1533856c4c629b7f52e62ddb10413d884f1c36bda",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_yaw_right_06/vitpose_annotation_ids.npy": "111b231b2a3324774631413e7a945ee11b4406c81aa04bc0a3339fe9980613e9",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_yaw_right_06/vitpose_image_ids.npy": "1e54fd7a9159c2147d81b76decd5bddcdfb072f4416498efdf9707c04a844b9f",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_yaw_right_06/vitpose_predictions.npy": "bede264feadf1205712c99d7cf84eb02d71c1c3587236e3a7cdfdbc2efef0a92",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_yaw_right_12/metrics.json": "ea45aab0d763183cef43c9c49ce8dd2168fab90b06bc3a980c3e1c5a4793a08d",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_yaw_right_12/vitpose_annotation_ids.npy": "111b231b2a3324774631413e7a945ee11b4406c81aa04bc0a3339fe9980613e9",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_yaw_right_12/vitpose_image_ids.npy": "1e54fd7a9159c2147d81b76decd5bddcdfb072f4416498efdf9707c04a844b9f",
+    "experiments/RO3/R3B_Eval_v1/valid_vp_yaw_right_12/vitpose_predictions.npy": "776582599e5ba625063d67a968babddf471a54c061d62ae7ba858b1d015317b5",
+    "experiments/RO3/R3B_ValidationLock_v1.json": "b3c27fa26a1acce5ee03301db4251a01793a17b8afb0de8ef2302645aaba4ad9",
+    "experiments/RO3/R3B_ValidationSummary_v1/analysis_report.json": "06a51460645922c95968ebd611bc76c4778011ff363a53e708943ec392dc1089",
+    "experiments/RO3/R3B_ValidationSummary_v1/validation_profile_results.csv": "6fbe6825f8d97e78dd82c368aa02c94d701aab5760c823e7932a676a61b386a2",
+    "experiments/RO3/R3B_ValidationSummary_v1/validation_viewpoint_summary.csv": "34350a6cbe9ef28e4f1d96fca6d1a33fa4cc2e2072caf2f6799a84bcd4eb668d",
+    "experiments/RO3/R3_Viewpoint_v1/test/protocol_metadata.json": "39746e935014e0bedbd4100d670d67e07c8d56d514718e640021229e36f44b2f",
+    "experiments/RO3/R3_Viewpoint_v1/test/viewpoint_manifest.jsonl": "46bf95e5ba4aa1a387b939caa640b4e2db12af94e4480590a7e2ca9bc32332eb",
+    "experiments/RO3/R3_Viewpoint_v1/valid/protocol_metadata.json": "1f904f113e574559846f61aa655c54150437289cdd500971ffc76f9209608c9d",
+    "experiments/RO3/R3_Viewpoint_v1/valid/viewpoint_manifest.jsonl": "15f2ec01f9745ef396c66f7bb4afa7daadc99140bcadbed00a4589d95f44f1c7",
+    "experiments/ViTPose_Runs/E03_ViTPoseB_Patched_v1/epoch_90.pth": "c0aa19b1c3ab0e953b87f6f528107d021c35d8fedcc6cb222b44c174a5cfbb26",
+    "experiments/ViTPose_Runs/E03_ViTPoseB_Patched_v1/td-hm_ViTPose-base_innocount_patched_v1.py": "9ad959a2df012f8ba521490b4edb8c4fa4e3496254b001f5888d498364cbb66a",
+    "scripts/ro3/evaluate_r3_viewpoint.py": "63027f0f4c8e13f6b98bce1698f5b7003c95dcba8494968b40057bd05818196c",
+    "scripts/ro3/lock_r3b_test_protocol.py": "5fa4abb3e42e27d1f5ca8d88e3f142e72c3778ff9474544d3e4d82f2d31d03b4",
+    "scripts/ro3/prepare_r3_viewpoint.py": "6319bcd913ed50f1b9d7e590529770de07e3276b90e6f802584dae5f94abb2cd",
+    "scripts/ro3/run_r3b_validation.sh": "118b176d944e66d65c96da4aa5467cff1186e5bda514f75be5cdb723a225ebd0",
+    "scripts/ro3/summarize_r3_orientation_test.py": "a53197f1d0c46071052eedc60623be8590848b074884646284dcde5f0e5580b1",
+    "scripts/ro3/summarize_r3_orientation_validation.py": "4b77e8e9ad53b3cb3f53e931ec43fd4075cac60ef49160e5d0f237313faa32ce",
+    "scripts/ro3/summarize_r3b_validation.py": "cf1c1a87ac42c94a1ac21bb36d48416869cd011604781011c131da8e393cdea5"
+  }
+}
